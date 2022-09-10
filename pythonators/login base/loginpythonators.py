@@ -19,11 +19,9 @@ def btn_clicked():
 
         import janelaavaliação
 
-    elif (emailcred != email1):
+    elif (emailcred != email1 or senhacred != senha1):
         messagebox.showerror(title=None, message='                          Erro!\n Seu usuário ou senha estão incorretos')
-    if (senhacred != senha1):
-        messagebox.showerror(title=None,
-                             message='                          Erro!\n Seu usuário ou senha estão incorretos')
+
 window = Tk()
 window.title('Login testes')
 window.geometry("1440x1024")
