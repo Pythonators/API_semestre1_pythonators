@@ -15,12 +15,16 @@ def AbrirJanela():
      window.title('Tela sprint')
      window.configure(bg="#F0F0F0")
 
-     # descobrindo o tamanho da tela do usuário
+    # descobrindo o tamanho da tela do usuário
      largura_screen = window.winfo_screenwidth()
      altura_screen = window.winfo_screenheight()
+     largura = largura_screen+20
+     altura = altura_screen+1
+     posx = largura_screen/2-largura/2
+     posy = altura_screen/2-altura/2
 
      # definindo largura e altura com base na tela do usuário
-     window.geometry("%dx%d" % (largura_screen, altura_screen))
+     window.geometry('%dx%d+%d+%d' % (largura_screen,altura_screen,posx,posy))
 
      # Texto de recepção ao usuário
      create_text = Label(text="OLÁ, SEJA BEM VINDO! \n SELECIONE SPRINT LIBERADA PARA AVALIAÇÃO.",
