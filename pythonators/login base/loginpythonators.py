@@ -1,7 +1,9 @@
 from tkinter import *
 import pandas as pd
 from tkinter import messagebox
-from openpyxl import *
+from pythonators.BaseDeTelaSprint.Sprint import AbrirJanela
+
+
 
 #consulta de login na xlsx
 data = pd.read_excel('login.xlsx',engine='openpyxl')
@@ -15,8 +17,11 @@ def btn_clicked():
     senhacred = str(senha.get())
     if (emailcred == email1) and (senhacred == senha1):
         print('Login ok')
+        window.destroy()
+        AbrirJanela()
 
-        import janelaavaliação
+
+
 
     elif (emailcred != email1 or senhacred != senha1):
         messagebox.showerror(title=None, message='                         Erro!\n Seu usuário ou senha estão incorretos')
