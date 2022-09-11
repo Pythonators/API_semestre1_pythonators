@@ -1,0 +1,35 @@
+from tkinter import *
+import pandas as pd
+from tkinter import messagebox
+from openpyxl import *
+
+# config e design janela root
+window = Tk()
+window.title('Login testes')
+window.configure(bg="#F0F0F0")
+
+# descobrindo o tamanho da tela do usuário
+largura_screen = window.winfo_screenwidth()
+altura_screen = window.winfo_screenheight()
+
+# definindo largura e altura com base na tela do usuário
+window.geometry("%dx%d" % (largura_screen, altura_screen))
+
+create_text = Label(text="Ao clicar em entrar, ou ao continuar com as outras opções \n abaixo, você concorda com os Termos de serviço e confirma \n que leu a Política de privacidade do Pythonators Database.",
+                    justify=CENTER, font=("None", int(13.0)))
+create_text.place(relx=0.5, rely=0.65, anchor=CENTER)
+
+# Config botão login
+b0 = Button(image=img0, borderwidth=0, highlightthickness=0,
+            command=btn_clicked, relief="flat")
+b0.place(relx=0.5, rely=0.75, anchor=CENTER, width=512, height=64)
+
+# Config entrada de email e senha
+email = Entry(window, font="Arial 18", bg='#CAD6D6')
+email.place(relx=0.5, rely=0.45, anchor=CENTER, width=518, height=50)
+
+senha = Entry(window, font="Arial 18", bg='#CAD6D6',)
+senha.place(relx=0.5, rely=0.55, anchor=CENTER, width=518, height=50)
+
+window.resizable(False, False)
+window.mainloop()
