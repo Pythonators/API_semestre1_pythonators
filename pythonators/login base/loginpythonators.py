@@ -25,6 +25,7 @@ def btn_clicked():
 window = Tk()
 window.title('Login testes')
 window.configure(bg="#FFFFFF")
+window.iconphoto(False, PhotoImage(file='image 1.png'))
 
 #definindo largura e altura com base na tela do usuário
 
