@@ -21,52 +21,52 @@ window.geometry('%dx%d+%d+%d' % (largura_screen,altura_screen,posx,posy))
 # Texto de recepção ao usuário
 create_text = Label(text="OLÁ, SEJA BEM VINDO! \n SELECIONE SPRINT LIBERADA PARA AVALIAÇÃO.",
      justify=CENTER, font=("Inter-Regular", int(18.0)))
-create_text.place(x=700, y=100, anchor=CENTER)
+create_text.place(relx=0.5, rely=0.2, anchor=CENTER)
 
 
 img0 = PhotoImage(file=f"group_10.png")
 label_img0 = Label(window, image=img0)
-label_img0.place(x=320, y=400)
+label_img0.place(relx=0.25, rely=0.5)
 
 img1 = PhotoImage(file=f"barra.png")
 label_img1 = Label(window, image=img1)
-label_img1.place(x=0, y=0)
+label_img1.place(relx=0, rely=0)
 
 
 # sprint 1
 create_text = Label( text="DISPONÍVEL A PARTIR DE 29/08/2022 \n ATÉ 18/09/2022",
      font=("None", int(10.0)))
-create_text.place(x=40, y=584)
+create_text.place(relx=0.04, rely=0.75)
 
 sprint = PhotoImage(file=f"button sprint 1.png")
 label_sprint = Label(image=sprint)
 sprint.image = sprint
 b0 = Button( image=sprint, borderwidth=0, highlightthickness=0, command = open)
-b0.place(x=40, y=300, width=251, height=251)
+b0.place(relx=0.04, rely=0.4, width=251, height=251)
    
 # sprint 2
 create_text = Label(text="DISPONÍVEL A PARTIR DE 19/09/2022 \n ATÉ 09/10/2022",
      font=("None", int(10.0)))
-create_text.place(x=370, y=584)
+create_text.place(relx=0.29, rely=0.75)
 img2 = PhotoImage(file=f"button sprint 2.png")
 label_img2 = Label(window, image=img2)
-label_img2.place(x=370, y=300)
+label_img2.place(relx=0.29, rely=0.4)
 
 # sprint 3
 create_text = Label( text="DISPONÍVEL A PARTIR DE 17/10/2022 \n ATÉ 06/11/2022",
      font=("None", int(10.0)))
-create_text.place(x=700, y=584)
+create_text.place(relx=0.53, rely=0.75)
 img3 = PhotoImage(file=f"button sprint 3.png")
 label_img3 = Label(window, image=img3)
-label_img3.place(x=700, y=300)
+label_img3.place(relx=0.53, rely=0.4)
 
 # sprint 4
 create_text = Label(text="DISPONÍVEL A PARTIR DE 07/11/2022 \n ATÉ 27/11/2022",
      font=("None", int(10.0)))
-create_text.place(x=1038, y=584)
+create_text.place(relx=0.77, rely=0.75)
 img4 = PhotoImage(file=f"button sprint 4.png")
 label_img4 = Label(window, image=img4)
-label_img4.place(x=1038, y=300)
+label_img4.place(relx=0.77, rely=0.4)
 
 window.resizable(False, False)
 window.mainloop()
