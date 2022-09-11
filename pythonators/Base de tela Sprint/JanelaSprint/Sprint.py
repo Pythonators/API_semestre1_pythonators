@@ -26,11 +26,11 @@ create_text.place(relx=0.5, rely=0.2, anchor=CENTER)
 
 img0 = PhotoImage(file=f"group_10.png")
 label_img0 = Label(window, image=img0)
-label_img0.place(relx=0.25, rely=0.5)
+label_img0.place(relx=0.5, rely=0.5, width=1366, height=21, anchor=tkinter.CENTER)
 
 img1 = PhotoImage(file=f"barra.png")
 label_img1 = Label(window, image=img1)
-label_img1.place(relx=0, rely=0)
+label_img1.place(relx=0, rely=0, width=1366, height=50)
 
 
 # sprint 1
