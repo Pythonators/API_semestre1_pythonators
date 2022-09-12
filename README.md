@@ -12,7 +12,19 @@ Este é um projeto apresentado pelos alunos do 1º Semestre do Curso do Banco de
 
 <br/>
 
-## Tecnologias Utilizadas
+## Lista de Conteúdos
+
+* [Tecnologias Utilizadas](#a)
+* [Datas do Projeto](#b)
+* [Backlog do Produto](#c)
+* [Backlog das Sprints](#d)
+* [Gráficos](#e)
+* [Aplicação](#f)
+* [Equipe](#g)
+
+<br/>
+
+## Tecnologias Utilizadas <br id=a>
 
 ![Badge](https://img.shields.io/static/v1?label=&message=PYTHON&color=gray&style=for-the-badge&logo=PYTHON)
 ![Badge](https://img.shields.io/static/v1?label=&message=FIGMA&color=gray&style=for-the-badge&logo=FIGMA)
@@ -21,7 +33,7 @@ Este é um projeto apresentado pelos alunos do 1º Semestre do Curso do Banco de
 
 <br/>
 
-## Datas do Projeto
+## Datas do Projeto <br id=b>
 
 * Kick-Off  15/08 a 19/08
 * Sprint 1  29/08 a 18/09
@@ -32,7 +44,7 @@ Este é um projeto apresentado pelos alunos do 1º Semestre do Curso do Banco de
 
 <br/>
 
-## Backlog do Produto
+## Backlog do Produto <br id=c>
 
 <p> O Product Backlog esta sendo desenvolvido conforme a demanda, considerando as funcionalidades solicitadas e a priorização requeridas pelo cliente, podendo haver mudanças na priorização ao longo do desenvolvimento do projeto, seja por fatores técnicos ou solicitação do cliente. 
 </p>
@@ -48,8 +60,10 @@ Este é um projeto apresentado pelos alunos do 1º Semestre do Curso do Banco de
 |   03   | Haverá um acesso para avaliação de PO | Eu como PBLTeX quero ter as avaliações armazenadas para não perder os dados de avaliações realizadas | Imprescendível |
 |   04   | Haverá uma página home | Eu como fake client quero avaliar meu aluno PO para manter bom rendimento e alterar pontos fracos | Imprescendível |
 |   04   | Haverá um dashboard ligado as informações de time, de sprint e de avaliações de usuario | Eu como aluno quero ter um dashboard para melhor facilidade de acompanhamento | Imprescendível |
+   
+<br/>
     
-## Backlog das Sprints
+## Backlog das Sprints <br id=d>
 
 <h3>Backlog da Sprint 1</h3>
     
@@ -61,8 +75,10 @@ Este é um projeto apresentado pelos alunos do 1º Semestre do Curso do Banco de
 |  02  | Eu como aluno quero poder realizar minhas avalições para manter uma informação sobre o desempenho do time | Deverá ser gerado uma tela de confirmação de término de avaliação |   
 |  03  | Eu como aluno quero poder acessar minhas informações de sprint para maior gerenciamento de tempo/atividades | Deverá ser gerado um painel de tarefas de sprint, e um timer de início e fim de sprint |
 
-<br />
+<br/>
+
 <!--
+
 <h3>Backlog da Sprint 2</h3>
 
 | Tópico | User Storie | Tarefas |
@@ -73,7 +89,7 @@ Este é um projeto apresentado pelos alunos do 1º Semestre do Curso do Banco de
 |  00  | A definir | A definir |   
 |  00  | A definir | A definir |
 
-<br />
+<br/>
 
 <h3>Backlog da Sprint 3</h3>
 
@@ -85,7 +101,7 @@ Este é um projeto apresentado pelos alunos do 1º Semestre do Curso do Banco de
 |  00  | A definir | A definir |   
 |  00  | A definir | A definir |
 
-<br />
+<br/>
 
 <h3>Backlog da Sprint 4</h3>
 
@@ -97,17 +113,17 @@ Este é um projeto apresentado pelos alunos do 1º Semestre do Curso do Banco de
 |  00  | A definir | A definir |   
 |  00  | A definir | A definir |
 
-<br />
+<br/>
+
 -->
 
-<!--
+## Gráficos Burndown <br id=e>
 
-## Gráficos Burndown
 <h3>Sprint 1</h3>
-
 <p width="100%">
-    <img width="33%" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vSFye2Cy5ZKk4ITaR4jn07u8yRFFHz-suO6wadgh4gzXuv3hieMPRE2ykFy5kYuu7ws54l7ouCKkusP/pubchart?oid=2089711791&format=image"> 
-</p>
+    <img width="50%" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vSFye2Cy5ZKk4ITaR4jn07u8yRFFHz-suO6wadgh4gzXuv3hieMPRE2ykFy5kYuu7ws54l7ouCKkusP/pubchart?oid=2089711791&format=image"> </p>
+
+<!--
 
 <h3>Sprint 2</h3>
 
@@ -117,38 +133,24 @@ Este é um projeto apresentado pelos alunos do 1º Semestre do Curso do Banco de
 
 <h3>Sprint 4</h3>
 
-
-<br />
 -->
 
-<!--
+<br/>
 
-## Demonstração da Aplicação
+## Demonstração da Aplicação <br id=f>
 
 
--->
+<br/>
 
-## Equipe
+## Equipe <br id=g>
 
-Colaboradores | Função | Github 
-:---------: | :------: | :-------: 
-Ana Flávia Damasceno Silva | DEV | [Github](https://github.com/anadamascenos)
-Caio Matheus de Sousa | PO | [Github](https://github.com/Caio-sousaFatec)
-Cauana Dias Costa | DEV | [Github](https://github.com/Cauana)
-Felipe Cesar | DEV | [Github](https://github.com/flpcsr)
-Gabriel Soares da Silva | DEV | [Github](https://github.com/GabrielSSilva123)
-Isadora Rocha da Silva | SM | [Github](https://github.com/isadorarocsilva)   
-Marcelo Felipe Borges Diógenes | DEV | [Github](https://github.com/Marcelofbd) 
-Mikaéla Petronilho Begotti Cardoso | DEV | [Github](https://github.com/MikaelaBgtt)  
-Murilo Brissi | DEV | [Github](https://github.com/Murilobss)
-Ryan Lanziloti de Faria Teixeira | DEV | [Github](https://github.com/Pirajui)
-<br>
+[<img src="https://github.com/isadorarocsilva/repositorioteste/blob/main/anaperfil.jpg?raw=true" width=115 > <br> <sub> Ana Flávia Damasceno Silva </sub>](https://github.com/anadamascenos) | [<img src="https://avatars.githubusercontent.com/u/111454312?v=4" width=115 > <br> <sub> Caio Matheus de Sousa </sub>](https://github.com/Caio-sousaFatec) | [<img src="https://avatars.githubusercontent.com/u/77700346?v=4" width=115 > <br> <sub> Cauana Dias Costa </sub>](https://github.com/Cauana) |  [<img src="https://avatars.githubusercontent.com/u/111532905?v=4" width=115 > <br> <sub> Felipe Cesar </sub>](https://github.com/flpcsr) |  [<img src="https://github.com/isadorarocsilva/repositorioteste/blob/main/gabrielperfil.png?raw=true" width=115 > <br> <sub> Gabriel Soares da Silva </sub>](https://github.com/GabrielSSilva123) |
+| :---: | :---: | :---: | :---: | :---: |
+
+[<img src="https://avatars.githubusercontent.com/u/111532166?v=4" width=115 > <br> <sub> Isadora Rocha da Silva </sub>](https://github.com/isadorarocsilva) | [<img src="https://avatars.githubusercontent.com/u/66282907?v=4" width=115 > <br> <sub> Marcelo Felipe Borges Diógenes </sub>](https://github.com/Marcelofbd) | [<img src="https://github.com/isadorarocsilva/repositorioteste/blob/main/mikaelaperfil.jpg?raw=true" width=115 > <br> <sub> Mikaéla Petronilho Begotti Cardoso </sub>](https://github.com/MikaelaBgtt) |  [<img src="https://github.com/isadorarocsilva/repositorioteste/blob/main/muriloperfil.jpg?raw=true" width=115 > <br> <sub> Murilo Brissi </sub>](https://github.com/Murilobss) |  [<img src="https://github.com/isadorarocsilva/repositorioteste/blob/main/ryanperfil.jpg?raw=true" width=115 > <br> <sub> Ryan Lanziloti de Faria Teixeira </sub>](https://github.com/Pirajui) |
+| :---: | :---: | :---: | :---: | :---: |
+
+<br/>
  
- <p>Legenda</p>
- 
-`PO - Product Owner`<br>
-`SM - Scrum Master`<br>
-`DEV - Developers Team`
-
 → [Voltar ao topo](#topo)
 </div>
