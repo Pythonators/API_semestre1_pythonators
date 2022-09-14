@@ -9,7 +9,7 @@ url.urlretrieve('https://i.imgur.com/GI14GMi.png','GI14GMi.png')
 url.urlretrieve('https://i.imgur.com/Bl10WW5.png','Bl10WW5.png')
 url.urlretrieve('https://i.imgur.com/UafmJv7.png','UafmJv7.png')
 url.urlretrieve('https://i.imgur.com/UafmJv7.png','UafmJv7.png')
-url.urlretrieve('https://imgur.com/a/6xOEsBt.png','6xOEsBt.png')
+
 from tkinter import messagebox
 def AbrirJanela():
      # config e design janela root
@@ -43,14 +43,7 @@ def AbrirJanela():
 
      canvas.create_rectangle(0.0, 0.0, 3000.0, 69.0, fill="#D9D9D9", outline="")
      
-          programador = PhotoImage(file="eMrv85A.png")
-     label_sprint = Label(image=sprint)
-     sprint.image = sprint
-     b0 = Button( image=sprint, borderwidth=0, highlightthickness=0, command = open)
-     b0.place(relx=0.0, rely=0.0, width=251, height=251)
-     
-
-
+    
      # sprint 1
      create_text = Label( text="DISPONÍVEL A PARTIR DE 29/08/2022 \n ATÉ 18/09/2022",
           font=("None", int(10.0)))
