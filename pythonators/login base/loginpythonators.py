@@ -1,7 +1,7 @@
 from tkinter import *
 import pandas as pd
 from tkinter import messagebox
-from BaseDeTelaSprint.Sprint import AbrirJanelaSprint
+from pythonators.BaseDeTelaSprint.Sprint import AbrirJanelaSprint
 
 
 #consulta de login na xlsx

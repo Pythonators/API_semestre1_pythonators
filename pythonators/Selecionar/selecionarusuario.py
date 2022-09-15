@@ -1,6 +1,6 @@
 from tkinter import CENTER, Label, Tk, Canvas, Entry, Text, Button, PhotoImage
 import urllib.request as url
-from PaginaVerific.index import AbrirJanelaAvaliacao
+from pythonators.PaginaVerificacao.index import AbrirJanelaAvaliacao
 #from BaseDeTelaSprint.Sprint import AbrirJanelaSprint
 url.urlretrieve("https://imgur.com/Mz49sv3.png", "Mz49sv3.png")
 url.urlretrieve("https://imgur.com/Wc3w3RC.png", "Wc3w3RC.png")
@@ -73,17 +73,17 @@ def AbrirJanelaSelecionarUser():
     )
     button_1.place(
         relx=0.68,
-        rely=0.65,
+        rely=0.63,
         width=208.0,
         height=208.0
     )
 
 
     canvas.create_text(
-        1081.0,
-        790.0,
+        1084.0,
+        759.0,
         anchor="nw",
-        text="LUIS INACIO",
+        text="CAROLINA SASAKI",
         fill="#000000",
         font=("Inter", 24 * -1)
     )
@@ -99,14 +99,14 @@ def AbrirJanelaSelecionarUser():
     )
     button_2.place(
         relx=0.32,
-        rely=0.65,
+        rely=0.63,
         width=208.0,
         height=208.0
     )
 
     canvas.create_text(
         490.0,
-        790.0,
+        759.0,
         anchor="nw",
         text="ALINE VANNUCCI",
         fill="#000000",
@@ -124,14 +124,14 @@ def AbrirJanelaSelecionarUser():
     )
     button_3.place(
         relx=0.5,
-        rely=0.65,
+        rely=0.63,
         width=208.0,
         height=208.0
     )
 
     canvas.create_text(
         770.0,
-        790.0,
+        759.0,
         anchor="nw",
         text="PEDRO SCOOBY",
         fill="#000000",
@@ -149,14 +149,14 @@ def AbrirJanelaSelecionarUser():
     )
     button_4.place(
         relx=0.14,
-        rely=0.65,
+        rely=0.63,
         width=208.0,
         height=208.0
     )
 
     canvas.create_text(
         225.0,
-        790.0,
+        759.0,
         anchor="nw",
         text="RYAN COBALT",
         fill="#000000",
@@ -181,7 +181,7 @@ def AbrirJanelaSelecionarUser():
 
     canvas.create_text(
         1060.0,
-        488.0,
+        475.0,
         anchor="nw",
         text="FELIPE SANTOS",
         fill="#000000",
@@ -206,7 +206,7 @@ def AbrirJanelaSelecionarUser():
 
     canvas.create_text(
         746.0,
-        488.0,
+        475.0,
         anchor="nw",
         text="SAMANTA ESPANHA",
         fill="#000000",
@@ -231,7 +231,7 @@ def AbrirJanelaSelecionarUser():
 
     canvas.create_text(
         495.0,
-        488.0,
+        475.0,
         anchor="nw",
         text="RODRIGO FARO",
         fill="#000000",
@@ -255,16 +255,13 @@ def AbrirJanelaSelecionarUser():
     )
 
     canvas.create_text(
-        210.0,
-        488.0,
+        219.0,
+        475.0,
         anchor="nw",
-        text="CAROLINA SASAKI",
+        text="LUIS INACIO",
         fill="#000000",
         font=("Inter", 24 * -1)
     )
-    #def bt_voltar():
-        #window3.destroy()
-        #AbrirJanelaSprint()
 
     button_voltar = PhotoImage(file=("button_9,png"))
     button_voltar = Button(window3,
