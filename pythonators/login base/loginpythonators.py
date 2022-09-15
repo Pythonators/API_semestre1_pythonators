@@ -1,8 +1,7 @@
 from tkinter import *
 import pandas as pd
 from tkinter import messagebox
-from pythonators.BaseDeTelaSprint.Sprint import AbrirJanela
-
+from BaseDeTelaSprint.Sprint import AbrirJanelaSprint
 
 
 #consulta de login na xlsx
@@ -12,16 +11,13 @@ email1 = str(data.iloc[0,0])
 
 
 #Função verificação de login inserido e abrir página de avaliação
-def btn_clicked():
+def btn_clickedlogin():
     emailcred = str(email.get())
     senhacred = str(senha.get())
     if (emailcred == email1) and (senhacred == senha1):
         print('Login ok')
         window.destroy()
-        AbrirJanela()
-
-
-
+        AbrirJanelaSprint()
 
     elif (emailcred != email1 or senhacred != senha1):
         messagebox.showerror(title=None, message='                         Erro!\n Seu usuário ou senha estão incorretos')
@@ -57,7 +53,7 @@ label_img1 = Label(window, bg='#FFFFFF', image=img1)
 label_img1.place(relx = 0.5, rely = 0.17, anchor = CENTER)
 
 #Config botão login
-b0 = Button(image=img0, bg="#FFFFFF", command=btn_clicked, relief="flat")
+b0 = Button(image=img0, bg="#FFFFFF", command=btn_clickedlogin, relief="flat")
 b0.place(relx = 0.5, rely = 0.75, anchor = CENTER, width=512, height=64)
 
 #Config entrada de email e senha com placeholder
