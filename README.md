@@ -3,8 +3,8 @@
     
 | Tópico | User Storie                                     | Tarefas                                   |
 | :--: | :-------------------------------------------: | :------------------------------------: |
-|  01  | eu como PBLTeX quero ter uma tela de autenticação para conseguir entrar em um perfil | deverá ser gerado uma tela de login e senha para um perfil| 
-|  02  | eu como PBLTeX quero ter as avaliações armazenadas para não perder os dados de avaliações realizadas	| haverá uma base de dados para avaliações|
+|  01  | Eu como PBLTeX quero ter uma tela de autenticação para conseguir entrar em um perfil | Deverá ser gerado uma tela de login e senha para um perfil| 
+|  02  | Eu como PBLTeX quero ter as avaliações armazenadas para não perder os dados de avaliações realizadas	| Haverá uma base de dados para avaliações|
 |  03  | Eu como aluno quero poder realizar minhas avalições para manter uma informação sobre o desempenho do time | Deverá ser gerado uma tela de avaliação com 5 opções de avaliação usando diagrama de likert |   
 |  04  | Eu como aluno quero poder acessar minhas informações de sprint para maior gerenciamento de tempo/atividades | Deverá ser gerado um painel com dados da sprint |
 
