@@ -44,9 +44,6 @@ Este é um projeto apresentado pelos alunos do 1º Semestre do Curso do Banco de
 <br/>
 
 ## Backlog do Produto <br id=c>
-
-<p> O Product Backlog esta sendo desenvolvido conforme a demanda, considerando as funcionalidades solicitadas e a priorização requeridas pelo cliente, podendo haver mudanças na priorização ao longo do desenvolvimento do projeto, seja por fatores técnicos ou solicitação do cliente. 
-</p>
     
 | Sprint |           Descrição               |                                            User Storie                                            | Prioridade |
 |:------:|:--------------------------------: | :----------------------------------------------------------------------------------------: |         :------:  |
