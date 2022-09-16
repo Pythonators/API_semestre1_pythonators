@@ -3,7 +3,7 @@
     
 | Tópico | User Storie                                     | Tarefas                                   |
 | :--: | :-------------------------------------------: | :------------------------------------: |
-|  01  | Eu como aluno quero poder acessar minhas avaliações para revisão | Deverá ser gerado um painel de revisão de avaiação, mostrando dados anteriormente inseridos por usuário |
+|  01  | Eu como aluno quero poder acessar minhas avaliações para revisão | Deverá ser gerado um painel de revisão de avaliação, mostrando dados anteriormente inseridos por usuário |
 |  01  | Eu como aluno quero poder acessar minhas avaliações para revisão | Deverá ser feito um botão para entrada no painel de revisão |
 |  02  | Eu como aluno quero poder realizar minhas avalições para manter uma informação sobre o desempenho do time | Deverá ser gerado uma tela de avaliação com 5 opções de avaliação usando diagrama de likert |
 |  02  | Eu como aluno quero poder realizar minhas avalições para manter uma informação sobre o desempenho do time | Deverá ser gerado uma tela de confirmação de término de avaliação |   
