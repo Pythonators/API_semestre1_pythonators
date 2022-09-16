@@ -66,10 +66,10 @@ Este é um projeto apresentado pelos alunos do 1º Semestre do Curso do Banco de
 
 | Sprint | Histórico |
 |:--:|:-------------------------------------------------:|
-| 01 | [ver relatório](https://github.com/Marcelofbd/RepositorioTeste2/blob/Sprint_1/README.md) |
-| 02 | [ver relatório](https://github.com/Marcelofbd/RepositorioTeste2/blob/Sprint_1/README.md) |
-| 03 | [ver relatório](https://github.com/Marcelofbd/RepositorioTeste2/blob/Sprint_1/README.md) |
-| 04 | [ver relatório](https://github.com/Marcelofbd/RepositorioTeste2/blob/Sprint_1/README.md) |
+| 01 | [ver relatório](https://github.com/Pythonators/API_semestre1_pythonators/tree/Sprint_1) |
+| 02 | [ver relatório](https://github.com/Pythonators/API_semestre1_pythonators/tree/Sprint_2) |
+| 03 | [ver relatório](https://github.com/Pythonators/API_semestre1_pythonators/tree/Sprint_3) |
+| 04 | [ver relatório](https://github.com/Pythonators/API_semestre1_pythonators/tree/Sprint_4) |
 
 <br/>
 
