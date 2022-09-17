@@ -126,7 +126,7 @@ def AbrirJanelaAvaliacao():
     i_peso = Image.open('Imagens/botao.png')
     i_peso = ImageTk.PhotoImage(i_peso)
     but = Button(second_frame,  image=i_peso, width=100, command= avaliar)
-    but.pack(anchor=NW, padx=15, pady=5)
+    but.pack(anchor=CENTER, padx=15, pady=5)
     print(MODES[1])
 
     janela.resizable(False,False)
