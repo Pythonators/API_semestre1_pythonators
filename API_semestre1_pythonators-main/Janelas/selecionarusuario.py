@@ -2,7 +2,7 @@ from tkinter import CENTER, Label, Tk, Canvas, Entry, Text, Button, PhotoImage
 import urllib.request as url
 from index import AbrirJanelaAvaliacao
 #from BaseDeTelaSprint.Sprint import AbrirJanelaSprint
-'''
+
 url.urlretrieve("https://imgur.com/Mz49sv3.png", "Mz49sv3.png")
 url.urlretrieve("https://imgur.com/Wc3w3RC.png", "Wc3w3RC.png")
 url.urlretrieve("https://imgur.com/mZksvEC.png", "mZksvEC.png")
@@ -10,8 +10,8 @@ url.urlretrieve("https://imgur.com/TDDApv6.png", "TDDApv6.png")
 url.urlretrieve("https://imgur.com/kkp1TSg.png", "kkp1TSg.png")
 url.urlretrieve("https://imgur.com/qdRhJAJ.png", "qdRhJAJ.png")
 url.urlretrieve("https://imgur.com/NgZ8Y0X.png", "NgZ8Y0X.png")
-url.urlretrieve("https://imgur.com/qdRhJAJ.png", "qdRhJAJ.png")
-'''
+url.urlretrieve("https://imgur.com/jmYPjEd.png", "jmYPjEd.png")
+
 
 def AbrirJanelaSelecionarUser():
 
@@ -109,7 +109,7 @@ def AbrirJanelaSelecionarUser():
         490.0,
         759.0,
         anchor="nw",
-        text="ALINE VANNUCCI",
+        text="LUIS INACIO",
         fill="#000000",
         font=("Inter", 24 * -1)
     )
@@ -134,13 +134,13 @@ def AbrirJanelaSelecionarUser():
         770.0,
         759.0,
         anchor="nw",
-        text="PEDRO SCOOBY",
+        text="SAMANTA ESPANHA",
         fill="#000000",
         font=("Inter", 24 * -1)
     )
 
     button_image_4 = PhotoImage(
-        file=("Imagens/TDDApv6.png"))
+        file=("Imagens/jmYPjEd.png"))
     button_4 = Button(window3,
         image=button_image_4,
         borderwidth=0,
@@ -209,13 +209,13 @@ def AbrirJanelaSelecionarUser():
         746.0,
         475.0,
         anchor="nw",
-        text="SAMANTA ESPANHA",
+        text="PEDRO SCOOBY",
         fill="#000000",
         font=("Inter", 24 * -1)
     )
 
     button_image_7 = PhotoImage(
-        file=("Imagens/NgZ8Y0X.png"))
+        file=("Imagens/TDDApv6.png"))
     button_7 = Button(window3,
         image=button_image_7,
         borderwidth=0,
@@ -240,7 +240,7 @@ def AbrirJanelaSelecionarUser():
     )
 
     button_image_8 = PhotoImage(
-        file=("Imagens/qdRhJAJ.png"))
+        file=("Imagens/NgZ8Y0X.png"))
     button_8 = Button(window3,
         image=button_image_8,
         borderwidth=0,
@@ -259,12 +259,12 @@ def AbrirJanelaSelecionarUser():
         219.0,
         475.0,
         anchor="nw",
-        text="LUIS INACIO",
+        text="ALINE VANNUCCI",
         fill="#000000",
         font=("Inter", 24 * -1)
     )
 
-    button_voltar = PhotoImage(file=("Imagens/button_9,png"))
+    button_voltar = PhotoImage(file=("Imagens/button_9.png"))
     button_voltar = Button(window3,
         image=button_voltar,
         bg="#D9D9D9",
