@@ -95,7 +95,7 @@ def AbrirJanelaSelecionarUser():
         image=button_image_2,
         borderwidth=0,
         highlightthickness=0,
-        command=lambda: print("button_2 clicked"),
+        command= btn_clicked_selecionarusuario,
         relief="flat"
     )
     button_2.place(
@@ -120,7 +120,7 @@ def AbrirJanelaSelecionarUser():
         image=button_image_3,
         borderwidth=0,
         highlightthickness=0,
-        command=lambda: print("button_3 clicked"),
+        command= btn_clicked_selecionarusuario,
         relief="flat"
     )
     button_3.place(
@@ -145,7 +145,7 @@ def AbrirJanelaSelecionarUser():
         image=button_image_4,
         borderwidth=0,
         highlightthickness=0,
-        command=lambda: print("button_4 clicked"),
+        command= btn_clicked_selecionarusuario,
         relief="flat"
     )
     button_4.place(
@@ -170,7 +170,7 @@ def AbrirJanelaSelecionarUser():
         image=button_image_5,
         borderwidth=0,
         highlightthickness=0,
-        command=lambda: print("button_5 clicked"),
+        command= btn_clicked_selecionarusuario,
         relief="flat"
     )
     button_5.place(
@@ -195,7 +195,7 @@ def AbrirJanelaSelecionarUser():
         image=button_image_6,
         borderwidth=0,
         highlightthickness=0,
-        command=lambda: print("button_6 clicked"),
+        command= btn_clicked_selecionarusuario,
         relief="flat"
     )
     button_6.place(
@@ -220,7 +220,7 @@ def AbrirJanelaSelecionarUser():
         image=button_image_7,
         borderwidth=0,
         highlightthickness=0,
-        command=lambda: print("button_7 clicked"),
+        command= btn_clicked_selecionarusuario,
         relief="flat"
     )
     button_7.place(
@@ -245,7 +245,7 @@ def AbrirJanelaSelecionarUser():
         image=button_image_8,
         borderwidth=0,
         highlightthickness=0,
-        command=lambda: print("button_8 clicked"),
+        command= btn_clicked_selecionarusuario,
         relief="flat"
     )
     button_8.place(
