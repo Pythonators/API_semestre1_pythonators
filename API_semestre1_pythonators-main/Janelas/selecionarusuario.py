@@ -2,7 +2,7 @@ from tkinter import CENTER, Label, Tk, Canvas, Entry, Text, Button, PhotoImage
 import urllib.request as url
 from index import AbrirJanelaAvaliacao
 #from BaseDeTelaSprint.Sprint import AbrirJanelaSprint
-'''
+
 url.urlretrieve("https://imgur.com/Mz49sv3.png", "Mz49sv3.png")
 url.urlretrieve("https://imgur.com/Wc3w3RC.png", "Wc3w3RC.png")
 url.urlretrieve("https://imgur.com/mZksvEC.png", "mZksvEC.png")
@@ -10,8 +10,8 @@ url.urlretrieve("https://imgur.com/TDDApv6.png", "TDDApv6.png")
 url.urlretrieve("https://imgur.com/kkp1TSg.png", "kkp1TSg.png")
 url.urlretrieve("https://imgur.com/qdRhJAJ.png", "qdRhJAJ.png")
 url.urlretrieve("https://imgur.com/NgZ8Y0X.png", "NgZ8Y0X.png")
-url.urlretrieve("https://imgur.com/qdRhJAJ.png", "qdRhJAJ.png")
-'''
+url.urlretrieve("https://imgur.com/jmYPjEd.png", "jmYPjEd.png")
+
 
 def AbrirJanelaSelecionarUser():
 
@@ -95,7 +95,7 @@ def AbrirJanelaSelecionarUser():
         image=button_image_2,
         borderwidth=0,
         highlightthickness=0,
-        command=lambda: print("button_2 clicked"),
+        command= btn_clicked_selecionarusuario,
         relief="flat"
     )
     button_2.place(
@@ -105,6 +105,7 @@ def AbrirJanelaSelecionarUser():
         height=208.0
     )
 
+<<<<<<< HEAD
     # canvas.create_text(
     #     490.0,
     #     759.0,
@@ -113,6 +114,16 @@ def AbrirJanelaSelecionarUser():
     #     fill="#000000",
     #     font=("Inter", 24 * -1)
     # )
+=======
+    canvas.create_text(
+        490.0,
+        759.0,
+        anchor="nw",
+        text="LUIS INACIO",
+        fill="#000000",
+        font=("Inter", 24 * -1)
+    )
+>>>>>>> beeda2ad823ecb8b7f5b4106cc02a54cc3003f13
 
     button_image_3 = PhotoImage(
         file=("Imagens/mZksvEC.png"))
@@ -120,7 +131,7 @@ def AbrirJanelaSelecionarUser():
         image=button_image_3,
         borderwidth=0,
         highlightthickness=0,
-        command=lambda: print("button_3 clicked"),
+        command= btn_clicked_selecionarusuario,
         relief="flat"
     )
     button_3.place(
@@ -130,6 +141,7 @@ def AbrirJanelaSelecionarUser():
         height=208.0
     )
 
+<<<<<<< HEAD
     # canvas.create_text(
     #     770.0,
     #     759.0,
@@ -138,14 +150,24 @@ def AbrirJanelaSelecionarUser():
     #     fill="#000000",
     #     font=("Inter", 24 * -1)
     # )
+=======
+    canvas.create_text(
+        770.0,
+        759.0,
+        anchor="nw",
+        text="SAMANTA ESPANHA",
+        fill="#000000",
+        font=("Inter", 24 * -1)
+    )
+>>>>>>> beeda2ad823ecb8b7f5b4106cc02a54cc3003f13
 
     button_image_4 = PhotoImage(
-        file=("Imagens/TDDApv6.png"))
+        file=("Imagens/jmYPjEd.png"))
     button_4 = Button(window3,
         image=button_image_4,
         borderwidth=0,
         highlightthickness=0,
-        command=lambda: print("button_4 clicked"),
+        command= btn_clicked_selecionarusuario,
         relief="flat"
     )
     button_4.place(
@@ -170,7 +192,7 @@ def AbrirJanelaSelecionarUser():
         image=button_image_5,
         borderwidth=0,
         highlightthickness=0,
-        command=lambda: print("button_5 clicked"),
+        command= btn_clicked_selecionarusuario,
         relief="flat"
     )
     button_5.place(
@@ -195,7 +217,7 @@ def AbrirJanelaSelecionarUser():
         image=button_image_6,
         borderwidth=0,
         highlightthickness=0,
-        command=lambda: print("button_6 clicked"),
+        command= btn_clicked_selecionarusuario,
         relief="flat"
     )
     button_6.place(
@@ -205,6 +227,7 @@ def AbrirJanelaSelecionarUser():
         height=208.0
     )
 
+<<<<<<< HEAD
     # canvas.create_text(
     #     746.0,
     #     475.0,
@@ -213,14 +236,24 @@ def AbrirJanelaSelecionarUser():
     #     fill="#000000",
     #     font=("Inter", 24 * -1)
     # )
+=======
+    canvas.create_text(
+        746.0,
+        475.0,
+        anchor="nw",
+        text="PEDRO SCOOBY",
+        fill="#000000",
+        font=("Inter", 24 * -1)
+    )
+>>>>>>> beeda2ad823ecb8b7f5b4106cc02a54cc3003f13
 
     button_image_7 = PhotoImage(
-        file=("Imagens/NgZ8Y0X.png"))
+        file=("Imagens/TDDApv6.png"))
     button_7 = Button(window3,
         image=button_image_7,
         borderwidth=0,
         highlightthickness=0,
-        command=lambda: print("button_7 clicked"),
+        command= btn_clicked_selecionarusuario,
         relief="flat"
     )
     button_7.place(
@@ -240,12 +273,12 @@ def AbrirJanelaSelecionarUser():
     # )
 
     button_image_8 = PhotoImage(
-        file=("Imagens/qdRhJAJ.png"))
+        file=("Imagens/NgZ8Y0X.png"))
     button_8 = Button(window3,
         image=button_image_8,
         borderwidth=0,
         highlightthickness=0,
-        command=lambda: print("button_8 clicked"),
+        command= btn_clicked_selecionarusuario,
         relief="flat"
     )
     button_8.place(
@@ -255,6 +288,7 @@ def AbrirJanelaSelecionarUser():
         height=208.0
     )
 
+<<<<<<< HEAD
     # canvas.create_text(
     #     219.0,
     #     475.0,
@@ -263,8 +297,18 @@ def AbrirJanelaSelecionarUser():
     #     fill="#000000",
     #     font=("Inter", 24 * -1)
     # )
+=======
+    canvas.create_text(
+        219.0,
+        475.0,
+        anchor="nw",
+        text="ALINE VANNUCCI",
+        fill="#000000",
+        font=("Inter", 24 * -1)
+    )
+>>>>>>> beeda2ad823ecb8b7f5b4106cc02a54cc3003f13
 
-    button_voltar = PhotoImage(file=("Imagens/button_9,png"))
+    button_voltar = PhotoImage(file=("Imagens/button_9.png"))
     button_voltar = Button(window3,
         image=button_voltar,
         bg="#D9D9D9",
