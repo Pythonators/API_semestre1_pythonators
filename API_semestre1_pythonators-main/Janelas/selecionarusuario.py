@@ -80,14 +80,14 @@ def AbrirJanelaSelecionarUser():
     )
 
 
-    canvas.create_text(
-        1084.0,
-        759.0,
-        anchor="nw",
-        text="CAROLINA SASAKI",
-        fill="#000000",
-        font=("Inter", 24 * -1)
-    )
+    # canvas.create_text(
+    #     1084.0,
+    #     759.0,
+    #     anchor="nw",
+    #     text="CAROLINA SASAKI",
+    #     fill="#000000",
+    #     font=("Inter", 24 * -1)
+    # )
 
     button_image_2 = PhotoImage(
         file=("Imagens/Wc3w3RC.png"))
@@ -105,14 +105,14 @@ def AbrirJanelaSelecionarUser():
         height=208.0
     )
 
-    canvas.create_text(
-        490.0,
-        759.0,
-        anchor="nw",
-        text="ALINE VANNUCCI",
-        fill="#000000",
-        font=("Inter", 24 * -1)
-    )
+    # canvas.create_text(
+    #     490.0,
+    #     759.0,
+    #     anchor="nw",
+    #     text="ALINE VANNUCCI",
+    #     fill="#000000",
+    #     font=("Inter", 24 * -1)
+    # )
 
     button_image_3 = PhotoImage(
         file=("Imagens/mZksvEC.png"))
@@ -130,14 +130,14 @@ def AbrirJanelaSelecionarUser():
         height=208.0
     )
 
-    canvas.create_text(
-        770.0,
-        759.0,
-        anchor="nw",
-        text="PEDRO SCOOBY",
-        fill="#000000",
-        font=("Inter", 24 * -1)
-    )
+    # canvas.create_text(
+    #     770.0,
+    #     759.0,
+    #     anchor="nw",
+    #     text="PEDRO SCOOBY",
+    #     fill="#000000",
+    #     font=("Inter", 24 * -1)
+    # )
 
     button_image_4 = PhotoImage(
         file=("Imagens/TDDApv6.png"))
@@ -155,14 +155,14 @@ def AbrirJanelaSelecionarUser():
         height=208.0
     )
 
-    canvas.create_text(
-        225.0,
-        759.0,
-        anchor="nw",
-        text="RYAN COBALT",
-        fill="#000000",
-        font=("Inter", 24 * -1)
-    )
+    # canvas.create_text(
+    #     225.0,
+    #     759.0,
+    #     anchor="nw",
+    #     text="RYAN COBALT",
+    #     fill="#000000",
+    #     font=("Inter", 24 * -1)
+    # )
 
     button_image_5 = PhotoImage(
         file=("Imagens/kkp1TSg.png"))
@@ -180,14 +180,14 @@ def AbrirJanelaSelecionarUser():
         height=208.0
     )
 
-    canvas.create_text(
-        1060.0,
-        475.0,
-        anchor="nw",
-        text="FELIPE SANTOS",
-        fill="#000000",
-        font=("Inter", 24 * -1)
-    )
+    # canvas.create_text(
+    #     1060.0,
+    #     475.0,
+    #     anchor="nw",
+    #     text="FELIPE SANTOS",
+    #     fill="#000000",
+    #     font=("Inter", 24 * -1)
+    # )
 
     button_image_6 = PhotoImage(
         file=("Imagens/qdRhJAJ.png"))
@@ -205,14 +205,14 @@ def AbrirJanelaSelecionarUser():
         height=208.0
     )
 
-    canvas.create_text(
-        746.0,
-        475.0,
-        anchor="nw",
-        text="SAMANTA ESPANHA",
-        fill="#000000",
-        font=("Inter", 24 * -1)
-    )
+    # canvas.create_text(
+    #     746.0,
+    #     475.0,
+    #     anchor="nw",
+    #     text="SAMANTA ESPANHA",
+    #     fill="#000000",
+    #     font=("Inter", 24 * -1)
+    # )
 
     button_image_7 = PhotoImage(
         file=("Imagens/NgZ8Y0X.png"))
@@ -230,14 +230,14 @@ def AbrirJanelaSelecionarUser():
         height=208.0
     )
 
-    canvas.create_text(
-        495.0,
-        475.0,
-        anchor="nw",
-        text="RODRIGO FARO",
-        fill="#000000",
-        font=("Inter", 24 * -1)
-    )
+    # canvas.create_text(
+    #     495.0,
+    #     475.0,
+    #     anchor="nw",
+    #     text="RODRIGO FARO",
+    #     fill="#000000",
+    #     font=("Inter", 24 * -1)
+    # )
 
     button_image_8 = PhotoImage(
         file=("Imagens/qdRhJAJ.png"))
@@ -255,14 +255,14 @@ def AbrirJanelaSelecionarUser():
         height=208.0
     )
 
-    canvas.create_text(
-        219.0,
-        475.0,
-        anchor="nw",
-        text="LUIS INACIO",
-        fill="#000000",
-        font=("Inter", 24 * -1)
-    )
+    # canvas.create_text(
+    #     219.0,
+    #     475.0,
+    #     anchor="nw",
+    #     text="LUIS INACIO",
+    #     fill="#000000",
+    #     font=("Inter", 24 * -1)
+    # )
 
     button_voltar = PhotoImage(file=("Imagens/button_9,png"))
     button_voltar = Button(window3,

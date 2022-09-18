@@ -14,9 +14,9 @@ def AbrirJanelaAvaliacao():
     largura_screen = janela.winfo_screenwidth()
     altura_screen = janela.winfo_screenheight()
     largura = 480
-    altura = 800
+    altura = 700
     posx = largura_screen / 2 - largura / 2
-    posy = (altura_screen / 2-30) - altura / 2
+    posy = (altura_screen / 2) - altura / 2
     janela.geometry('%dx%d+%d+%d' % (largura, altura, posx, posy))
 
     def avaliar():
@@ -126,7 +126,7 @@ def AbrirJanelaAvaliacao():
     i_peso = Image.open('Imagens/botao.png')
     i_peso = ImageTk.PhotoImage(i_peso)
     but = Button(second_frame,  image=i_peso, width=100, command= avaliar)
-    but.pack(anchor=NW, padx=15, pady=5)
+    but.pack(anchor=CENTER, padx=15, pady=5)
     print(MODES[1])
 
     janela.resizable(False,False)
