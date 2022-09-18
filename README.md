@@ -19,6 +19,7 @@ Este é um projeto apresentado pelos alunos do 1º Semestre do Curso do Banco de
 * [Backlog do Produto](#c)
 * [Backlog das Sprints](#d)
 * [Aplicação](#f)
+* [Tutorial](#e)
 * [Equipe](#g)
 
 <br/>
@@ -74,6 +75,11 @@ Este é um projeto apresentado pelos alunos do 1º Semestre do Curso do Banco de
 
 https://user-images.githubusercontent.com/107864553/190879906-e18914c6-c6c3-42cc-9371-5bce51d66d8d.mp4
 
+<br/>
+
+## Tutorial <br id=e>
+
+* [Tutorial para baixar aplicativo](https://github.com/Pythonators/API_semestre1_pythonators/blob/Tutorial/README.md)
 
 <br/>
 
