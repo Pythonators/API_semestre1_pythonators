@@ -72,7 +72,7 @@ email.configure(state=DISABLED)
 email.bind("<Button-1>",on_click1)
 email.place(relx = 0.5, rely = 0.45, anchor = CENTER, width=518, height=50)
 
-senha = Entry(window, font="inter 18", bg='#D9D9D9',)
+senha = Entry(window, font="inter 18", bg='#D9D9D9',show='*')
 senha.insert(0,'SENHA')
 senha.configure(state=DISABLED)
 senha.bind("<Button-1>",on_click2)
