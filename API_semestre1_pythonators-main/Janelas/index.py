@@ -11,12 +11,13 @@ from PIL import ImageTk, Image
 from openpyxl.reader.excel import load_workbook
 def AbrirJanelaAvaliacao():
     janela = Tk()
+    janela.title('Avaliação')
     largura_screen = janela.winfo_screenwidth()
     altura_screen = janela.winfo_screenheight()
     largura = 480
     altura = 700
     posx = largura_screen / 2 - largura / 2
-    posy = (altura_screen / 2) - altura / 2
+    posy = (altura_screen / 2-35) - altura / 2
     janela.geometry('%dx%d+%d+%d' % (largura, altura, posx, posy))
 
     def avaliar():

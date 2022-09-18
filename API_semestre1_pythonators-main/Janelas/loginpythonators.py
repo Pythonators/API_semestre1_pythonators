@@ -28,15 +28,15 @@ window.title('Login testes')
 window.configure(bg="#FFFFFF")
 window.iconphoto(False, PhotoImage(file='Imagens/image 1.png'))
 
-#definindo largura e altura com base na tela do usuário
+#Configuração de tela
 
 largura_screen = window.winfo_screenwidth()
 altura_screen = window.winfo_screenheight()
-largura = largura_screen+20
-altura = altura_screen+1
-posx = largura_screen/2-largura/2
-posy = altura_screen/2-altura/2
-window.geometry('%dx%d+%d+%d' % (largura_screen,altura_screen,posx,posy))
+largura = 1300
+altura = 700
+posx = largura_screen / 2 - largura / 2
+posy = (altura_screen / 2-35) - altura / 2
+window.geometry('%dx%d+%d+%d' % (largura, altura, posx, posy))
 
 
 #Window design
@@ -50,7 +50,7 @@ create_text.place(relx = 0.5, rely = 0.65, anchor = CENTER)
 img0 = PhotoImage(file = f"Imagens/img0.png")
 img1 = PhotoImage(file="Imagens/image 1.png")
 label_img1 = Label(window, bg='#FFFFFF', image=img1)
-label_img1.place(relx = 0.5, rely = 0.17, anchor = CENTER)
+label_img1.place(relx = 0.5, rely = 0.2, anchor = CENTER)
 
 #Config botão login
 b0 = Button(image=img0, bg="#FFFFFF", command=btn_clickedlogin, relief="flat")
