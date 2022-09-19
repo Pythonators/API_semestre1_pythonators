@@ -34,8 +34,9 @@ Espere a instalação completar para seguir para o próximo comando, pode ser qu
 
 4.1) Clique com o botão direito no arquivo .zip e clique para editar no PyCharm OU <br>
 
-4.2) Extraia o arquivo .zip na pasta. Abra o PyCharm, clique em ‘File’, clique em ‘Open’, abra a pasta na qual foi baixada o arquivo. Vá em API_semestre1_pythonators-main > API_semestre1_pythonators-main > Janelas > loginpythonators.py e aperte OK
+4.2) Extraia o arquivo .zip na pasta. Abra o PyCharm, clique em ‘File’, clique em ‘Open’, abra a pasta na qual foi baixada o arquivo. Vá em API_semestre1_pythonators-main > API_semestre1_pythonators-main > Janelas > loginpythonators.py e aperte OK <br>
 
+Importante: para rodar o aplicativo é obrigatório ser no arquivo loginpyhtonators.py
 <br/>
 
 5.0) Depois de todas as bibliotecas instaladas, clique em ‘Run’. Após isso, deve aparecer uma janela nova na barra de ferramentas da sua máquina.
