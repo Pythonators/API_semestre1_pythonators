@@ -8,6 +8,7 @@ class Aluno:
      
 a1 = Aluno('Caio')
 a2 = Aluno('Marcelo' )
+a3 = Aluno('Murilo')
 a4 = Aluno('Gabriel')
 a5 = Aluno('Micaela')
 a6 = Aluno('Isadora')
@@ -19,6 +20,7 @@ a10 = Aluno('Ryan')
 alunos = []
 alunos.append(a1)
 alunos.append(a2)
+alunos.append(a3)
 alunos.append(a4)
 alunos.append(a5)
 alunos.append(a6)
