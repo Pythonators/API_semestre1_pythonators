@@ -70,3 +70,10 @@ details {
     left: 0px;
     top: 0px;
   }
+
+textarea{
+  resize: none;
+  width: 88%;
+  position: sticky;
+  left: 45px;
+}  
