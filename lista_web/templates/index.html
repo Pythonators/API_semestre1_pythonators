@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Lista de Alunos</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='estilo.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='avaliacao.css') }}">
     
 </head>
 <body>
@@ -28,6 +28,8 @@
                         </ul>
                     </ul>
                 {% endfor %}
+                <textarea rows="8" cols="50" name="justificativa" id="coment" maxlength="3000"></textarea>
+                <br>
             </details>
         {% endfor %}
 </body>
