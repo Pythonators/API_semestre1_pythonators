@@ -51,9 +51,11 @@ Este é um projeto apresentado pelos alunos do 1º Semestre do Curso do Banco de
 |   01   | Haverá uma tela de avaliação com 5 opções de avaliação, seguindo o diagrama de likert | Eu como aluno quero poder realizar minhas avalições para manter uma informação sobre o desempenho do time | Imprescendível |
 |   01   | Haverá uma base de dados para avaliação | Eu como PBLTeX quero ter as avaliações armazenadas para não perder os dados de avaliações realizadas | Imprescendível |
 |   01   | Haverá um painel com dados da sprint | Eu como aluno quero poder acessar minhas informações de sprint para melhor gerenciamento | Importante |
-|   02   | Haverá uma pagina exclusiva a revisão | Eu como aluno quero poder acessar minhas avaliações para revisão | Imprescendível |
-|   02   | Haverá um uma página de avaliação para instrutores | Eu como aluno quero ter minhas informações de grupo para melhor controle de qual é meu grupo e suas qualidades | Importante |
-|   02   | Haverá uma base de dados para avaliações | Eu como instrutor quero ter acesso a avaliação de meus alunos para saber qual seu rendimento na visão do time | Imprescendível |
+|   02   | Haverá um uma página de avaliação para instrutores | Eu como aluno quero ter minhas informações de grupo para melhor controle de qual é meu grupo e suas qualidades | Importante | imprescindível |
+|   02   | Haverá uma diferenciação de usuarios no login | Eu como cliente quero que haja uma diferenciação entre aluno e orientador para que ambos tenham acesso a suas devidas features e efetuem as devidas avaliações | Importante |
+|   02   | Haverá uma base de dados para avaliações | Eu como instrutor quero ter acesso a avaliação de meus alunos para saber qual seu rendimento na visão do time | Imprescendível | importante |
+|   02   | Haverá um perfil de administrador para cadastro e alteração no login | Eu como PBLTeX quero que haja um perfil administrador para cadastrar ou retirar cadastro dos usuários | Imprescindível |
+|   03   | Haverá uma pagina exclusiva a revisão | Eu como aluno quero poder acessar minhas avaliações para revisão | Imprescendível |
 |   03   | Haverá um painel mostrando a que grupo pertence, previamente definido | Eu como líder técnico quero poder avaliar meu aluno líder técnico para manter um bom rendimento de atividades | Importante |
 |   04   | Haverá uma página home | Eu como fake client quero avaliar meu aluno PO para manter bom rendimento e alterar pontos fracos | Imprescendível |
 |   04   | Haverá um dashboard ligado as informações de time, de sprint e de avaliações de usuario | Eu como aluno quero ter um dashboard para melhor facilidade de acompanhamento | Imprescendível |
