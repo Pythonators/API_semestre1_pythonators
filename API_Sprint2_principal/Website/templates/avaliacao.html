@@ -12,8 +12,10 @@
     <header>
         <div class="header">
             <h1>Header</h1>
+            </div>
     </header>
-    </div>
+    <div>
+
         {% for itens in alunos %}
             <details>
                  <summary>{{itens.nome}}</summary>
@@ -30,5 +32,14 @@
                 {% endfor %}
             </details>
         {% endfor %}
+    </div>
+
+
 </body>
+<div>
+            <button class="enviarbutton">
+                <a href="/aluno/notas">ENVIAR
+                </a>
+            </button>
+            </div>
 </html>

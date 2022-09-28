@@ -1,53 +1,35 @@
 <!DOCTYPE html>
-<html lang="pt">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
-   <title>Tela de Login</title>
-<style>
-    body{
-        font-family: Arial, Helvetica, sans-serif;
-        background-image: linear-gradient(45deg,black, orange);
-    }
-    .tela-login{
-        background-color: rgba(0, 0, 0, 0.8);
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%,-50%);
-        padding: 80px;
-        border-radius: 15px;
-        color: white;
-    }
-    input{
-        padding: 15px;
-        border: none;
-        outline: none;
-        font-size: 15px;
-    }
-    button{
-        background-color: orange;
-        border: none;
-        padding: 15px;
-        width: 100%;
-        border-radius: 10px;
-        color: white;
-        font-size: 15px;
-    }
-    button:hover{
-        background-color: darkorange;
-        cursor: pointer;
-    }
-</style>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel= "stylesheet" href= "{{ url_for('static', filename= 'login.css')}}">
+
+    <title>Login</title>
 </head>
 <body>
-    <div class="tela-login">
-    <h1>Login Admin</h1>
-    <br>
-    <input type="text" placeholder="Nome">
-    <br><br>
-    <input type="password" placeholder="Senha">
-    <br><br>
-    <button>Enviar</button>
-</div>
+    <div class = "main-login">
+        <div class="card-login">
+            <div class="fotologo">
+                <img src="https://i.imgur.com/ojSRbhn.png">
+            </div>
+            <div class="campousuario">
+                <input type="text" name="usuario" placeholder="E-mail">
+            </div>
+            <div class="camposenha">
+                <input type="password" name="senha" placeholder="Senha">
+            </div>
+            <div class="instrucoes">
+                <h6>Ao clicar em entrar, ou ao continuar com as outras opções abaixo, você concorda com os Termos de serviço e confirma que leu a Política de privacidade do Pythonators Database.</h6>
+            </div>
+            <div>
+            <button class="loginbutton">
+                <a href="/aluno/avaliacao">ENTRAR
+                </a>
+            </button>
+            </div>
+        </div>
+    </div>
 </body>
 </html>
