@@ -50,7 +50,7 @@ details {
   
   body {
     background: #FFFFFF;
-    height: 100vh;
+    height: 130vh;
     font-family: sans-serif;
     color: white;
     line-height: 1.5;
@@ -70,3 +70,28 @@ details {
     left: 0px;
     top: 0px;
   }
+
+textarea{
+  resize: none;
+  width: 88%;
+  position: relative;
+  left: 45px;
+}  
+button{
+  resize: none;
+  position:relative;
+  left: 850px;
+  top: 80px;
+  background-color: #2839ab; 
+  border: none;
+  color: white;
+  padding: 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+  box-shadow: 0 .1rem 1rem -.5rem rgba(0,0,0,.4);
+  border-radius: 5px;
+} 

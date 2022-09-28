@@ -46,7 +46,11 @@ perguntas.append(p4)
 
 @app.route("/")
 def index():
-    return render_template("index.html", alunos = alunos, perguntas = perguntas)
+    return render_template("avaliacao.html", alunos = alunos, perguntas = perguntas)
+
+@app.route("/login")
+def login():
+    return render_template("login.html")
 
 
 if __name__ == "__main__":
