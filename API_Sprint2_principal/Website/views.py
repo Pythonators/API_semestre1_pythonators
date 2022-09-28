@@ -4,6 +4,8 @@ from flask import Blueprint, render_template
 views = Blueprint('views', __name__)
 
 
+
+
 @views.route('/')
 def pagina_login():
     return render_template("login.html")
@@ -24,6 +26,7 @@ def pagina_cadastro_admin():
 class Aluno:
     def __init__(self, nome):
         self.nome = nome
+
 
 a1 = Aluno('Caio')
 a2 = Aluno('Marcelo')

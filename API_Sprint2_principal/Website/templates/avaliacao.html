@@ -5,16 +5,15 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Lista de Alunos</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='style_telaavaliacao.css') }}">
-    
+    <link rel="stylesheet" href="{{ url_for('static', filename='style_avaliacao.css') }}">
+
 </head>
 <body>
     <header>
         <div class="header">
             <h1>Header</h1>
-            </div>
+        </div>
     </header>
-    <div>
 
         {% for itens in alunos %}
             <details>
@@ -30,16 +29,13 @@
                         </ul>
                     </ul>
                 {% endfor %}
+                <textarea rows="8" cols="50" name="justificativa" id="coment" maxlength="3000"></textarea>
+                <br>
             </details>
         {% endfor %}
-    </div>
-
+        <button type="button"><a href="/aluno/notas"> ENVIAR
+        </a>
+        </button>
 
 </body>
-<div>
-            <button class="enviarbutton">
-                <a href="/aluno/notas">ENVIAR
-                </a>
-            </button>
-            </div>
 </html>
