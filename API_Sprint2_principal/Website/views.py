@@ -56,18 +56,22 @@ perguntas.append(p2)
 perguntas.append(p3)
 perguntas.append(p4)
 
-@views.route("/aluno")
-def telaavaliacao():
+@views.route("/aluno/avaliacao")
+def avaliacao():
     return render_template("avaliacao.html", alunos = alunos, perguntas = perguntas)
 
+@views.route("/aluno/notas")
+def aluno_notas():
+    return "<h1>Página de notas do aluno logado</h1>"
+
 @views.route('/professor-m2')
-def pagina_professorm2():
+def professorm2():
     return "<h1>página professor M2</h1>"
 
 @views.route('/professor-p2')
-def pagina_professorp2():
+def professorp2():
     return "<h1>página professor P2</h1>"
 
 @views.route("/professor/dashboard")
-def pagina_professor_dash():
+def professor_dash():
     return "<h1>página dashboard</h1>"

@@ -1,0 +1,102 @@
+h1 {
+color: #000000;
+font:15px 'Inter', sans-serif;
+font-size: 40px;
+position: absolute;
+width: 495px;
+height: 00px;
+left: 400px;
+top: 00px;}
+
+div1 {box-sizing: border-box;
+
+position: absolute;
+width: 150px;
+height: 150px;
+left: 40px;
+top: 150px;
+
+}
+
+div2{box-sizing: border-box;
+
+position: absolute;
+width: 251px;
+height: 251px;
+left: 350px;
+top: 150px;
+
+}
+
+div3 {
+box-sizing: border-box;
+position: absolute;
+width: 251px;
+height: 251px;
+left: 681px;
+top: 150px;
+}
+
+
+div4{
+position: absolute;
+width: 251px;
+height: 251px;
+left: 1012px;
+top: 150px;
+}
+
+.btn-pri{
+background-color: #2ecc71;
+color: #ecf0f1;
+padding: 25px 38px;
+border: 1px solid #2ecc71;
+border-radius: 4px;
+cursor: pointer;
+font-size: 15px;
+}
+.btn-pri:hover{
+    background-color:#ecf0f1;
+    color:#2ecc71;
+}
+
+.btn-seg{
+background-color: #2ecc71;
+color: #ecf0f1;
+padding: 25px 38px;
+border: 1px solid #2ecc71;
+border-radius: 4px;
+cursor: pointer;
+font-size: 15px;
+}
+.btn-seg:hover{
+    background-color:#ecf0f1;
+    color:#2ecc71;
+}
+
+.btn-ter{
+background-color: #e74c3c;
+color: #ecf0f1;
+padding: 25px 38px;
+border: 1px solid #e74c3c;
+border-radius: 4px;
+cursor: pointer;
+font-size: 15px;
+}
+.btn-ter:hover{
+    background-color:#ecf0f1;
+    color:#e74c3c;
+    color:#e74c3c;}
+
+.btn-qua{
+background-color: #e74c3c;
+color: #ecf0f1;
+padding: 25px 38px;
+border: 1px solid #e74c3c;
+border-radius: 4px;
+cursor: pointer;
+font-size: 15px;
+}
+.btn-qua:hover{
+    background-color:#ecf0f1;
+    color:#e74c3c;}

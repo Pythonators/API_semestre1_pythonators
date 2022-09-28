@@ -70,3 +70,30 @@ details {
     left: 0px;
     top: 0px;
   }
+  .enviarbutton {
+    width: 30%;
+    height: 64px;
+    border-radius: 16px;
+    background: #2D3142;
+    outline: none;
+    color: #FFFFFF;
+    font-family: 'Inter', sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 24px;
+    text-align: center;
+    position: relative;
+    top:150%;
+    bottom:180%;
+    align:center;
+
+}
+
+.enviarbutton:hover {
+    background: #6f7aa7;
+    color: #FFFFFF;
+    outline: none;
+    border: none;
+    cursor: pointer;
+    transition: background .5;
+}
