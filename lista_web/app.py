@@ -1,4 +1,11 @@
 from flask import Flask, render_template
+import openpyxl
+from openpyxl import Workbook, load_workbook
+import xlsxwriter
+from openpyxl import *
+import numpy as np
+import pandas as pd
+from openpyxl.reader.excel import load_workbook
 
 app = Flask(__name__)
 
@@ -10,7 +17,7 @@ a1 = Aluno('Caio')
 a2 = Aluno('Marcelo' )
 a3 = Aluno('Murilo')
 a4 = Aluno('Gabriel')
-a5 = Aluno('Micaela')
+a5 = Aluno('Mikaéla')
 a6 = Aluno('Isadora')
 a7 = Aluno('Cauana')
 a8 = Aluno('Ana')
@@ -43,6 +50,7 @@ perguntas.append(p1)
 perguntas.append(p2)
 perguntas.append(p3)
 perguntas.append(p4)
+
 
 @app.route("/")
 def index():
