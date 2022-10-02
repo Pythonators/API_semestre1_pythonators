@@ -98,8 +98,10 @@
         <td>{{contato.senha}}</td>
         <td>{{contato.funcao}}</td>
         <td>{{contato.time}}</td>
-        <td><button type="button" class="btn btn-secondary">Atualizar</button></td>
-        <td><button type="button" class="btn btn-danger">Excluir</button></td>
+        <td><a class="btn btn-danger" href='/deletar/{{contato["id"]}}'>
+          <i class="bi bi-trash"> </i>Deletar</a>
+          <a href='/atualizar/{{contato["id"]}}'class="btn btn-secondary">
+            <i class="bi bi-arrow-clockwise"> </i>Atualizar</a></td>
       </tr>
       {% endfor %}
 
