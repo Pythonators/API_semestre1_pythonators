@@ -1,9 +1,7 @@
 from cgitb import reset
 from flask import Flask, render_template, request, redirect
 import pandas as pd
-import openpyxl
-from werkzeug import debug
-from connect import mostrarTodos,inserir
+from connect import mostrarTodos,inserir,atualizarPessoa,buscarPorCPF,deletarPessoa
 from modelos import Usuario
 
 
@@ -85,6 +83,37 @@ def cadastrar():
     pessoa = Usuario(id,cargo,nome,usuario,senha,funcao,time)
     inserir(pessoa)
     return redirect("/admin")
+
+@app.route('/atualizar/<int:id>',methods=["POST","GET"])
+def atualizar(id):    
+    if request.method =='POST':
+        id = request.form["id"]
+        cargo = request.form["cargo"]
+        nome = request.form["nome"]
+        usuario = request.form["usuario"]
+        senha = request.form["senha"]
+        funcao = request.form["funcao"]
+        time = request.form["time"]
+        pessoa = Usuario(id,cargo,nome,usuario,senha,funcao,time)
+        try:
+            atualizarPessoa(id,pessoa)
+            return redirect('/admin')
+        except:
+            return 'algo deu errado'
+    else:
+        pessoa = buscarPorCPF(id)
+        return render_template('update.html',pessoa = pessoa)
+
+@app.route('/deletar/<int:id>')
+def deletar(id):
+    try:
+        deletarPessoa(id)
+        return redirect("/admin")
+    except:
+        return "Algo de errado aconteceu"
+if __name__=="__main__":
+    app.run(debug=True)
+
 
 @app.route("/aluno/avaliacao",)
 def avaliacao():
