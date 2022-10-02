@@ -1,0 +1,138 @@
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Document title</title>
+    <script src="script/script.js"></script>
+    <!--    https://fontawesome.com/   -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css" integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=Poppins" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style_admin.css') }}">
+
+
+  </head>
+
+  <body>
+      <header>
+         <label class="labelMenu"><i class="fa fa-bars"></i></label>
+      </header>
+
+    <div class="menu">
+      <nav>
+
+        <details>
+          <summary id="cabecalho">Salas</summary>
+          <ul id="listaSalas">
+            <li>
+              sala 305
+            </li>
+          </ul>
+        </details>
+
+        <a href="">
+          <li class="icone3" id="adicionar">Adicionar salas</li>
+        </a>
+        <a href="">
+          <li>Sair</li>
+        </a>
+      </nav>
+    </div>
+  </body>
+
+ <body>
+    <div class="content">
+      <div class="card-body">
+        <h1>Cadastro de Usuários</h1>
+        <hr>
+        <form style="width: 20rem;" action="cadastrar" method="POST">
+          <div class="form-floating mb-3">
+            <input type="text" class="form-control" name="id" cargo="floatingInput" placeholder="cargo" id="id">
+              <label for="floatingInput">ID</label>
+          </div>
+        <div class="form-floating mb-3">
+          <input type="text" class="form-control" name="cargo" cargo="floatingInput" placeholder="cargo" id="cargo">
+            <label for="floatingInput">CARGO</label>
+        </div>
+        <div class="form-floating mb-3">
+          <input type="text" class="form-control"  id="nome" name="nome" nome_completo="floatingInput" placeholder="NOME COMPLETO">
+            <label for="floatingInput">NOME COMPLETO</label>
+        </div>
+        <div class="form-floating mb-3">
+          <input type="text" class="form-control" name="usuario" cargo="floatingInput" placeholder="cargo" id="usuario">
+            <label for="floatingInput">USUARIO</label>
+        </div>
+        <div class="form-floating mb-3">
+          <input type="text" class="form-control" id="senha" name="senha" senha="floatingInput" placeholder="SENHA">
+            <label for="floatingInput">SENHA</label>
+        </div>
+        <div class="form-floating mb-3">
+          <input type="text" class="form-control" id="funcao" name="funcao" funcao="floatingInput" placeholder="FUNÇÃO (dev,prof,po,sm)">
+            <label for="floatingInput">FUNÇÃO</label>
+        </div>
+        <div class="form-floating mb-3">
+          <input type="text" class="form-control" id="time" name="time" time="floatingInput" placeholder="TIME">
+            <label for="floatingInput">TIME</label>
+        </div>
+          <button type="submit" name="Enviar" class="btn btn-primary">Cadastrar</button>
+        </form>
+      </div>
+    </div>
+    <hr>
+    <h1>Usuários cadastrados</h1>
+    <table class="table">
+      <tr>
+        <th>id</th>
+        <th>cargo</th>
+        <th>nome_completo</th>
+        <th>usuario</th>
+        <th>senha</th>
+        <th>funcao</th>
+        <th>time</th>
+       </tr>
+      {% for contato in result %}
+      <tr>
+        <td>{{contato.id}}</td>
+        <td>{{contato.cargo}}</td>
+        <td>{{contato.nome}}</td>
+        <td>{{contato.usuario}}</td>
+        <td>{{contato.senha}}</td>
+        <td>{{contato.funcao}}</td>
+        <td>{{contato.time}}</td>
+        <td><button type="button" class="btn btn-secondary">Atualizar</button></td>
+        <td><button type="button" class="btn btn-danger">Excluir</button></td>
+      </tr>
+      {% endfor %}
+
+    </table>
+    <div class="opacMenu"></div>
+
+    <!--  Jquery and Bootstrap  -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script>
+
+      $(document).ready
+      (
+        function()
+        {
+          $('.labelMenu').click
+          (
+            function()
+            {
+               $('.menu').css('left', 0);
+               $('.opacMenu').fadeIn();
+            }
+          )
+
+          $('.opacMenu').click
+          (
+            function()
+            {
+               $('.menu').css('left', '-205px');
+               $('.opacMenu').fadeOut();
+            }
+          )
+        }
+      )
+    </script>
+  </body>
+</html>
