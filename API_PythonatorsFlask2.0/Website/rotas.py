@@ -1,15 +1,10 @@
-from flask import Flask, render_template, request, Blueprint
-import openpyxl
-from openpyxl import Workbook, load_workbook
-import xlsxwriter
-from openpyxl import *
-import numpy as np
+from flask import Flask, render_template, request, redirect
 import pandas as pd
-from openpyxl.reader.excel import load_workbook
+import openpyxl
 from werkzeug import debug
 
 app = Flask(__name__)
-# app = Blueprint('app', __name__)
+
 class Aluno:
     def __init__(self, nome):
         self.nome = nome
@@ -45,9 +40,24 @@ perguntas.append(p1)
 perguntas.append(p2)
 perguntas.append(p3)
 perguntas.append(p4)
-@app.route('/')
+
+@app.route('/', methods = ['GET','POST'])
 def pagina_login():
     return render_template("index.html")
+
+@app.route('/autenticar', methods = ['GET','POST'])
+def autenticar():
+    usuario = request.form['usuario']
+    senha = request.form['senha']
+    if usuario == 'aluno' and senha == 'alu':
+        return redirect('/aluno/avaliacao')
+    elif usuario == 'admin' and senha == 'adm':
+        return redirect('/admin/cadastro')
+    elif usuario == 'professor' and senha == 'prof':
+        return redirect('/professor-m2')
+    else:
+        print('Erro')
+        return redirect('/')
 
 @app.route('/sprint')
 def pagina_sprint():
@@ -70,55 +80,17 @@ def avaliacao():
 def aluno_notas():
         x = 0
         y = 0
-        wb = Workbook()
-        sh = wb.active
-        array = ['A', 'B', 'C', 'D']
-        array2 = ['A','B','C','D','E']
-
-        option = []
         lista = [1,2,3,4]
-        for x in range(len(alunos)):
-            option.append([str(alunos[x].nome)])
-
+        option = []
+        uniao = []
+        nomesAlunos = []
         result = len(alunos)
+        result2 = len(perguntas)
         for x in range(result):
             for y in range(len(lista)):
-                option[x].append(request.form[(str(alunos[x].nome+str(lista[y])))])
+                option.append(request.form[(str(alunos[x].nome+str(lista[y])))])
                 y+=1
             x += 1
-        tam = len(array)
-        i = 0
-        d = 0
-        l = 1
-        while i < tam:
-            sh[array[i] + (str(1))] = "PGT" + str(i + 1)
-            i += 1
-        sh['E1'] = 'AVALIADO'
-
-        for d in range(len(option)):
-
-
-                sh['A' + str(l+1)] = option[d][1]
-                sh['B' + str(l+1)] = option[d][2]
-                sh['C' + str(l+1)] = option[d][3]
-                sh['D' + str(l+1)] = option[d][4]
-                sh['E' + str(l+1)] = option[d][0]
-                l += 1
-
-                d+=1
-
-
-        i += 1
-
-        wb.save(filename='templates/Pasta1.xlsx')
-        # for z in range(len(option)):
-        #     for x in range(len(alunos)):
-        #         if option[z] == str(alunos[x].nome):
-        #             option[z].append('{')
-        #             break
-        #         x+=1
-        #     z+=1
-
 
 
         #
