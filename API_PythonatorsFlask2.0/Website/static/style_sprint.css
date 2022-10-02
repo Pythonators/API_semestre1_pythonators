@@ -8,9 +8,9 @@ color: #000000;
 font-family: 'Inter', sans-serif;
 font-size: 40px;
 position: absolute;
-width: 495px;
-left: 400px;
-top: 120px;}
+width: 750px;
+left: 350px;
+top: 100px;}
 
 body {margin: 0;}
 
@@ -58,33 +58,33 @@ div1 {box-sizing: border-box;
     position: absolute;
     width: 250px;
     height: 250px;
-    left: 240px;
-    top: 250px;
+    left: 100px;
+    top: 350px;
 }
 
 div2{box-sizing: border-box;
     position: absolute;
-    width: 251px;
-    height: 251px;
+    width: 250px;
+    height: 250px;
     left: 450px;
-    top: 250px;
+    top: 350px;
 }
 
 div3 {
     box-sizing: border-box;
     position: absolute;
-    width: 251px;
-    height: 251px;
-    left: 660px;
-    top: 250px;
+    width: 250px;
+    height: 250px;
+    left: 750px;
+    top: 350px;
 }
 
 div4{
     position: absolute;
-    width: 251px;
-    height: 251px;
-    left: 870px;
-    top: 250px;
+    width: 250px;
+    height: 250px;
+    left: 1100px;
+    top: 350px;
 }
 
 /* Decoração dos botões */

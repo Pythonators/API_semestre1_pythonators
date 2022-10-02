@@ -1,1 +1,1 @@
-{"_default": {}}
+{"_default": {"1": {"id": "1", "cargo": "Al", "nome": "", "usuario": "", "senha": "", "funcao": "", "time": ""}, "2": {"id": "1", "cargo": "ALUNO", "nome": "Gabriel", "usuario": "Gabiru", "senha": "123", "funcao": "DEV", "time": "PYNTONATORS"}}}
