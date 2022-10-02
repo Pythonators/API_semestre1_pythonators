@@ -1,4 +1,4 @@
-from flask import Flask, render_template, request, Blueprint
+from flask import Flask, render_template, request, redirect
 import openpyxl
 from openpyxl import Workbook, load_workbook
 import xlsxwriter
@@ -45,10 +45,24 @@ perguntas.append(p1)
 perguntas.append(p2)
 perguntas.append(p3)
 perguntas.append(p4)
-@app.route('/')
+
+@app.route('/', methods = ['GET','POST'])
 def pagina_login():
     return render_template("index.html")
 
+@app.route('/autenticar', methods = ['GET','POST'])
+def autenticar():
+    usuario = request.form['usuario']
+    senha = request.form['senha']
+    if usuario == 'aluno' and senha == 'alu':
+        return redirect('/aluno/avaliacao')
+    elif usuario == 'admin' and senha == 'adm':
+        return redirect('/admin/cadastro')
+    elif usuario == 'professor' and senha == 'prof':
+        return redirect('/professor-m2')
+    else:
+        print('Erro')
+        return redirect('/')
 @app.route('/sprint')
 def pagina_sprint():
     return render_template("sprint.html")
