@@ -1,7 +1,7 @@
 from cgitb import reset
 from flask import Flask, render_template, request, redirect
 import pandas as pd
-from connect import mostrarTodos,inserir,atualizarPessoa,buscarPorCPF,deletarPessoa
+from connect import mostrarTodos,inserir,atualizarPessoa,buscarPorId,deletarPessoa
 from modelos import Usuario
 
 
@@ -101,7 +101,7 @@ def atualizar(id):
         except:
             return 'algo deu errado'
     else:
-        pessoa = buscarPorCPF(id)
+        pessoa = buscarPorId(id)
         return render_template('update.html',pessoa = pessoa)
 
 @app.route('/deletar/<int:id>')
@@ -111,13 +111,13 @@ def deletar(id):
         return redirect("/admin")
     except:
         return "Algo de errado aconteceu"
-if __name__=="__main__":
-    app.run(debug=True)
+
 
 
 @app.route("/aluno/avaliacao",)
 def avaliacao():
-    return render_template("avaliacao.html", alunos = alunos, perguntas = perguntas)
+    result = mostrarTodos()
+    return render_template("avaliacao.html", result = result, perguntas = perguntas)
 
 
 @app.route("/aluno/notas",methods=['POST'])
