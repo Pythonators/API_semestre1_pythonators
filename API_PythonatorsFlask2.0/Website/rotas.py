@@ -1,7 +1,9 @@
+from cgitb import reset
 from flask import Flask, render_template, request, redirect
 import pandas as pd
-import openpyxl
-from werkzeug import debug
+from connect import mostrarTodos,inserir,atualizarPessoa,buscarPorId,deletarPessoa
+from modelos import Usuario
+
 
 app = Flask(__name__)
 
@@ -52,7 +54,7 @@ def autenticar():
     if usuario == 'aluno' and senha == 'alu':
         return redirect('/aluno/avaliacao')
     elif usuario == 'admin' and senha == 'adm':
-        return redirect('/admin/cadastro')
+        return redirect('/admin')
     elif usuario == 'professor' and senha == 'prof':
         return redirect('/professor-m2')
     else:
@@ -65,15 +67,57 @@ def pagina_sprint():
 
 @app.route('/admin')
 def pagina_admin():
-    return "<h1>página cadastro de alunos e grupos</h1>"
+    result = mostrarTodos()
+    return render_template("admin_cadastro.html",
+    result=result)
 
-@app.route('/admin/cadastro')
-def pagina_cadastro_admin():
-    return render_template("admin_cadastro.html",textadmin = 'Hello, Admin')
+@app.route('/cadastrar', methods=["POST","GET"])
+def cadastrar():
+    id = request.form["id"]
+    cargo = request.form["cargo"]
+    nome = request.form["nome"]
+    usuario = request.form["usuario"]
+    senha = request.form["senha"]
+    funcao = request.form["funcao"]
+    time = request.form["time"]
+    pessoa = Usuario(id,cargo,nome,usuario,senha,funcao,time)
+    inserir(pessoa)
+    return redirect("/admin")
+
+@app.route('/atualizar/<int:id>',methods=["POST","GET"])
+def atualizar(id):    
+    if request.method =='POST':
+        id = request.form["id"]
+        cargo = request.form["cargo"]
+        nome = request.form["nome"]
+        usuario = request.form["usuario"]
+        senha = request.form["senha"]
+        funcao = request.form["funcao"]
+        time = request.form["time"]
+        pessoa = Usuario(id,cargo,nome,usuario,senha,funcao,time)
+        try:
+            atualizarPessoa(id,pessoa)
+            return redirect('/admin')
+        except:
+            return 'algo deu errado'
+    else:
+        pessoa = buscarPorId(id)
+        return render_template('update.html',pessoa = pessoa)
+
+@app.route('/deletar/<int:id>')
+def deletar(id):
+    try:
+        deletarPessoa(id)
+        return redirect("/admin")
+    except:
+        return "Algo de errado aconteceu"
+
+
 
 @app.route("/aluno/avaliacao",)
 def avaliacao():
-    return render_template("avaliacao.html", alunos = alunos, perguntas = perguntas)
+    result = mostrarTodos()
+    return render_template("avaliacao.html", result = result, perguntas = perguntas)
 
 
 @app.route("/aluno/notas",methods=['POST'])

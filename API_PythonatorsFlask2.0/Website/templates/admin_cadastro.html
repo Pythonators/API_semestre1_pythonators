@@ -44,37 +44,33 @@
       <div class="card-body">
         <h1>Cadastro de Usuários</h1>
         <hr>
-        <form style="width: 20rem;" action="/" method="POST">
+        <form style="width: 20rem;" action="cadastrar" method="POST">
+          <div class="form-floating mb-3">
+            <input type="text" class="form-control" name="id" cargo="floatingInput" placeholder="cargo" id="id">
+              <label for="floatingInput">ID</label>
+          </div>
         <div class="form-floating mb-3">
-          <input type="text" class="form-control" name="id" id="floatingInput" placeholder="ID usuário">
-            <label for="floatingInput">ID</label>
-        </div>
-        <div class="form-floating mb-3">
-          <input type="text" class="form-control" name="cargo" cargo="floatingInput" placeholder="cargo">
+          <input type="text" class="form-control" name="cargo" cargo="floatingInput" placeholder="cargo" id="cargo">
             <label for="floatingInput">CARGO</label>
         </div>
         <div class="form-floating mb-3">
-          <input type="text" class="form-control" name="nome_completo" nome_completo="floatingInput" placeholder="NOME COMPLETO">
+          <input type="text" class="form-control"  id="nome" name="nome" nome_completo="floatingInput" placeholder="NOME COMPLETO">
             <label for="floatingInput">NOME COMPLETO</label>
         </div>
         <div class="form-floating mb-3">
-          <input type="text" class="form-control" name="usuario" usuario="floatingInput" placeholder="NOME USUÁRIO">
-            <label for="floatingInput">NOME USUÁRIO</label>
+          <input type="text" class="form-control" name="usuario" cargo="floatingInput" placeholder="cargo" id="usuario">
+            <label for="floatingInput">USUARIO</label>
         </div>
         <div class="form-floating mb-3">
-          <input type="text" class="form-control" name="senha" senha="floatingInput" placeholder="SENHA">
+          <input type="text" class="form-control" id="senha" name="senha" senha="floatingInput" placeholder="SENHA">
             <label for="floatingInput">SENHA</label>
         </div>
         <div class="form-floating mb-3">
-          <input type="text" class="form-control" name="funcao" funcao="floatingInput" placeholder="FUNÇÃO (dev,prof,po,sm)">
+          <input type="text" class="form-control" id="funcao" name="funcao" funcao="floatingInput" placeholder="FUNÇÃO (dev,prof,po,sm)">
             <label for="floatingInput">FUNÇÃO</label>
         </div>
         <div class="form-floating mb-3">
-          <input type="text" class="form-control" name="turma" turma="floatingInput" placeholder="TURMA">
-            <label for="floatingInput">TURMA</label>
-        </div>
-        <div class="form-floating mb-3">
-          <input type="text" class="form-control" name="time" time="floatingInput" placeholder="TIME">
+          <input type="text" class="form-control" id="time" name="time" time="floatingInput" placeholder="TIME">
             <label for="floatingInput">TIME</label>
         </div>
           <button type="submit" name="Enviar" class="btn btn-primary">Cadastrar</button>
@@ -91,30 +87,25 @@
         <th>usuario</th>
         <th>senha</th>
         <th>funcao</th>
-        <th>turma</th>
         <th>time</th>
        </tr>
-      {% for contato in contatos %}
+      {% for contato in result %}
       <tr>
         <td>{{contato.id}}</td>
         <td>{{contato.cargo}}</td>
-        <td>{{contato.nome_completo}}</td>
+        <td>{{contato.nome}}</td>
         <td>{{contato.usuario}}</td>
         <td>{{contato.senha}}</td>
         <td>{{contato.funcao}}</td>
-        <td>{{contato.turma}}</td>
         <td>{{contato.time}}</td>
-        <td><button type="button" class="btn btn-secondary">Atualizar</button></td>
-        <td><button type="button" class="btn btn-danger">Excluir</button></td>
+        <td><a class="btn btn-danger" href='/deletar/{{contato["id"]}}'>
+          <i class="bi bi-trash"> </i>Deletar</a>
+          <a href='/atualizar/{{contato["id"]}}'class="btn btn-secondary">
+            <i class="bi bi-arrow-clockwise"> </i>Atualizar</a></td>
       </tr>
       {% endfor %}
 
     </table>
-
-
-
-
-      </tr>
     <div class="opacMenu"></div>
 
     <!--  Jquery and Bootstrap  -->
