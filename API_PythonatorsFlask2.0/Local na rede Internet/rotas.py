@@ -52,11 +52,11 @@ def autenticar():
     usuario = request.form['usuario']
     senha = request.form['senha']
     if usuario == 'aluno' and senha == 'alu':
-        return redirect('/aluno/avaliacao')
+        return redirect('/sprint')
     elif usuario == 'admin' and senha == 'adm':
         return redirect('/admin')
     elif usuario == 'professor' and senha == 'prof':
-        return redirect('/professor-m2')
+        return redirect('/sprint')
     else:
         print('Erro')
         return redirect('/')
