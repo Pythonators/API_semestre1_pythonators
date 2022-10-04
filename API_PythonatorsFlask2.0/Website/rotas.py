@@ -60,7 +60,7 @@ def autenticar():
         return redirect('/admin')
     elif usuario == 'professor' and senha == 'prof':
         return redirect('/sprint')
-     elif bd.search(Q.usuario == usuario) and bd.search(Q.senha == senha):
+    elif bd.search(Q.usuario == usuario) and bd.search(Q.senha == senha):
         return redirect('/aluno/avaliacao')
     else:
         print('Erro')
