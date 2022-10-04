@@ -10,16 +10,20 @@
 
 </head>
 <body>
-
+<!-- BARRA SUPERIOR-->
+    <div class="barrasuperior">
+        <div class="nomeadm">
+            <h3>PROGRAMADOR</h3></div>
+    </div>
+    <h1>REALIZAR AVALIAÇÕES</h1>
 <!--    <input  type=text name="aaa" value="Funciona por favor">Funciona por favor</input>-->
 <!--    <button type="submit">ENVIAR</button>-->
-    <header>
-        <div class="header">
-            <h1>Header</h1>
-    </div>
-    </header>
+    <div class = "centralizar">
         {% for itens in result %}
             <details>
+                <div class="scrollbar" id="style-4">
+                    <div class="force-overflow"></div>
+                  </div>
                  <summary>{{itens.nome}}</summary>
                 {% for pergunt in perguntas %}
                     <ul>
@@ -47,8 +51,9 @@
                 <br>
             </details>
         {% endfor %}
-        <button type="submit">Botao</button>
+        <button type="submit">ENVIAR AVALIAÇÕES</button>
 </form>
+    </div>
 </body>
 <!--<script>-->
 <!--    var buttonSub = document.querySelector('button')-->
