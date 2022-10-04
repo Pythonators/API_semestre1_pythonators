@@ -3,6 +3,8 @@ from flask import Flask, render_template, request, redirect
 import pandas as pd
 from connect import mostrarTodos,inserir,atualizarPessoa,buscarPorId,deletarPessoa
 from modelos import Usuario
+from tinydb import where, Query
+from connect import bd
 
 
 app = Flask(__name__)
@@ -49,6 +51,7 @@ def pagina_login():
 
 @app.route('/autenticar', methods = ['GET','POST'])
 def autenticar():
+    Q = Query()
     usuario = request.form['usuario']
     senha = request.form['senha']
     if usuario == 'aluno' and senha == 'alu':
@@ -57,6 +60,8 @@ def autenticar():
         return redirect('/admin')
     elif usuario == 'professor' and senha == 'prof':
         return redirect('/sprint')
+     elif bd.search(Q.usuario == usuario) and bd.search(Q.senha == senha):
+        return redirect('/aluno/avaliacao')
     else:
         print('Erro')
         return redirect('/')
