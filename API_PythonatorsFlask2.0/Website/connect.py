@@ -15,6 +15,7 @@ def inserir(model: Usuario):
 def mostrarTodos():
     todos = bd.all()
     return todos
+
 def atualizarPessoa(id: int, model:Usuario):
     if bd.search(usuario.id==str(id)):
         bd.remove(usuario.id==str(id))

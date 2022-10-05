@@ -1,9 +1,9 @@
 from cgitb import reset
-from flask import Flask, render_template, request, redirect
+from flask import Flask, render_template, request, redirect, json
 import pandas as pd
-from connect import mostrarTodos,inserir,atualizarPessoa,buscarPorId,deletarPessoa
-from modelos import Usuario
-
+from connect import mostrarTodos, inserir, atualizarPessoa, buscarPorId, deletarPessoa, bd
+from connectAvaliacao import mostrarTodos2,inserir2
+from modelos import Usuario, Avaliacao
 
 app = Flask(__name__)
 
@@ -117,6 +117,11 @@ def deletar(id):
 @app.route("/aluno/avaliacao",)
 def avaliacao():
     result = mostrarTodos()
+
+    #json_obj = json.loads(result)
+    ob = json.dumps(result)
+    json_obj = json.loads(ob)
+    print(json_obj)
     return render_template("avaliacao.html", result = result, perguntas = perguntas)
 
 
@@ -126,15 +131,37 @@ def aluno_notas():
         y = 0
         lista = [1,2,3,4]
         option = []
+        result = json.dumps(mostrarTodos())
         uniao = []
+        ob = json.loads(result)
+        # json_obj = json.loads(ob)
         nomesAlunos = []
-        result = len(alunos)
+        sub = []
+        perguntas = []
         result2 = len(perguntas)
-        for x in range(result):
+        for x in range(len(ob)):
+            option.append([ob[x]['nome']])
             for y in range(len(lista)):
-                option.append(request.form[(str(alunos[x].nome+str(lista[y])))])
-                y+=1
-            x += 1
+               option[x].append(request.form[ob[x]['nome']+str(lista[y])])
+               y += 1
+            x+=1
+        for z in range(len(option)):
+            avaliado = Avaliacao(option[z][0], option[z])
+            inserir2(avaliado)
+            z += 1
+        result = mostrarTodos2()
+        print(result)
+
+
+
+
+            # avaliado = Avaliacao(ob[x]['nome'], option[1])
+            # inserir2(avaliado)
+            # result = mostrarTodos2()
+            # print(result)
+
+
+
 
 
         #
@@ -143,7 +170,7 @@ def aluno_notas():
         # print(option)
 
 
-        return option
+        return result
     # # sh['A' + str(2)] = option
     # print(option)
 

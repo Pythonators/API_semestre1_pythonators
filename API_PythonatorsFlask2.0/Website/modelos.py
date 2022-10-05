@@ -7,3 +7,7 @@ class Usuario:
         self.senha=senha
         self.funcao=funcao
         self.time=time
+class Avaliacao:
+    def __init__(self, avaliado, perguntas) -> None:
+        self.avaliado=avaliado
+        self.perguntas = perguntas
