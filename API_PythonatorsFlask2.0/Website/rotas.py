@@ -1,9 +1,10 @@
 from cgitb import reset
 from flask import Flask, render_template, request, redirect, json
-import pandas as pd
 from connect import mostrarTodos, inserir, atualizarPessoa, buscarPorId, deletarPessoa, bd
-from connectAvaliacao import mostrarTodos2,inserir2
+from connectAvaliacao import mostrarTodos2, inserir2
 from modelos import Usuario, Avaliacao
+from tinydb import where, Query
+
 
 app = Flask(__name__)
 
@@ -49,14 +50,17 @@ def pagina_login():
 
 @app.route('/autenticar', methods = ['GET','POST'])
 def autenticar():
+    Q = Query()
     usuario = request.form['usuario']
     senha = request.form['senha']
     if usuario == 'aluno' and senha == 'alu':
-        return redirect('/aluno/avaliacao')
+        return redirect('/sprint')
     elif usuario == 'admin' and senha == 'adm':
         return redirect('/admin')
     elif usuario == 'professor' and senha == 'prof':
-        return redirect('/professor-m2')
+        return redirect('/sprint')
+    elif bd.search(Q.usuario == usuario) and bd.search(Q.senha == senha):
+        return redirect('/aluno/avaliacao')
     else:
         print('Erro')
         return redirect('/')
