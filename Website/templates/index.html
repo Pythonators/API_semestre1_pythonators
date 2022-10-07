@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel= "stylesheet" href= "{{ url_for('static', filename= 'login.css')}}">
+
+    <title>Login</title>
+</head>
+<body>
+    <div class = "main-login">
+        <div class="card-login">
+            <div class="fotologo">
+                <img src="static/LOGO.png">
+            </div>
+
+            <form action="/autenticar" method="post">
+            <div class="campousuario">
+                <input type="text" class="form-control" name="usuario" placeholder="E-mail">
+            </div>
+            <div class="camposenha">
+                <input type="password" class="form-control" name="senha" placeholder="Senha">
+            </div>
+            <div class="instrucoes">
+                <h6>Ao clicar em entrar, ou ao continuar com as outras opções abaixo, você concorda com os Termos de serviço e confirma que leu a Política de privacidade do Pythonators Database.</h6>
+            </div>
+            <div><p>
+            <button class="loginbutton" type="submit">
+                ENTRAR
+            </button></div></p>
+            </form>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
