@@ -1,8 +1,8 @@
-## Tutorial para baixar as bibliotecas no Python e abrir a aplicação usando o PyCharm
+## Tutorial para baixar as bibliotecas no Python e abrir a aplicação usando o PyCharm ou VSCode
 
 <br/>
 
-<p>Para seguir com as instruções você precisa já ter instalado o Python e o PyCharm na sua máquina. Verifique se o pip está atualizado.</p>
+<p>Para seguir com as instruções você precisa já ter instalado o Python e o PyCharm/VSCode na sua máquina. Verifique se o pip está atualizado.</p>
 
 <br/>
 
@@ -24,7 +24,7 @@ Espere a instalação completar para seguir para o próximo comando, pode ser qu
 
 <br/>
 
-4.0) Abra o arquivo no PyCharm, há duas formas de abrir: <br>
+4.0) Abra o arquivo no PyCharm/VSCode, há duas formas de abrir: <br>
 
 4.1) Clique com o botão direito no arquivo .zip e clique para editar no PyCharm OU <br>
 
