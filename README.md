@@ -31,7 +31,7 @@ Este é um projeto apresentado pelos alunos do 1º Semestre do Curso do Banco de
 ![Badge](https://img.shields.io/static/v1?label=&message=TKINTER&color=gray&style=for-the-badge&logo=TKINTER)
 ![Badge](https://img.shields.io/static/v1?label=&message=HTML&color=gray&style=for-the-badge&logo=HTML)
 ![Badge](https://img.shields.io/static/v1?label=&message=CSS&color=gray&style=for-the-badge&logo=CSS)
-![Badge](https://img.shields.io/static/v1?label=&message=TINYBD&color=gray&style=for-the-badge&logo=TINYBD)
+![Badge](https://img.shields.io/static/v1?label=&message=TINYDB&color=gray&style=for-the-badge&logo=TINYDB)
 ![Badge](https://img.shields.io/static/v1?label=&message=FLASK&color=gray&style=for-the-badge&logo=FLASK)
 
 <br/>
@@ -70,7 +70,7 @@ Este é um projeto apresentado pelos alunos do 1º Semestre do Curso do Banco de
 | Sprint | Histórico |
 |:--:|:-------------------------------------------------:|
 | 01 | [ver relatório](https://github.com/Pythonators/API_semestre1_pythonators/tree/Sprint_1) |
-| 02 | [ver relatório](https://github.com/Pythonators/API_semestre1_pythonators/tree/Sprint_2) |
+| 02 | [ver relatório](https://github.com/Pythonators/API_semestre1_pythonators/tree/Sprint_2.2) |
 | 03 | [ver relatório](https://github.com/Pythonators/API_semestre1_pythonators/tree/Sprint_3) |
 | 04 | [ver relatório](https://github.com/Pythonators/API_semestre1_pythonators/tree/Sprint_4) |
 
@@ -84,7 +84,7 @@ https://user-images.githubusercontent.com/107864553/190879906-e18914c6-c6c3-42cc
 
 ## Tutorial <br id=e>
 
-* [Tutorial para baixar aplicativo](https://github.com/Pythonators/API_semestre1_pythonators/blob/Tutorial/README.md)
+* [Tutorial para entrar no aplicativo](https://github.com/Pythonators/API_semestre1_pythonators/blob/Tutorial/README.md)
 
 <br/>
 
