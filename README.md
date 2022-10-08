@@ -30,11 +30,13 @@ Espere a instalação completar para seguir para o próximo comando, pode ser qu
 4.2) Extraia o arquivo .zip na pasta. Abra o PyCharm, clique em ‘File’, clique em ‘Open’, abra a pasta na qual foi baixada o arquivo. Vá em API_semestre1_pythonators-sprint2.2 > API_Pythonatorsflask2.0 > website > main.py <br>
 
 Importante: para rodar o aplicativo é obrigatório ser no arquivo citado
+
 <br/>
 
-5.0) Clique em ‘Run’. Após isso, deve aparecer o terminal inicializando o arquivo, clique cntrl+clique para ser direcionado a página de login.
+5.0) Clique em ‘Run’. Após isso, deve aparecer o terminal inicializando o arquivo, aperte no botão Ctrl e clique no link que aparecerá sublinhado em azul para ser direcionado a página de login (dessa forma será aberto no chrome, caso queira abrir em outro navegador, clique com o botão direito em cima do link mencionado e escolha o navegador de preferência).
 
 5.1) Na página de login é possivel inserir apenas dois usuarios, sendo esses email: "admin", senha:"adm" ; E email="aluno", senha="alu".
+
 <br/>
 
 </p>
