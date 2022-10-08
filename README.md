@@ -29,7 +29,10 @@ Este é um projeto apresentado pelos alunos do 1º Semestre do Curso do Banco de
 ![Badge](https://img.shields.io/static/v1?label=&message=PYTHON&color=gray&style=for-the-badge&logo=PYTHON)
 ![Badge](https://img.shields.io/static/v1?label=&message=FIGMA&color=gray&style=for-the-badge&logo=FIGMA)
 ![Badge](https://img.shields.io/static/v1?label=&message=TKINTER&color=gray&style=for-the-badge&logo=TKINTER)
-![Badge](https://img.shields.io/static/v1?label=&message=PANDAS&color=gray&style=for-the-badge&logo=PANDAS)
+![Badge](https://img.shields.io/static/v1?label=&message=HTML&color=gray&style=for-the-badge&logo=HTML)
+![Badge](https://img.shields.io/static/v1?label=&message=CSS&color=gray&style=for-the-badge&logo=CSS)
+![Badge](https://img.shields.io/static/v1?label=&message=TINYBD&color=gray&style=for-the-badge&logo=TINYBD)
+![Badge](https://img.shields.io/static/v1?label=&message=FLASK&color=gray&style=for-the-badge&logo=FLASK)
 
 <br/>
 
