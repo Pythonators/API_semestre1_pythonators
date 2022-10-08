@@ -16,8 +16,8 @@ Espere a instalação completar para seguir para o próximo comando, pode ser qu
 [Ajuda flask](https://pypi.org/project/Flask/) <br>
 <br/>
 
-2.0) Abra o [repositório](https://github.com/Pythonators/API_semestre1_pythonators)
-
+2.0) Abra o [repositório]
+  (https://github.com/Pythonators/API_semestre1_pythonators)
   <br/>
   
 3.0) Clique em ‘Code’ e clique em ‘Download ZIP’, salve em uma nova pasta
@@ -35,7 +35,7 @@ Importante: para rodar o aplicativo é obrigatório ser no arquivo citado
 
 5.0) Clique em ‘Run’. Após isso, deve aparecer o terminal inicializando o arquivo, clique cntrl+clique para ser direcionado a página de login.
 
-  5.5) na página de login é possivel inserir apenas dois usuarios, sendo esses email: "admin", senha:"adm" ; E email="aluno", senha="alu".
+5.1) Na página de login é possivel inserir apenas dois usuarios, sendo esses email: "admin", senha:"adm" ; E email="aluno", senha="alu".
 <br/>
 
 </p>
