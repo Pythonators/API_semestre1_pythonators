@@ -16,8 +16,7 @@ Espere a instalação completar para seguir para o próximo comando, pode ser qu
 [Ajuda flask](https://pypi.org/project/Flask/) <br>
 <br/>
 
-2.0) Abra o [repositório]
-  (https://github.com/Pythonators/API_semestre1_pythonators)
+2.0) Abra o [repositório](https://github.com/Pythonators/API_semestre1_pythonators)
   <br/>
   
 3.0) Clique em ‘Code’ e clique em ‘Download ZIP’, salve em uma nova pasta
