@@ -35,7 +35,9 @@ Importante: para rodar o aplicativo é obrigatório ser no arquivo citado
 
 5.0) Clique em ‘Run’. Após isso, deve aparecer o terminal inicializando o arquivo, aperte no botão Ctrl e clique no link que aparecerá sublinhado em azul para ser direcionado a página de login (dessa forma será aberto no chrome, caso queira abrir em outro navegador, clique com o botão direito em cima do link mencionado e escolha o navegador de preferência).
 
-5.1) Na página de login é possivel inserir apenas dois usuarios, sendo esses email: "admin", senha:"adm" ; E email="aluno", senha="alu".
+5.1) Na página de login é possivel inserir dois usuários testes, sendo esses email: "admin", senha:"adm" ; E email="aluno", senha="alu".
+
+5.2) Na página do admin é possível cadastrar novos usuários e editar ou excluir os já existentes. Para fazer login com usuários cadastrados pelo admin basta voltar a página de login e utilizar as credenciais 'usuario' e 'senha' cadastrados anteriormente.
 
 <br/>
 
