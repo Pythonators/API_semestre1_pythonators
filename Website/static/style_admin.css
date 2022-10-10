@@ -1,45 +1,60 @@
-*
-{
+@import url('https://fonts.googleapis.com/css2?family=Inter&display=swap');
+
+body {
   margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: 'Poppins', sans-serif;
-  /* Google Fonts: https://fonts.google.com/?selection.family=Poppins*/
+  background: #D8D5DB;
+  font-family: 'Inter', sans-serif;
   list-style: none;
+  overflow: hidden;
 }
 
-a { text-decoration: none; }
-
-header
-{
-  background-color: #2D3142; padding: 15px; box-shadow: 2px 2px 1px black;
+a {
+  text-decoration: none;
 }
 
-header .labelMenu
-{
+header {
+  width: 100%;
+  height: 64px;
+  justify-content: flex-start;
+  background-color: #2D3142;
+  border-radius: 0px 0px 24px 24px;
+  flex-direction: row;
+  padding: 0px;
+  margin: 0px;
+}
+
+
+header .labelMenu {
+  justify-content: center;
   color: #FFF;
   transition: all 0.2s;
-  width: 40px;
-  height: 40px;
-  display: inline;
-  text-align: fixed;
-  line-height: 40px;
-  border-radius: 100px;
-  padding: 10px;
+  height: 64px;
+  align-items: center;
+  margin-left: 32px;
+  margin-top: 20px;
+
+}
+
+/* CENTRALIZAR TITULO */
+
+h1 {
+  text-align: center;
+  margin-top: 16px;
 }
 
 /* NAVGATION: */
 
-#collapse-menu{
-    padding: 0px ;
-    display: inline;
-    position: flex;
+#collapse-menu {
+  padding: 0px;
+  display: inline;
+  position: flex;
 }
 
-.menu
-{
+.menu {
   position: fixed;
-  top: 0; left: -205px; bottom: 0;
+  top: 0;
+  left: -205px;
+  bottom: 0;
   width: 200px;
   height: 100vh;
   background-color: #595E75;
@@ -47,22 +62,31 @@ header .labelMenu
   transition: all 0.2s;
   z-index: 50;
 }
-    #salas{ align-items: fixed;  display: none; }
-    #salas.mostra{ display: block;}
-    #adicionar{
-        text-align: center;
-        position: flex;
-        width: 200px;
-        height: 40px;
-        left: 0px;
-        top: 328px;
 
-        background: yellow;
-        box-shadow: 2px 0px 4px rgba(0, 0, 0, 0.25);
-        border-radius: 0px 0px 20px 20px;;}
+#salas {
+  align-items: fixed;
+  display: none;
+}
 
-    .menu h1
-{
+#salas.mostra {
+  display: block;
+}
+
+#adicionar {
+  text-align: center;
+  position: flex;
+  width: 200px;
+  height: 40px;
+  left: 0px;
+  top: 328px;
+
+  background: yellow;
+  box-shadow: 2px 0px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 0px 0px 20px 20px;
+  ;
+}
+
+.menu h1 {
   background-color: #313a45;
   text-align: center;
   color: #DDD;
@@ -70,29 +94,39 @@ header .labelMenu
 }
 
 .menu ul a {
-    display: flex;
-    padding: 10px;
-    color: #444;
-    transition: all 0.2s;
+  display: flex;
+  padding: 10px;
+  color: #444;
+  transition: all 0.2s;
 }
 
-.menu a:hover { background-color: #DDD; }
+.menu a:hover {
+  background-color: #DDD;
+}
 
 
-.opacMenu
-{
+.opacMenu {
   position: fixed;
-  top: 0; left: 0;
-  width: 100%; height: 100vh;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
   background-color: rgba(0, 0, 0, 0.5);
   display: none;
   z-index: 40;
 }
 
 
-p
-{
-  text-align: center; padding: 40px; color: #DDD; font-size: 50px; text-shadow: 1px 1px 1px #222;
+p {
+  text-align: center;
+  padding: 40px;
+  color: #DDD;
+  font-size: 50px;
+  text-shadow: 1px 1px 1px #222;
 }
 
-p span { color: #ff3366; }
+p span {
+  color: #ff3366;
+}
+
+/* MURILO */
