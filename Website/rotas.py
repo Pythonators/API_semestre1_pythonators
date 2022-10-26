@@ -1,4 +1,4 @@
-from flask import Flask, render_template, request, redirect, json
+from flask import Flask, flash, render_template, request, redirect, json, session
 from connect import mostrarTodos, inserir, atualizarPessoa, buscarPorId, deletarPessoa, bd
 from connectAvaliacao import mostrarTodos2, inserir2
 from connectSala import mostrarSalas, inserirSala
@@ -6,6 +6,7 @@ from modelos import Usuario, Avaliacao, Salas
 from tinydb import TinyDB, Query
 
 app = Flask(__name__)
+app.config['SECRET_KEY'] = 'A1B2C3'
 
 class Pergunta:
     def __init__(self, pergunta_, name):
@@ -30,30 +31,33 @@ def pagina_login():
 
 @app.route('/autenticar', methods = ['GET','POST'])
 def autenticar():
+    Q = Query()
     usuario = request.form.get('nome')
     senha = request.form.get('senha')
     result = json.dumps(mostrarTodos())
-    lista = json.loads(result)
-    cont=0
-    if usuario=='admin' and senha=='adm':
-        return redirect('/admin')
+    
+    if usuario == 'admin' and senha == '1234':
+        session['adminlogado'] = "admin"
+        return redirect("/admin")
     else:
-        for c in lista:
-                cont+=1
-                if usuario == c['usuario'] and senha == c['senha']:
-                    global nomeUsuario
-                    nomeUsuario=c['usuario']
-                    global cargoUsuario
-                    cargoUsuario = c['cargo']
-                    return redirect('/sprint')
-                if cont >= len(lista):
-                    return redirect("/")
+        if bd.search(Q.usuario == usuario) and bd.search(Q.senha == senha):
+            session["usuario_logado"] = request.form['nome']
+            return redirect('/sprint')
+    
+@app.route('/logout')
+def logout():
+    session['usuario_logado'] = None
+    return redirect('/')
+
+@app.route('/novo')
+def novo():
+    return render_template('novo.html')
     
 
 @app.route('/sprint', methods = ['GET','POST'])
 def pagina_sprint():
-    a = nomeUsuario
-    return render_template("sprint.html",a=a)
+    #a = nomeUsuario
+    return render_template("sprint.html")
 
 @app.route('/admin')
 def pagina_admin():
@@ -71,6 +75,8 @@ def index(sala):
 
 @app.route('/addSalas', methods=["POST","GET"])
 def addSalas():
+    if session['usuario_logado'] not in session or session['usuario_logado'] == None:
+        return redirect ('/')
     sala = request.form["sala"]
     TinyDB(f'Salas/{sala}.json')
     n_sala = Salas(sala)
@@ -123,11 +129,11 @@ def deletar(id):
 @app.route("/aluno/avaliacao",)
 def avaliacao():
     result = mostrarTodos()
-    b = cargoUsuario
+    #b = cargoUsuario
     #json_obj = json.loads(result)
     ob = json.dumps(result)
     json_obj = json.loads(ob)
-    return render_template("avaliacao.html", result = result, perguntas = perguntas,b=b)
+    return render_template("avaliacao.html", result = result, perguntas = perguntas)
 
 
 @app.route("/aluno/notas",methods=['POST'])

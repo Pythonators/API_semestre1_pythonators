@@ -13,64 +13,72 @@
 
     <div class="barrasuperior">
         <div class="nomeadm">
-            <h3>{{a}}</h3></div>
+            <h3>{{session['usuario_logado']}}</h3></div>
     </div>
-
-<h1> OLÁ, AVALIADOR SEJA BEM VINDO! SELECIONE A SPRINT DISPONÍVEL  </h1>
+    
+    {% with messages = get_flashed_messages() %}
+        {% if messages %}
+            {% for message in messages %}
+            <h5 class="alert alert-success alert-dismissible" role="alert">{{ message }}</h5>
+            {% endfor %}
+        {% endif %}
+    {% endwith %}
+    
+    <h1> OLÁ, AVALIADOR SEJA BEM VINDO! SELECIONE A SPRINT DISPONÍVEL  </h1>
 
 <!–botão 1 e texto embaixo–>
-<div1 class="box1">
-    <a href="/sprint">
-        <button class="btn-pri">SPRINT 1
+        <div1 class="box1">
+            <a href="/sprint">
+                <button class="btn-pri">SPRINT 1
 
-        </button>
-    </a>
-     <div class="texto">
-         <br>
-            <span>Avaliação disponível de <br> 29/08/2022 à 18/09/2022</span>
+                </button>
+            </a>
+            <div class="texto">
+                <br>
+                    <span>Avaliação disponível de <br> 29/08/2022 à 18/09/2022</span>
+                </div>
+            </div></div1>
+
+        <!–botão 2 e texto embaixo–>
+        <div2 class="box2">
+            <a href="/aluno/avaliacao">
+                <button class="btn-seg">SPRINT 2
+
+                </button>
+            </a>
+            <div class="texto">
+                <br>
+                    <span> Avaliação disponível de <br>19/09/2022 à 09/10/2022 </span>
+                </div>
+        </div2>
+
+        <!–botão 3 e texto embaixo–>
+        <div3 class="box3">
+        <a href="/sprint">
+            <button class="btn-ter">SPRINT 3</button>
+        </a>
+        <div class="texto">
+                <br>
+            <span> Avaliação disponível de <br> 17/10/2022 à 06/11/2022 </span>
         </div>
-    </div></div1>
+        </div3>
 
-<!–botão 2 e texto embaixo–>
-<div2 class="box2">
-    <a href="/aluno/avaliacao">
-        <button class="btn-seg">SPRINT 2
-
-        </button>
-    </a>
-    <div class="texto">
+        <!–botão 4 e texto embaixo–>
+        <div4 class="box4">
+        <a href="/sprint">
+            <button class="btn-qua">SPRINT 4</button>
+        </a>
+        <div class="texto">
         <br>
-            <span> Avaliação disponível de <br>19/09/2022 à 09/10/2022 </span>
+            <span> Avaliação disponível de <br>07/11/2022 à 27/11/2022</span>
         </div>
-</div2>
+        </div4>
 
-<!–botão 3 e texto embaixo–>
-<div3 class="box3">
-   <a href="/sprint">
-      <button class="btn-ter">SPRINT 3</button>
-   </a>
-   <div class="texto">
-        <br>
-       <span> Avaliação disponível de <br> 17/10/2022 à 06/11/2022 </span>
-   </div>
-</div3>
+        <!–rodape–>
+        <div class="main">
+                <div id="footer">
 
-<!–botão 4 e texto embaixo–>
-<div4 class="box4">
-  <a href="/sprint">
-    <button class="btn-qua">SPRINT 4</button>
-  </a>
- <div class="texto">
-  <br>
-    <span> Avaliação disponível de <br>07/11/2022 à 27/11/2022</span>
- </div>
-</div4>
+            <span> <img src="static/LOGO.png" width=80 height=80> </span>
 
-<!–rodape–>
-<div class="main">
-        <div id="footer">
-
-     <span> <img src="static/LOGO.png" width=80 height=80> </span>
-
+                </div>
         </div>
-</div>

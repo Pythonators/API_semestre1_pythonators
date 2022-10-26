@@ -1,4 +1,5 @@
-class Usuario:
+
+class Usuario():
     def __init__(self, id, cargo, nome, usuario, senha, funcao, time) -> None:
         self.id=id
         self.cargo = cargo
