@@ -35,16 +35,19 @@ def autenticar():
     result = json.dumps(mostrarTodos())
     lista = json.loads(result)
     cont=0
-    for c in lista:
-            cont+=1
-            if usuario == c['usuario'] and senha == c['senha']:
-                global nomeUsuario
-                nomeUsuario=c['usuario']
-                global cargoUsuario
-                cargoUsuario = c['cargo']
-                return redirect('/sprint')
-            if cont >= len(lista):
-                return redirect("/")
+    if usuario=='admin' and senha=='adm':
+        return redirect('/admin')
+    else:
+        for c in lista:
+                cont+=1
+                if usuario == c['usuario'] and senha == c['senha']:
+                    global nomeUsuario
+                    nomeUsuario=c['usuario']
+                    global cargoUsuario
+                    cargoUsuario = c['cargo']
+                    return redirect('/sprint')
+                if cont >= len(lista):
+                    return redirect("/")
     
 
 @app.route('/sprint', methods = ['GET','POST'])
