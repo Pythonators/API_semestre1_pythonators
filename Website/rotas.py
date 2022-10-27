@@ -47,20 +47,21 @@ def autenticar():
 @app.route('/logout')
 def logout():
     session['usuario_logado'] = None
+    session['adminlogado'] = None
     return redirect('/')
-
-@app.route('/novo')
-def novo():
-    return render_template('novo.html')
-    
 
 @app.route('/sprint', methods = ['GET','POST'])
 def pagina_sprint():
-    #a = nomeUsuario
+    if 'usuario_logado' not in session or session['usuario_logado'] == None:
+        return redirect('/')
     return render_template("sprint.html")
 
 @app.route('/admin')
 def pagina_admin():
+    if 'usuario_logado' in session:
+        redirect("/")
+    if 'adminlogado' not in session or session['adminlogado'] == None:
+        return redirect('/')
     result = mostrarTodos()
     salas = mostrarSalas()
     return render_template("admin_cadastro.html",
@@ -68,6 +69,10 @@ def pagina_admin():
 
 @app.route('/admin/<int:sala>')
 def index(sala):
+    if 'usuario_logado' in session:
+        redirect("/")
+    if 'adminlogado' not in session or session['adminlogado'] == None:
+        return redirect('/')
     result = mostrarTodos()
     salas = mostrarSalas()
     return render_template("admin.html",
@@ -75,8 +80,10 @@ def index(sala):
 
 @app.route('/addSalas', methods=["POST","GET"])
 def addSalas():
-    if session['usuario_logado'] not in session or session['usuario_logado'] == None:
-        return redirect ('/')
+    if 'usuario_logado' in session:
+        redirect("/")
+    if 'adminlogado' not in session or session['adminlogado'] == None:
+        return redirect('/')
     sala = request.form["sala"]
     TinyDB(f'Salas/{sala}.json')
     n_sala = Salas(sala)
@@ -85,6 +92,10 @@ def addSalas():
 
 @app.route('/admin/cadastrar', methods=["POST","GET"])
 def cadastrar():
+    if 'usuario_logado' in session:
+        redirect("/")
+    if 'adminlogado' not in session or session['adminlogado'] == None:
+        return redirect('/')
     id = request.form["id"]
     cargo = request.form["cargo"]
     nome = request.form["nome"]
@@ -98,6 +109,10 @@ def cadastrar():
 
 @app.route('/atualizar/<int:id>',methods=["POST","GET"])
 def atualizar(id):    
+    if 'usuario_logado' in session:
+        redirect("/")
+    if 'adminlogado' not in session or session['adminlogado'] == None:
+        return redirect('/')
     if request.method =='POST':
         id = request.form["id"]
         cargo = request.form["cargo"]
@@ -118,6 +133,10 @@ def atualizar(id):
 
 @app.route('/deletar/<int:id>')
 def deletar(id):
+    if 'usuario_logado' in session:
+        redirect("/")
+    if 'adminlogado' not in session or session['adminlogado'] == None:
+        return redirect('/')
     try:
         deletarPessoa(id)
         return redirect("/admin")
@@ -128,6 +147,8 @@ def deletar(id):
 
 @app.route("/aluno/avaliacao",)
 def avaliacao():
+    if 'usuario_logado' not in session or session['usuario_logado'] == None:
+        return redirect('/')
     result = mostrarTodos()
     #b = cargoUsuario
     #json_obj = json.loads(result)
