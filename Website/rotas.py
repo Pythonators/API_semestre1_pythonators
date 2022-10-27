@@ -1,32 +1,13 @@
-from cgitb import reset
-from flask import Flask, render_template, request, redirect, json
+from flask import Flask, flash, render_template, request, redirect, json, session
 from connect import mostrarTodos, inserir, atualizarPessoa, buscarPorId, deletarPessoa, bd
 from connectAvaliacao import mostrarTodos2, inserir2
-from modelos import Usuario, Avaliacao
-from tinydb import where, Query
-
+from connectSala import mostrarSalas, inserirSala
+from modelos import Usuario, Avaliacao, Salas
+from tinydb import TinyDB, Query
 
 app = Flask(__name__)
+app.config['SECRET_KEY'] = 'A1B2C3'
 
-class Aluno:
-    def __init__(self, nome):
-        self.nome = nome
-
-
-a1 = Aluno('Caio')
-a2 = Aluno('Marcelo')
-a4 = Aluno('Gabriel')
-a5 = Aluno('Mikaéla')
-a6 = Aluno('Isadora')
-a7 = Aluno('Cauana')
-a8 = Aluno('Ana')
-a9 = Aluno('Felipe')
-a10 = Aluno('Murilo')
-a11 = Aluno('Ryan')
-
-alunos = []
-alunos.append(a1), alunos.append(a2), alunos.append(a4), alunos.append(a5), alunos.append(a6), alunos.append(a7),
-alunos.append(a8), alunos.append(a9), alunos.append(a10), alunos.append(a11)
 class Pergunta:
     def __init__(self, pergunta_, name):
         self.pergunta_ = pergunta_
@@ -51,32 +32,70 @@ def pagina_login():
 @app.route('/autenticar', methods = ['GET','POST'])
 def autenticar():
     Q = Query()
-    usuario = request.form['usuario']
-    senha = request.form['senha']
-    if usuario == 'aluno' and senha == 'alu':
-        return redirect('/sprint')
-    elif usuario == 'admin' and senha == 'adm':
-        return redirect('/admin')
-    elif usuario == 'professor' and senha == 'prof':
-        return redirect('/sprint')
-    elif bd.search(Q.usuario == usuario) and bd.search(Q.senha == senha):
-        return redirect('/aluno/avaliacao')
+    usuario = request.form.get('nome')
+    senha = request.form.get('senha')
+    result = json.dumps(mostrarTodos())
+    
+    if usuario == 'admin' and senha == '1234':
+        session['adminlogado'] = "admin"
+        return redirect("/admin")
     else:
-        print('Erro')
-        return redirect('/')
+        if bd.search(Q.usuario == usuario) and bd.search(Q.senha == senha):
+            session["usuario_logado"] = request.form['nome']
+            return redirect('/sprint')
+    
+@app.route('/logout')
+def logout():
+    session['usuario_logado'] = None
+    session['adminlogado'] = None
+    return redirect('/')
 
-@app.route('/sprint')
+@app.route('/sprint', methods = ['GET','POST'])
 def pagina_sprint():
+    if 'usuario_logado' not in session or session['usuario_logado'] == None:
+        return redirect('/')
     return render_template("sprint.html")
 
 @app.route('/admin')
 def pagina_admin():
+    if 'usuario_logado' in session:
+        redirect("/")
+    if 'adminlogado' not in session or session['adminlogado'] == None:
+        return redirect('/')
     result = mostrarTodos()
+    salas = mostrarSalas()
     return render_template("admin_cadastro.html",
-    result=result)
+    result=result,salas=salas)
 
-@app.route('/cadastrar', methods=["POST","GET"])
+@app.route('/admin/<int:sala>')
+def index(sala):
+    if 'usuario_logado' in session:
+        redirect("/")
+    if 'adminlogado' not in session or session['adminlogado'] == None:
+        return redirect('/')
+    result = mostrarTodos()
+    salas = mostrarSalas()
+    return render_template("admin.html",
+    result=result, salas=salas)
+
+@app.route('/addSalas', methods=["POST","GET"])
+def addSalas():
+    if 'usuario_logado' in session:
+        redirect("/")
+    if 'adminlogado' not in session or session['adminlogado'] == None:
+        return redirect('/')
+    sala = request.form["sala"]
+    TinyDB(f'Salas/{sala}.json')
+    n_sala = Salas(sala)
+    inserirSala(n_sala)
+    return redirect("/admin/<int:sala>")
+
+@app.route('/admin/cadastrar', methods=["POST","GET"])
 def cadastrar():
+    if 'usuario_logado' in session:
+        redirect("/")
+    if 'adminlogado' not in session or session['adminlogado'] == None:
+        return redirect('/')
     id = request.form["id"]
     cargo = request.form["cargo"]
     nome = request.form["nome"]
@@ -90,6 +109,10 @@ def cadastrar():
 
 @app.route('/atualizar/<int:id>',methods=["POST","GET"])
 def atualizar(id):    
+    if 'usuario_logado' in session:
+        redirect("/")
+    if 'adminlogado' not in session or session['adminlogado'] == None:
+        return redirect('/')
     if request.method =='POST':
         id = request.form["id"]
         cargo = request.form["cargo"]
@@ -110,6 +133,10 @@ def atualizar(id):
 
 @app.route('/deletar/<int:id>')
 def deletar(id):
+    if 'usuario_logado' in session:
+        redirect("/")
+    if 'adminlogado' not in session or session['adminlogado'] == None:
+        return redirect('/')
     try:
         deletarPessoa(id)
         return redirect("/admin")
@@ -120,12 +147,13 @@ def deletar(id):
 
 @app.route("/aluno/avaliacao",)
 def avaliacao():
+    if 'usuario_logado' not in session or session['usuario_logado'] == None:
+        return redirect('/')
     result = mostrarTodos()
-
+    #b = cargoUsuario
     #json_obj = json.loads(result)
     ob = json.dumps(result)
     json_obj = json.loads(ob)
-    print(json_obj)
     return render_template("avaliacao.html", result = result, perguntas = perguntas)
 
 
