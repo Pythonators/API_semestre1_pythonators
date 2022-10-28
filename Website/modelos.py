@@ -1,4 +1,4 @@
-class Usuario():
+class Usuario:
 
     def __init__(self, id, cargo, nome, usuario, senha, funcao, time) -> None:
         self.id=id
@@ -15,4 +15,7 @@ class Avaliacao:
 class Salas:
     def __init__(self, sala):
         self.sala = sala
-
+class Sprint:
+    def __init__(self,sprint,data):
+        self.sprint=sprint
+        self.data=data

@@ -68,7 +68,7 @@ def pagina_admin():
     return render_template("admin_cadastro.html",
     result=result,salas=salas)
 
-@app.route('/admin/<int:sala>')
+@app.route('/admin/<string:sala>')
 def index(sala):
     if 'usuario_logado' in session:
         redirect("/")
@@ -89,7 +89,7 @@ def addSalas():
     TinyDB(f'Salas/{sala}.json')
     n_sala = Salas(sala)
     inserirSala(n_sala)
-    return redirect("/admin/<int:sala>")
+    return redirect("/admin/<string:sala>")
 
 @app.route('/admin/cadastrar', methods=["POST","GET"])
 def cadastrar():
