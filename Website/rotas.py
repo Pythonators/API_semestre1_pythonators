@@ -40,10 +40,11 @@ def autenticar():
     if usuario == 'admin' and senha == '1234':
         session['adminlogado'] = "admin"
         return redirect("/admin")
+    if bd.search(Q.usuario == usuario) and bd.search(Q.senha == senha):
+        session["usuario_logado"] = request.form['nome']
+        return redirect('/sprint')
     else:
-        if bd.search(Q.usuario == usuario) and bd.search(Q.senha == senha):
-            session["usuario_logado"] = request.form['nome']
-            return redirect('/sprint')
+         return redirect("/")
     
 @app.route('/logout')
 def logout():
