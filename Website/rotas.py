@@ -139,6 +139,16 @@ def deletar(id):
     json_obj = json.loads(ob)
     return render_template("avaliacao.html", result = result, perguntas = perguntas)
 
+@app.route("/aluno/avaliacao",)
+def avaliacao():
+    if 'usuario_logado' not in session or session['usuario_logado'] == None:
+        return redirect('/')
+    result = mostrarTodos()
+    #b = cargoUsuario
+    #json_obj = json.loads(result)
+    ob = json.dumps(result)
+    json_obj = json.loads(ob)
+    return render_template("avaliacao.html", result = result, perguntas = perguntas)
 
 @app.route("/aluno/notas",methods=['POST'])
 def aluno_notas():
@@ -190,13 +200,9 @@ def aluno_notas():
     # print(option)
 
 
-@app.route('/professor-m2')
+@app.route('/professor')
 def professorm2():
-    return "<h1>página professor M2</h1>"
-
-@app.route('/professor-p2')
-def professorp2():
-    return "<h1>página professor P2</h1>"
+    return render_template("tela_do_professor.html")
 
 @app.route("/professor/dashboard")
 def professor_dash():
