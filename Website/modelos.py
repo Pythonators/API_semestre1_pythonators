@@ -1,5 +1,5 @@
-
 class Usuario():
+
     def __init__(self, id, cargo, nome, usuario, senha, funcao, time) -> None:
         self.id=id
         self.cargo = cargo
@@ -15,3 +15,4 @@ class Avaliacao:
 class Salas:
     def __init__(self, sala):
         self.sala = sala
+

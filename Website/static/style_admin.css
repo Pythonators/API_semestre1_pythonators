@@ -26,6 +26,7 @@ header .labelMenu
   line-height: 40px;
   border-radius: 100px;
   padding: 10px;
+
 }
 
 /* NAVGATION: */
@@ -47,6 +48,7 @@ header .labelMenu
   transition: all 0.2s;
   z-index: 50;
 }
+
     #salas{ align-items: fixed;  display: none; }
     #salas.mostra{ display: block;}
     #adicionar{
@@ -88,7 +90,6 @@ header .labelMenu
   display: none;
   z-index: 40;
 }
-
 
 p
 {

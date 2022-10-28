@@ -202,5 +202,3 @@ def professorp2():
 def professor_dash():
     return "<h1>página dashboard</h1>"
 
-
-
