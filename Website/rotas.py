@@ -4,6 +4,7 @@ from connectAvaliacao import mostrarTodos2, inserir2
 from connectSala import mostrarSalas, inserirSala
 from modelos import Usuario, Avaliacao, Salas
 from tinydb import TinyDB, Query
+import uuid
 
 app = Flask(__name__)
 app.config['SECRET_KEY'] = 'A1B2C3'
@@ -39,11 +40,10 @@ def autenticar():
     if usuario == 'admin' and senha == '1234':
         session['adminlogado'] = "admin"
         return redirect("/admin")
-    if bd.search(Q.usuario == usuario) and bd.search(Q.senha == senha):
-        session["usuario_logado"] = request.form['nome']
-        return redirect('/sprint')
     else:
-        return redirect("/")
+        if bd.search(Q.usuario == usuario) and bd.search(Q.senha == senha):
+            session["usuario_logado"] = request.form['nome']
+            return redirect('/sprint')
     
 @app.route('/logout')
 def logout():
@@ -93,11 +93,8 @@ def addSalas():
 
 @app.route('/admin/cadastrar', methods=["POST","GET"])
 def cadastrar():
-    if 'usuario_logado' in session:
-        redirect("/")
-    if 'adminlogado' not in session or session['adminlogado'] == None:
-        return redirect('/')
-    id = request.form["id"]
+    myid = uuid.uuid1()
+    id = str(myid)
     cargo = request.form["cargo"]
     nome = request.form["nome"]
     usuario = request.form["usuario"]
@@ -108,14 +105,10 @@ def cadastrar():
     inserir(pessoa)
     return redirect("/admin")
 
-@app.route('/atualizar/<int:id>',methods=["POST","GET"])
-def atualizar(id):    
-    if 'usuario_logado' in session:
-        redirect("/")
-    if 'adminlogado' not in session or session['adminlogado'] == None:
-        return redirect('/')
+@app.route('/atualizar/<string:id>',methods=["POST","GET"])
+def atualizar(id):
     if request.method =='POST':
-        id = request.form["id"]
+        id = id
         cargo = request.form["cargo"]
         nome = request.form["nome"]
         usuario = request.form["usuario"]
@@ -132,25 +125,14 @@ def atualizar(id):
         pessoa = buscarPorId(id)
         return render_template('update.html',pessoa = pessoa)
 
-@app.route('/deletar/<int:id>')
+@app.route('/deletar/<string:id>')
 def deletar(id):
-    if 'usuario_logado' in session:
-        redirect("/")
-    if 'adminlogado' not in session or session['adminlogado'] == None:
-        return redirect('/')
     try:
         deletarPessoa(id)
         return redirect("/admin")
     except:
         return "Algo de errado aconteceu"
 
-
-
-@app.route("/aluno/avaliacao",)
-def avaliacao():
-    if 'usuario_logado' not in session or session['usuario_logado'] == None:
-        return redirect('/')
-    result = mostrarTodos()
     #b = cargoUsuario
     #json_obj = json.loads(result)
     ob = json.dumps(result)
