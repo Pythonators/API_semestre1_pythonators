@@ -1,7 +1,7 @@
 from modelos import Sprint
 from tinydb import TinyDB, Query
 
-bd = TinyDB("Salas.json")
+bd = TinyDB("SprintDatabase.json")
 n_sprint = Query()
 
 

@@ -2,7 +2,8 @@ from flask import Flask, flash, render_template, request, redirect, json, sessio
 from connect import mostrarTodos, inserir, atualizarPessoa, buscarPorId, deletarPessoa, bd
 from connectAvaliacao import mostrarTodos2, inserir2
 from connectSala import mostrarSalas, inserirSala
-from modelos import Usuario, Avaliacao, Salas
+from connectSprint import mostrarSprint,buscarPorNome
+from modelos import Usuario, Avaliacao, Salas, Sprint
 from tinydb import TinyDB, Query
 import uuid
 
@@ -56,7 +57,9 @@ def logout():
 def pagina_sprint():
     if 'usuario_logado' not in session or session['usuario_logado'] == None:
         return redirect('/')
-    return render_template("sprint.html")
+    sprints = mostrarSprint()
+    print(sprints)
+    return render_template("sprint.html",sprints=sprints)
 
 @app.route('/admin')
 def pagina_admin():
