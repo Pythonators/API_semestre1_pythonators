@@ -1,4 +1,5 @@
 from flask import Flask
+from rotas import app
 
 from __init__ import create_app
 

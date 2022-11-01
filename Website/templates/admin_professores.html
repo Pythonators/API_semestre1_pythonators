@@ -1,0 +1,68 @@
+{% extends 'admin.html' %}
+
+{% block conteudo %}
+<body>
+    <div class="content">
+      <div class="card-body">
+        <h1>Cadastro de Professores</h1>
+        <hr>
+        <form style="width: 20rem;" action="cadastrar" method="POST">
+          <div class="form-floating mb-3">
+          </div>
+        <div class="form-floating mb-3">
+              <select class="form-select" name="cargo" type="text" aria-label="CARGO" id="cargo">
+                <option selected>PROFESSOR</option>
+              </select>
+        </div>
+        <div class="form-floating mb-3">
+          <input type="text" class="form-control"  id="nome" name="nome" nome_completo="floatingInput" placeholder="NOME COMPLETO">
+            <label for="floatingInput">NOME COMPLETO</label>
+        </div>
+        <div class="form-floating mb-3">
+          <input type="text" class="form-control" name="usuario" usuario="floatingInput" placeholder="cargo" id="usuario">
+            <label for="floatingInput">USUARIO</label>
+        </div>
+        <div class="form-floating mb-3">
+          <input type="text" class="form-control" id="senha" name="senha" senha="floatingInput" placeholder="SENHA">
+            <label for="floatingInput">SENHA</label>
+        </div>
+        <div class="form-floating mb-3">
+          <select class="form-select" name="funcao" type="text" aria-label="CARGO" id="funcao">
+          <option selected>FUNÇÃO</option>
+           <option value="PROFESSOR P2">PROFESSOR P2</option>
+           <option value="PROFESSOR M2">PROFESSOR M2</option>
+          </select>
+          <br>
+          <button type="submit" name="Enviar" class="btn btn-primary">Cadastrar</button>
+        </div></form>
+      </div>
+    </div>
+    <hr>
+    <h1>Professores cadastrados</h1>
+    <table class="table">
+      <tr>
+        <th>id</th>
+        <th>cargo</th>
+        <th>nome_completo</th>
+        <th>usuario</th>
+        <th>senha</th>
+        <th>funcao</th>
+       </tr>
+      {% for contato in result %}
+      <tr>
+        <td>{{contato.id}}</td>
+        <td>{{contato.cargo}}</td>
+        <td>{{contato.nome}}</td>
+        <td>{{contato.usuario}}</td>
+        <td>{{contato.senha}}</td>
+        <td>{{contato.funcao}}</td>
+        <td><a class="btn btn-danger" href='/deletar/{{contato["id"]}}'>
+          <i class="bi bi-trash"> </i>Deletar</a>
+          <a href='/atualizar/{{contato["id"]}}'class="btn btn-secondary">
+            <i class="bi bi-arrow-clockwise"> </i>Atualizar</a></td>
+      </tr>
+      {% endfor %}
+
+    </table>
+    <div class="opacMenu"></div>
+{% endblock %}

@@ -1,0 +1,69 @@
+{% extends 'admin.html' %}
+
+{% block conteudo %}
+<body>
+  <div class="content">
+    <div class="card-body">
+      <h1>Cadastro de Alunos</h1>
+      <hr>
+      <form style="width: 20rem;" action="cadastraralunos" method="POST">
+        <div class="form-floating mb-3">
+        </div>
+      <div class="form-floating mb-3">
+            <select class="form-select" name="cargo_aluno" type="text" aria-label="CARGO" id="cargo_aluno">
+              <option selected>ALUNO</option>
+            </select>
+      </div>
+      <div class="form-floating mb-3">
+        <input type="text" class="form-control"  id="nome_aluno" name="nome_aluno" nome_completo="floatingInput" placeholder="NOME COMPLETO">
+          <label for="floatingInput">NOME COMPLETO</label>
+      </div>
+      <div class="form-floating mb-3">
+        <input type="text" class="form-control" name="usuario_aluno" usuario="floatingInput" placeholder="cargo" id="usuario_aluno">
+          <label for="floatingInput">USUÁRIO</label>
+      </div>
+      <div class="form-floating mb-3">
+        <input type="text" class="form-control" id="senha_aluno" name="senha_aluno" senha="floatingInput" placeholder="SENHA">
+          <label for="floatingInput">SENHA</label>
+      </div>
+      <div class="form-floating mb-3">
+        <select class="form-select" name="funcao_aluno" type="text" aria-label="CARGO" id="funcao_aluno">
+        <option selected>FUNÇÃO</option>
+         <option value="DEV">DEV</option>
+         <option value="PRODUCT OWNER (P.O)">PRODUCT OWNER (P.O)</option>
+         <option value="SCRUM MASTER">SCRUM MASTER</option>
+        </select>
+        <br>
+        <button type="submit" name="Enviar" class="btn btn-primary">Cadastrar</button>
+      </div></form>
+    </div>
+  </div>
+    <hr>
+    <h1>Alunos cadastrados</h1>
+    <table class="table">
+      <tr>
+        <th>id</th>
+        <th>cargo</th>
+        <th>nome_completo</th>
+        <th>usuario</th>
+        <th>senha</th>
+        <th>funcao</th>
+       </tr>
+      {% for contato_aluno in result %}
+      <tr>
+        <td>{{contato_aluno.id}}</td>
+        <td>{{contato_aluno.cargo}}</td>
+        <td>{{contato_aluno.nome}}</td>
+        <td>{{contato_aluno.usuario}}</td>
+        <td>{{contato_aluno.senha}}</td>
+        <td>{{contato_aluno.funcao}}</td>
+        <td><a class="btn btn-danger" href='/deletar/{{contato_aluno["id"]}}'>
+          <i class="bi bi-trash"> </i>Deletar</a>
+          <a href='/atualizar/{{contato_aluno["id"]}}'class="btn btn-secondary">
+            <i class="bi bi-arrow-clockwise"> </i>Atualizar</a></td>
+      </tr>
+      {% endfor %}
+
+    </table>
+    <div class="opacMenu"></div>
+{% endblock %}
