@@ -1,18 +1,20 @@
 class Professor:
-    def __init__(self, id, cargo, nome, usuario, senha, funcao) -> None:
+    def __init__(self, id, cargo, nome, usuario, senha) -> None:
         self.id=id
         self.cargo = cargo
         self.nome=nome
         self.usuario=usuario
         self.senha=senha
-        self.funcao=funcao
+        #self.funcao=funcao
 class Avaliacao:
     def __init__(self, avaliado, perguntas) -> None:
         self.avaliado=avaliado
         self.perguntas = perguntas
 class Salas:
-    def __init__(self, sala):
+    def __init__(self, sala,prof,prof2):
         self.sala = sala
+        self.prof = prof
+        self.prof2 = prof2
 class Sprint:
     def __init__(self,sprint,data):
         self.sprint=sprint

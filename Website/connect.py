@@ -10,7 +10,8 @@ def inserir(model: Professor):
     "nome":model.nome,
     "usuario":model.usuario,
     "senha":model.senha,
-    "funcao":model.funcao})
+    #"funcao":model.funcao
+    })
 def mostrarTodos():
     todos = bdProfessor.all()
     return todos

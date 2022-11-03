@@ -1,6 +1,6 @@
 from flask import Flask, flash, render_template, request, redirect, json, session
-from connect import *
-from connectAluno import mostrarTodosAlunos    
+from connect import mostrarTodos, inserir, atualizarProfessor, buscarPorId, deletarProfessor, bdProfessor
+from connectAluno import mostrarTodosAlunos, bdAlunos
 from connectAvaliacao import mostrarTodos2, inserir2
 from connectSala import mostrarSalas, inserirSala
 from connectSprint import *
@@ -42,19 +42,21 @@ def autenticar():
     usuario = request.form.get('nome')
     senha = request.form.get('senha')
     result = json.dumps(mostrarTodos())
-    
-    print(usuario, senha)
+    ob = json.loads(result)
     if usuario == 'admin' and senha == '1234':
         session['adminlogado'] = "admin"
         return redirect("/admin")
     if bdProfessor.search(Q.usuario == usuario) and bdProfessor.search(Q.senha == senha):
         session["usuario_logado"] = request.form['nome']
+        session['prof'] = "PROFESSOR"
+
         return redirect('/sprint')
     if bdAlunos.search(Q.usuario == usuario) and bdAlunos.search(Q.senha == senha):
         session["usuario_logado"] = request.form['nome']
+        session['prof'] = "ALUNO"
         return redirect('/sprint')
     else:
-         return redirect("/")
+        return redirect("/")
     
 #Logout
 
@@ -65,7 +67,6 @@ def logout():
     return redirect('/')
 
 #Página de Sprint
-
 @app.route('/sprint', methods = ['GET','POST'])
 def pagina_sprint():
     if 'usuario_logado' not in session or session['usuario_logado'] == None:
@@ -86,6 +87,8 @@ def pagina_admin():
     salas = mostrarSalas()
     return render_template("admin.html",
     result=result,salas=salas)
+
+
     
 #Adicionar Salas, requisição e inserção para o banco
     
@@ -96,8 +99,10 @@ def addSalas():
     if 'adminlogado' not in session or session['adminlogado'] == None:
         return redirect('/')
     sala = request.form["sala"]
+    prof = request.form['p2']
+    prof2 = request.form['m2']
     TinyDB(f'Salas/{sala}.json')
-    n_sala = Salas(sala)
+    n_sala = Salas(sala,prof,prof2)
     inserirSala(n_sala)
     return redirect("/admin")
 
@@ -136,8 +141,8 @@ def cadastrar_professor():
     nome = request.form["nome"]
     usuario = request.form["usuario"]
     senha = request.form["senha"]   
-    funcao = request.form["funcao"]
-    professor = Professor(id,cargo,nome,usuario,senha,funcao)
+    #funcao = request.form["funcao"]
+    professor = Professor(id,cargo,nome,usuario,senha,)
     inserir(professor)
     return redirect("/admin/cadastro/professores")
 
@@ -184,11 +189,41 @@ def deletar(id):
 def avaliacao():
     if 'usuario_logado' not in session or session['usuario_logado'] == None:
         return redirect('/')
+
     result = mostrarTodos()
     #b = cargoUsuario
     #json_obj = json.loads(result)
     ob = json.dumps(result)
+    result2 = json.dumps(mostrarSalas())
+    ob2 = json.loads(result2)
+    turmasp2 = []
+    turmasm2 = []
     json_obj = json.loads(ob)
+    if session['prof'] == "PROFESSOR":
+        usuario = session['usuario_logado']
+        print(usuario)
+        for pos in range(len(ob2)):
+            print(ob2[pos]['p2'])
+            if ob2[pos]['p2'] == usuario: #se o nome do p2 que eu estou iterando dentro de OB2 (lista de salas) for igual ao do usuário logado
+                turmasp2.append(ob2[pos]['sala'])
+            pos += 1
+        for pos2 in range(len(ob2)):
+            print(ob2[pos2]['m2'])
+            if ob2[pos2]['m2'] == usuario:
+                print(ob2[pos2]['sala'])
+                turmasm2.append(ob2[pos2]['sala'])
+                print(turmasm2)
+            pos2 += 1
+
+
+        turmas = []
+        turmas.append(turmasp2)
+        turmas.append(turmasm2)
+        print(turmas)
+
+        #proxima sprint ou sla nessa ainda, pfv alguem faz o layout dessa pagina pra mostrar pro professor
+        #as turmas q ele ministra aula e oq ele ministra (qual o papel dele)
+        return  f'salas do titular:\n turmas que você é P2: \n{turmasp2}\n turmas que você é M2:\n {turmasm2}'
     return render_template("avaliacao.html", result = result, perguntas = perguntas)
 
 #Notas Alunos
@@ -209,8 +244,11 @@ def aluno_notas():
         result2 = len(perguntas)
         for x in range(len(ob)):
             option.append([ob[x]['nome']])
+
             for y in range(len(lista)):
                option[x].append(request.form[ob[x]['nome']+str(lista[y])])
+               if request.form[ob[x]['nome']+str(lista[y])] == '':
+                   return 'PREENCHA TODOSS!!'
                y += 1
             x+=1
         for z in range(len(option)):
@@ -220,27 +258,8 @@ def aluno_notas():
         result = mostrarTodos2()
         print(result)
 
-
-
-
-            # avaliado = Avaliacao(ob[x]['nome'], option[1])
-            # inserir2(avaliado)
-            # result = mostrarTodos2()
-            # print(result)
-
-
-
-
-
-        #
-        #         # option = request.form[str(alunos[x].nome+perguntas[y].name)]
-        #         x+=1
-        # print(option)
-
-
         return result
-    # # sh['A' + str(2)] = option
-    # print(option)
+
 
 # Tela de professores
 
@@ -264,8 +283,9 @@ def cadastrotimes():
     if 'adminlogado' not in session or session['adminlogado'] == None:
         return redirect('/')
     result = mostrarTodos_times()
+    turmas = mostrarSalas()
     return render_template("admin_times.html",
-    result=result)
+    result=result,turmas=turmas)
 
 #Inserção times no Banco de dados
 

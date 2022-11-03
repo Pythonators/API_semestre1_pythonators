@@ -11,7 +11,9 @@
           </div>
         <div class="form-floating mb-3">
               <select class="form-select" name="turma" type="text" aria-label="TURMA" id="turma">
-                <option selected>TURMA</option>
+                  {% for s in turmas%}
+                <option selected>{{s.sala}}</option>
+                  {%endfor%}
               </select>
         </div>
         <div class="form-floating mb-3">
