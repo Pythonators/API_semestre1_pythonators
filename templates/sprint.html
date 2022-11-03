@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sprint</title>
+    <link rel= "stylesheet" href= "{{ url_for('static', filename= 'style_sprint.css')}}">
+
+</head>
+
+<body style="background-color:#D8D5DB">
+
+    <div class="barrasuperior">
+        <div class="nomeadm">
+            <h3>{{session['usuario_logado']}}</h3></div>
+    </div>
+    
+    {% with messages = get_flashed_messages() %}
+        {% if messages %}
+            {% for message in messages %}
+            <h5 class="alert alert-success alert-dismissible" role="alert">{{ message }}</h5>
+            {% endfor %}
+        {% endif %}
+    {% endwith %}
+    
+    <h1> OLÁ, AVALIADOR SEJA BEM VINDO! SELECIONE A SPRINT DISPONÍVEL  </h1>
+
+<!–botão 1 e texto embaixo–>
+        <div1 class="box1">
+            <a href="/sprint">
+                <button class="btn-pri">SPRINT {{sprints[0]['sprint']}}
+
+                </button>
+            </a>
+            <div class="texto">
+                <br>
+                    <span>Avaliação disponível de <br> 29/08/2022 à 18/09/2022</span>
+                </div>
+            </div></div1>
+
+        <!–botão 2 e texto embaixo–>
+        <div2 class="box2">
+            <a href="/aluno/avaliacao">
+                <button class="btn-seg">SPRINT {{sprints[1]['sprint']}}
+
+                </button>
+            </a>
+            <div class="texto">
+                <br>
+                    <span> Avaliação disponível de <br>19/09/2022 à 09/10/2022 </span>
+                </div>
+        </div2>
+
+        <!–botão 3 e texto embaixo–>
+        <div3 class="box3">
+        <a href="/sprint">
+            <button class="btn-ter">SPRINT {{sprints[2]['sprint']}}</button>
+        </a>
+        <div class="texto">
+                <br>
+            <span> Avaliação disponível de <br> 17/10/2022 à 06/11/2022 </span>
+        </div>
+        </div3>
+
+        <!–botão 4 e texto embaixo–>
+        <div4 class="box4">
+        <a href="/sprint">
+            <button class="btn-qua">SPRINT {{sprints[3]['sprint']}}</button>
+        </a>
+        <div class="texto">
+        <br>
+            <span> Avaliação disponível de <br>07/11/2022 à 27/11/2022</span>
+        </div>
+        </div4>
+
+        <!–rodape–>
+        <div class="main">
+                <div id="footer">
+
+            <span> <img src="static/LOGO.png" width=80 height=80> </span>
+
+                </div>
+        </div>
+

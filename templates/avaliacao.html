@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista de Alunos</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style_avaliacao.css') }}">
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+
+</head>
+<body>
+
+<!-- BARRA SUPERIOR-->
+    <div class="barrasuperior">
+        <div class="nomeadm">
+            <h3>{{session['usuario_logado']}}</h3></div>
+
+    </div>
+    <h1>REALIZAR AVALIAÇÕES</h1>
+<!--    <input  type=text name="aaa" value="Funciona por favor">Funciona por favor</input>-->
+<!--    <button type="submit">ENVIAR</button>-->
+    <div class = "centralizar">
+        {% for itens in result %}
+            <details>
+                <div class="scrollbar" id="style-4">
+                    <div class="force-overflow"></div>
+                  </div>
+                 <summary>{{itens.nome}}</summary>
+                {% for pergunt in perguntas %}
+                    <ul>
+                        <il>{{pergunt.pergunta_}}</il>
+                        <form action="/aluno/notas" method="POST">
+                        <ul>
+<!--                        <li >Extramamente -->
+                            <input type="radio" value="Extremamente" name="{{itens.nome}}{{pergunt.name}}">Extremamente</input>
+<!--                            </li>-->
+<!--                        <li >Muito -->
+                            <input type="radio" value= 'Muito' name="{{itens.nome}}{{pergunt.name}}">Muito</input>
+<!--                        </li>-->
+<!--                        <li >Pouco -->
+                            <input type="radio" value='Pouco' name="{{itens.nome}}{{pergunt.name}}">Pouco</input>
+<!--                            </li>-->
+<!--                        <li >Nada -->
+                            <input type="radio" value='Nada' name="{{itens.nome}}{{pergunt.name}}">Nada</input>
+<!--                            </li>-->
+                        </ul>
+
+</ul>
+                {% endfor %}
+                <textarea rows="8" cols="50" name="justificativa" id="coment" maxlength="3000"></textarea>
+
+                <br>
+            </details>
+        {% endfor %}
+        <button type="submit">ENVIAR AVALIAÇÕES</button>
+</form>
+    </div>
+</body>
+<!--<script>-->
+<!--    var buttonSub = document.querySelector('button')-->
+<!--    buttonSub.addEventListener('click',enviar)-->
+<!--    var y = document.querySelectorAll('input')-->
+<!--    var z  = document.querySelectorAll('summary')-->
+<!--    b = []-->
+
+<!--    function enviar(){-->
+
+<!--        for(d=0; d < z.length;d++){-->
+<!--            //console.log(z[d].getAttribute('id'))-->
+<!--            b.push(z[d].getAttribute('id')) //array de nomes-->
+<!--            console.log(b[d])-->
+<!--             }-->
+<!--        for(a=0; a < y.length;a++){-->
+
+<!--                if(y[a].checked){-->
+<!--                //-->
+<!--                for(h=0; h < b.length;h++){-->
+<!--                if(b[h] == y[a].getAttribute('id')){-->
+<!--                console.log(b[h]+y[a].value)-->
+<!--                }-->
+<!--        }-->
+<!--        }-->
+
+<!--        }-->
+
+
+
+<!--    }-->
+<!--</script>-->
+
+</html>
