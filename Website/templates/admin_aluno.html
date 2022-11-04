@@ -33,6 +33,12 @@
          <option value="PRODUCT OWNER (P.O)">PRODUCT OWNER (P.O)</option>
          <option value="SCRUM MASTER">SCRUM MASTER</option>
         </select>
+        <select class="form-select" name="time_aluno" type="text" aria-label="time_aluno" id="time_aluno">
+                  {% for s in result2%}
+                <option selected>{{s.nome_time}}</option>
+                  {%endfor%}
+              </select>
+
         <br>
         <button type="submit" name="Enviar" class="btn btn-primary">Cadastrar</button>
       </div></form>

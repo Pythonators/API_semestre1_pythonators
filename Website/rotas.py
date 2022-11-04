@@ -337,8 +337,9 @@ def cadastroalunos():
     if 'adminlogado' not in session or session['adminlogado'] == None:
         return redirect('/')
     result = mostrarTodosAlunos()
+    result2 = mostrarTodos_times()
     return render_template("admin_aluno.html",
-    result=result)
+    result=result, result2=result2)
 
 #Inserção alunos no Banco de dados
 
@@ -351,7 +352,8 @@ def cadastrar_alunos():
     usuario_aluno = request.form["usuario_aluno"]
     senha_aluno = request.form["senha_aluno"]
     funcao_aluno = request.form["funcao_aluno"]
-    aluno = Alunos(id, cargo_aluno, nome_aluno, usuario_aluno, senha_aluno, funcao_aluno)
+    time_aluno = request.form["time_aluno"]
+    aluno = Alunos(id, cargo_aluno, nome_aluno, usuario_aluno, senha_aluno, funcao_aluno, time_aluno)
     inserirAlunos(aluno)
     return redirect("/admin/cadastro/alunos")
 

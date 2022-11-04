@@ -8,7 +8,7 @@ def inserir_time(model: Times):
     bdtime.insert({"id":model.id,
     "turma":model.turma,
     "nome_time":model.nome_time })
-def mostrarTodos_times():
+def mostrarTodos_times() -> object:
     todos = bdtime.all()
     return todos
 def atualizarTimes(id: int, model:Times):
