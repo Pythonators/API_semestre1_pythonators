@@ -85,7 +85,7 @@ def pagina_admin():
         return redirect('/')
     result = mostrarTodos()
     salas = mostrarSalas()
-    return render_template("admin.html",
+    return render_template("admin_turmas.html",
     result=result,salas=salas)
 
 

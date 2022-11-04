@@ -1,0 +1,39 @@
+{% extends 'admin.html' %}
+
+{% block conteudo %}
+  <body>
+        <div class="container text-center">
+
+
+          <h1 id="cabecalho">Salas</h1>
+          {% for s in salas %}
+          <ul id="listaSalas">
+            <li>
+              <a href='/admin/{{s["sala"]}}' class="btn btn-secondary">
+                <i class="bi bi-arrow-clockwise" id="sala" nome="sala"> </i>{{s.sala}}</a></td>   
+            </li>
+          </ul>
+          {% endfor %}
+          <form  action="addSalas" method="POST">
+          <input type="text" class="form-control" name="sala" id="floatingInput" placeholder="Sala" id="sala">
+          Professor P2:
+            <select class="form-select" name="p2" type="text" aria-label="P2" id="p2">
+                  {% for s in result%}
+                <option selected>{{s.usuario}}</option>
+                  {%endfor%}
+              </select>
+            Professor M2:<select class="form-select" name="m2" type="text" aria-label="M2" id="m2">
+                  {% for s in result%}
+                <option selected>{{s.usuario}}</option>
+                  {%endfor%}
+              </select>
+
+            <button type="submit" name="23" class="btn btn-primary">Cadastrar</button>
+          </form>
+        </details>
+      </nav>
+    </div>
+  </body>
+  {% endblock %}  
+  </body>
+</html>
