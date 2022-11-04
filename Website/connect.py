@@ -6,7 +6,6 @@ bdProfessor = TinyDB("Professor.json")
 professor = Query()
 def inserir(model: Professor):
     bdProfessor.insert({"id":model.id,
-    "cargo":model.cargo,
     "nome":model.nome,
     "usuario":model.usuario,
     "senha":model.senha,

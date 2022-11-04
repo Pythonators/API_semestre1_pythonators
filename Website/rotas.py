@@ -137,12 +137,11 @@ def index():
 def cadastrar_professor():
     myid = uuid.uuid1()
     id = str(myid)
-    cargo = request.form["cargo"]
     nome = request.form["nome"]
     usuario = request.form["usuario"]
     senha = request.form["senha"]   
     #funcao = request.form["funcao"]
-    professor = Professor(id,cargo,nome,usuario,senha,)
+    professor = Professor(id,nome,usuario,senha)
     inserir(professor)
     return redirect("/admin/cadastro/professores")
 
@@ -152,15 +151,13 @@ def cadastrar_professor():
 def atualizar_professor(id):
     if request.method =='POST':
         id = id
-        cargo = request.form["cargo"]
         nome = request.form["nome"]
         usuario = request.form["usuario"]
         senha = request.form["senha"]
-        funcao = request.form["funcao"]
-        pessoa = Professor(id,cargo,nome,usuario,senha,funcao)
+        pessoa = Professor(id,nome,usuario,senha)
         try:
             atualizarProfessor(id,pessoa)
-            return redirect('/admin')
+            return redirect('/admin/cadastro/professores')
         except:
             return 'algo deu errado'
     else:
@@ -301,7 +298,7 @@ def cadastrar_times():
 
 #Atualizar dados times
 
-@app.route('/atualizar/<string:id>',methods=["POST","GET"])
+@app.route('/atualizar/time/<string:id>',methods=["POST","GET"])
 def atualizar_times(id):
     if request.method =='POST':
         id = id
@@ -314,13 +311,14 @@ def atualizar_times(id):
         except:
             return 'algo deu errado'
     else:
+        turmas = mostrarSalas()
         time = buscarPorIdTime(id)
-        return render_template('update.html',time = time)
+        return render_template('update_time.html',time = time,turmas=turmas)
 
 #Deletar times do banco de dados
 
-@app.route('/deletar/<string:id>')
-def deletarTime(id):
+@app.route('/deletar/time/<string:id>')
+def deletarTimes(id):
     try:
         deletarTime(id)
         return redirect("/admin/cadastro/times")
@@ -359,28 +357,31 @@ def cadastrar_alunos():
 
 #Atualizar dados alunos
 
-@app.route('/atualizar/<string:id>',methods=["POST","GET"])
+@app.route('/atualizar/aluno/<string:id>',methods=["POST","GET"])
 def atualizar_alunos(id):
     if request.method =='POST':
-        cargo_aluno = request.form["cargo_aluno"]
-        nome_aluno = request.form["nome_aluno"]
-        usuario_aluno = request.form["usuario_aluno"]
-        senha_aluno = request.form["senha_aluno"]
+        id = id
+        cargo = request.form['cargo']
+        nome_aluno = request.form["nome"]
+        usuario_aluno = request.form["usuario"]
+        senha_aluno = request.form["senha"]
         funcao_aluno = request.form["funcao_aluno"]
-        aluno = Alunos(id, cargo_aluno, nome_aluno, usuario_aluno, senha_aluno, funcao_aluno)
+        time = request.form['time']
+        aluno = Alunos(id, cargo, nome_aluno, usuario_aluno, senha_aluno, funcao_aluno, time)
         try:
             atualizarAlunos(id,aluno)
             return redirect('/admin/cadastro/alunos')
         except:
             return 'algo deu errado'
     else:
-        aluno = buscarPorIdAluno(id)
-        return render_template('update.html',aluno = aluno)
+        result2 = mostrarTodos_times()
+        pessoa = buscarPorIdAluno(id)
+        return render_template('update_aluno.html',pessoa = pessoa, result2=result2)
 
 #Deletar alunos do banco de dados
 
-@app.route('/deletar/<string:id>')
-def deletarAlunos(id):
+@app.route('/deletar/aluno/<string:id>')
+def deletarAluno(id):
     try:
         deletarAlunos(id)
         return redirect("/admin/cadastro/alunos")

@@ -38,9 +38,9 @@
         <td>{{contato.id}}</td>
         <td>{{contato.turma}}</td>
         <td>{{contato.nome_time}}</td>
-        <td><a class="btn btn-danger" href='/deletar/{{contato["id"]}}'>
+        <td><a class="btn btn-danger" href='/deletar/time/{{contato["id"]}}'>
           <i class="bi bi-trash"> </i>Deletar</a>
-          <a href='/atualizar/{{contato["id"]}}'class="btn btn-secondary">
+          <a href='/atualizar/time/{{contato["id"]}}'class="btn btn-secondary">
             <i class="bi bi-arrow-clockwise"> </i>Atualizar</a></td>
       </tr>
       {% endfor %}

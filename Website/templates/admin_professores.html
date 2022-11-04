@@ -9,11 +9,7 @@
         <form style="width: 20rem;" action="cadastrar" method="POST">
           <div class="form-floating mb-3">
           </div>
-        <div class="form-floating mb-3">
-              <select class="form-select" name="cargo" type="text" aria-label="CARGO" id="cargo">
-                <option selected>PROFESSOR</option>
-              </select>
-        </div>
+        
         <div class="form-floating mb-3">
           <input type="text" class="form-control"  id="nome" name="nome" nome_completo="floatingInput" placeholder="NOME COMPLETO">
             <label for="floatingInput">NOME COMPLETO</label>
@@ -38,20 +34,16 @@
     <table class="table">
       <tr>
         <th>id</th>
-        <th>cargo</th>
         <th>nome_completo</th>
         <th>usuario</th>
         <th>senha</th>
-        <th>funcao</th>
        </tr>
       {% for contato in result %}
       <tr>
         <td>{{contato.id}}</td>
-        <td>{{contato.cargo}}</td>
         <td>{{contato.nome}}</td>
         <td>{{contato.usuario}}</td>
         <td>{{contato.senha}}</td>
-        <td>{{contato.funcao}}</td>
         <td><a class="btn btn-danger" href='/deletar/{{contato["id"]}}'>
           <i class="bi bi-trash"> </i>Deletar</a>
           <a href='/atualizar/{{contato["id"]}}'class="btn btn-secondary">

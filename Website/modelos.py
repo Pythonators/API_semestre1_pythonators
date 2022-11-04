@@ -1,7 +1,6 @@
 class Professor:
-    def __init__(self, id, cargo, nome, usuario, senha) -> None:
+    def __init__(self, id, nome, usuario, senha) -> None:
         self.id=id
-        self.cargo = cargo
         self.nome=nome
         self.usuario=usuario
         self.senha=senha

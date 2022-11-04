@@ -63,9 +63,9 @@
         <td>{{contato_aluno.usuario}}</td>
         <td>{{contato_aluno.senha}}</td>
         <td>{{contato_aluno.funcao}}</td>
-        <td><a class="btn btn-danger" href='/deletar/{{contato_aluno["id"]}}'>
+        <td><a class="btn btn-danger" href='/deletar/aluno/{{contato_aluno["id"]}}'>
           <i class="bi bi-trash"> </i>Deletar</a>
-          <a href='/atualizar/{{contato_aluno["id"]}}'class="btn btn-secondary">
+          <a href='/atualizar/aluno/{{contato_aluno["id"]}}'class="btn btn-secondary">
             <i class="bi bi-arrow-clockwise"> </i>Atualizar</a></td>
       </tr>
       {% endfor %}
