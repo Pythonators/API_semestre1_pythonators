@@ -57,11 +57,11 @@ Este é um projeto apresentado pelos alunos do 1º Semestre do Curso do Banco de
 |   02   | Haverá uma diferenciação de times no cadastro | Eu como aluno quero ter minhas informações de grupo para melhor controle de qual é meu grupo e suas qualidades | Importante |
 |   02   |Haverá uma diferenciação entre aluno e professor  | Eu como cliente quero que haja uma diferenciação entre aluno e orientador para melhor diferenciação de dados | Importante |
 |   02   | Haverá uma tela de admin | Eu como PBLTeX quero que haja um perfil administrador para cadastrar ou retirar cadastro dos usuários | Imprescindível |
-|   03   | Haverá uma pagina exclusiva a revisão | Eu como aluno quero poder acessar minhas avaliações para revisão | Imprescindível |
 |   03   | Haverá uma tela de avaliação ao ScrumMaster | Eu como líder técnico quero poder avaliar meu aluno líder técnico para manter um bom rendimento de atividades | Importante |
 |   03   | Haverá uma tela de avaliação ao PO | Eu como fake client quero avaliar meu aluno PO para manter bom rendimento e alterar pontos fracos | Imprescindível |
 |   03   | Haverão telas de demonstração de pontuação | Eu como usuario quero que os dados sejam demonstrados de forma direta e prática para facilitação de entendimento |  Importante |
 |   03  | Haverá um sistema de profiles | Eu como administrador quero atribuir um perfil especifico a cada usuario cadastrado para que eu possa utilizar esse dado sistemicamente após sua autenticação | Imprescindível |
+|   04   | Haverá uma pagina exclusiva a revisão | Eu como aluno quero poder acessar minhas avaliações para revisão | Imprescindível |
 |   04  | Haverá uma visualização de avaliação geral | Eu como instrutor quero ter acesso a avaliação de meus alunos para saber qual seu rendimento na visão do time| Imprescindível |
 |   04  | Haverá um dashboard ligado as informações de time, de sprint e de avaliações de usuario | Eu como aluno quero ter um dashboard para melhor facilidade de acompanhamento | Imprescindível |
 <br/>
