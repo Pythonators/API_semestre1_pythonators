@@ -209,71 +209,51 @@ def avaliacao():
     ob3 = json.loads(ob3)
     ob4 = json.dumps(mostrarTodosAlunos())
     ob4 = json.loads(ob4)
-    json_obj = json.loads(ob)
-    times_p2 = []
-    times_m2 = []
+
+    alunos_turma = []
     alunos_turma2 = []
 
-    if session['prof'] == "PROFESSOR":
-        usuario = session['usuario_logado']
-        print(usuario)
-        # area q testa pro P2
-        if session['prof'] == "PROFESSOR":
-            usuario = session['usuario_logado']
-            print(usuario)
-            for pos in range(len(ob2)):
-                print(ob2[pos]['p2'])
-                if ob2[pos][
-                    'p2'] == usuario:  # se o nome do p2 que eu estou iterando dentro de OB2 (lista de salas) for igual ao do usuário logado
-                    turmasp2.append(ob2[pos]['sala'])
-                pos += 1
-            for p in range(len(ob3)):
-                if ob3[p]['turma'] in turmasp2:
-                    times_p2.append(ob3[p]['nome_time'])
-                p += 1
-            for x in range(len(ob4)):
-                if ob4[x]['time'] in times_p2:
-                    if ob4[x]['funcao'] == 'PRODUCT OWNER (P.O)':
-                        alunos_m2.append(ob4[x]['usuario'])
-                x += 1
-            for pos2 in range(len(ob2)):
-                print(ob2[pos2]['m2'])
-                if ob2[pos2]['m2'] == usuario:
-                    print(ob2[pos2]['sala'])
-                    turmasm2.append(ob2[pos2]['sala'])
-                    print(turmasm2)
-                pos2 += 1
-            for p in range(len(ob3)):
-                if ob3[p]['turma'] in turmasm2:
-                    times_m2.append(ob3[p]['nome_time'])
-                p += 1
-            for x in range(len(ob4)):
-                print(ob4[x]['time'])
-                if ob4[x]['time'] in times_m2:
-                    if ob4[x]['funcao'] == 'SCRUM MASTER':
-                        alunos_m2.append(ob4[x]['usuario'])
-                x += 1
-        turmas = []
-        alunos_turma = []
-        turmas.append(turmasp2)
-        turmas.append(turmasm2)
-        for i in range(len(ob4)):
-            if ob4[i]['sala'] in turmasp2:
-                alunos_turma.append(ob4[i]['nome'])
-            i += 1
-        print(alunos_turma)
-        for i in range(len(ob4)):
-            if ob4[i]['sala'] in turmasm2:
-                alunos_turma2.append(ob4[i]['nome'])
-            i += 1
-        print(alunos_turma2)
-        print(turmas)
 
-        # proxima sprint ou sla nessa ainda, pfv alguem faz o layout dessa pagina pra mostrar pro professor
-        # as turmas q ele ministra aula e oq ele ministra (qual o papel dele),
-        # teste com array puro:
-        # return f'salas do titular:\n turmas que você é P2: \n{turmasp2}\n turmas que você é M2:\n {turmasm2}, times da turma p2: {times_p2}, times da turma m2: {times_m2}, alunos: {alunos_p2},{alunos_m2}'
-        return render_template('tela_professor_turmas.html', turmas=turmas, alunos_turma=alunos_turma,alunos_turma2=alunos_turma2)
+    if session['prof'] == "PROFESSOR":
+
+        # area q testa pro P2
+
+        for pos in range(len(ob2)):
+            if ob2[pos]['p2'] in session['usuario_logado']:  # se o nome do p2 que eu estou iterando dentro de OB2 (lista de salas) for igual ao do usuário logado
+                turmasp2.append(ob2[pos]['sala'])
+
+            pos += 1
+        print(turmasp2)
+        for x in range(len(ob4)):
+            if ob4[x]['sala'] in turmasp2:
+               check = 'PRODUCT OWNER (P.O)'
+            # for i in range(len(ob4)):
+               if check in ob4[x]['funcao']:
+                    print('há')
+                    print('é o ',ob4[x]['usuario'])
+                    alunos_turma.append(ob4[X]['nome'])
+            x += 1
+        for pos in range(len(ob2)):
+            if ob2[pos]['m2'] in session['usuario_logado']:  # se o nome do p2 que eu estou iterando dentro de OB2 (lista de salas) for igual ao do usuário logado
+                turmasm2.append(ob2[pos]['sala'])
+
+            pos += 1
+        print(turmasm2)
+        for x in range(len(ob4)):
+            if ob4[x]['sala'] in turmasm2:
+               check = 'SCRUM MASTER'
+            # for i in range(len(ob4)):
+               if check in ob4[x]['funcao']:
+                    print('há')
+                    print('é o ',ob4[x]['usuario'])
+                    alunos_turma2.append(ob4[x]['nome'])
+
+            x += 1
+
+        print(alunos_turma2)
+        print(alunos_turma)
+
+        return render_template('tela_professor_turmas.html', alunos_turma=alunos_turma,alunos_turma2=alunos_turma2)
     return render_template("avaliacao.html", result=result, perguntas=perguntas)
 
 #Notas Alunos
