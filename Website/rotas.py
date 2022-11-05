@@ -231,7 +231,7 @@ def avaliacao():
                if check in ob4[x]['funcao']:
                     print('há')
                     print('é o ',ob4[x]['usuario'])
-                    alunos_turma.append(ob4[X]['nome'])
+                    alunos_turma.append(ob4[x]['nome'])
             x += 1
         for pos in range(len(ob2)):
             if ob2[pos]['m2'] in session['usuario_logado']:  # se o nome do p2 que eu estou iterando dentro de OB2 (lista de salas) for igual ao do usuário logado
