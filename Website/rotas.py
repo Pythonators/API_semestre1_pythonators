@@ -196,8 +196,8 @@ def avaliacao():
         return redirect('/')
 
     result = mostrarTodos()
-    #b = cargoUsuario
-    #json_obj = json.loads(result)
+    # b = cargoUsuario
+    # json_obj = json.loads(result)
     ob = json.dumps(result)
     result2 = json.dumps(mostrarSalas())
     ob2 = json.loads(result2)
@@ -205,19 +205,19 @@ def avaliacao():
     turmasm2 = []
     alunos_m2 = []
     alunos_p2 = []
-    ob3 =  json.dumps(mostrarTodos_times())
+    ob3 = json.dumps(mostrarTodos_times())
     ob3 = json.loads(ob3)
     ob4 = json.dumps(mostrarTodosAlunos())
     ob4 = json.loads(ob4)
     json_obj = json.loads(ob)
     times_p2 = []
     times_m2 = []
-    alunos_turma2 =[]
+    alunos_turma2 = []
 
     if session['prof'] == "PROFESSOR":
         usuario = session['usuario_logado']
         print(usuario)
-        #area q testa pro P2
+        # area q testa pro P2
         if session['prof'] == "PROFESSOR":
             usuario = session['usuario_logado']
             print(usuario)
@@ -228,14 +228,14 @@ def avaliacao():
                     turmasp2.append(ob2[pos]['sala'])
                 pos += 1
             for p in range(len(ob3)):
-                 if ob3[p]['turma'] in turmasp2:
+                if ob3[p]['turma'] in turmasp2:
                     times_p2.append(ob3[p]['nome_time'])
-                 p += 1
+                p += 1
             for x in range(len(ob4)):
-                     if ob4[x]['time'] in times_p2:
-                         if ob4[x]['funcao'] == 'PRODUCT OWNER (P.O)':
-                            alunos_m2.append(ob4[x]['usuario'])
-                     x += 1
+                if ob4[x]['time'] in times_p2:
+                    if ob4[x]['funcao'] == 'PRODUCT OWNER (P.O)':
+                        alunos_m2.append(ob4[x]['usuario'])
+                x += 1
             for pos2 in range(len(ob2)):
                 print(ob2[pos2]['m2'])
                 if ob2[pos2]['m2'] == usuario:
@@ -244,15 +244,15 @@ def avaliacao():
                     print(turmasm2)
                 pos2 += 1
             for p in range(len(ob3)):
-                    if ob3[p]['turma'] in turmasm2:
-                        times_m2.append(ob3[p]['nome_time'])
-                    p+=1
+                if ob3[p]['turma'] in turmasm2:
+                    times_m2.append(ob3[p]['nome_time'])
+                p += 1
             for x in range(len(ob4)):
-                    print(ob4[x]['time'])
-                    if ob4[x]['time'] in times_m2:
-                        if ob4[x]['funcao'] == 'SCRUM MASTER':
-                            alunos_m2.append(ob4[x]['usuario'])
-                    x += 1
+                print(ob4[x]['time'])
+                if ob4[x]['time'] in times_m2:
+                    if ob4[x]['funcao'] == 'SCRUM MASTER':
+                        alunos_m2.append(ob4[x]['usuario'])
+                x += 1
         turmas = []
         alunos_turma = []
         turmas.append(turmasp2)
@@ -260,23 +260,21 @@ def avaliacao():
         for i in range(len(ob4)):
             if ob4[i]['sala'] in turmasp2:
                 alunos_turma.append(ob4[i]['nome'])
-            i+=1
+            i += 1
         print(alunos_turma)
         for i in range(len(ob4)):
             if ob4[i]['sala'] in turmasm2:
                 alunos_turma2.append(ob4[i]['nome'])
-            i+=1
+            i += 1
         print(alunos_turma2)
         print(turmas)
-
 
         # proxima sprint ou sla nessa ainda, pfv alguem faz o layout dessa pagina pra mostrar pro professor
         # as turmas q ele ministra aula e oq ele ministra (qual o papel dele),
         # teste com array puro:
-        #return f'salas do titular:\n turmas que você é P2: \n{turmasp2}\n turmas que você é M2:\n {turmasm2}, times da turma p2: {times_p2}, times da turma m2: {times_m2}, alunos: {alunos_p2},{alunos_m2}'
-        return render_template('tela_professor_turmas.html', turmas=turmas,alunos_turma = alunos_turma)
+        # return f'salas do titular:\n turmas que você é P2: \n{turmasp2}\n turmas que você é M2:\n {turmasm2}, times da turma p2: {times_p2}, times da turma m2: {times_m2}, alunos: {alunos_p2},{alunos_m2}'
+        return render_template('tela_professor_turmas.html', turmas=turmas, alunos_turma=alunos_turma,alunos_turma2=alunos_turma2)
     return render_template("avaliacao.html", result=result, perguntas=perguntas)
-
 
 #Notas Alunos
 
@@ -422,13 +420,20 @@ def cadastrar_alunos():
 def atualizar_alunos(id):
     if request.method =='POST':
         id = id
-        cargo = request.form['cargo']
+        obj = json.dumps(mostrarTodos_times())
+        obj = json.loads(obj)
+        cargo_aluno = request.form['cargo']
         nome_aluno = request.form["nome"]
         usuario_aluno = request.form["usuario"]
         senha_aluno = request.form["senha"]
         funcao_aluno = request.form["funcao_aluno"]
-        time = request.form['time']
-        aluno = Alunos(id, cargo, nome_aluno, usuario_aluno, senha_aluno, funcao_aluno, time)
+        time_aluno = request.form['time']
+        for x in range(len(obj)):
+            if obj[x]['nome_time'] == time_aluno:
+                sala_aluno = obj[x]['turma']
+                aluno = Alunos(id, cargo_aluno, nome_aluno, usuario_aluno, senha_aluno, funcao_aluno, time_aluno,
+                               sala_aluno)
+                inserirAlunos(aluno)
         try:
             atualizarAlunos(id,aluno)
             return redirect('/admin/cadastro/alunos')
