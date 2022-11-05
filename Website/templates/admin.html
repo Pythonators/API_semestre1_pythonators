@@ -16,6 +16,18 @@
   </head>
 
   <body>
+<!--  começo do flashcard-->
+  {% with messages = get_flashed_messages() %}
+  {% if messages %}
+    <ul class=flashes>
+    {% for message in messages %}
+      <li>{{ message }}</li>
+    {% endfor %}
+    </ul>
+  {% endif %}
+{% endwith %}
+{% block body %}{% endblock %}
+<!--fim flashcard, FAVOR, PERSONALIZAR! Fonte: https://flask.palletsprojects.com/en/1.1.x/patterns/flashing/-->
       <nav class="navbar " id="barraSuperior">
           <div class="container-fluid" id="barraSuperior">
             <span class="intername" >ADMINISTRADOR</span>

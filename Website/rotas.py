@@ -94,6 +94,7 @@ def pagina_admin():
     
 @app.route('/addSalas', methods=["POST","GET"])
 def addSalas():
+    Q = Query()
     if 'usuario_logado' in session:
         redirect("/")
     if 'adminlogado' not in session or session['adminlogado'] == None:
@@ -101,9 +102,16 @@ def addSalas():
     sala = request.form["sala"]
     prof = request.form['p2']
     prof2 = request.form['m2']
-    TinyDB(f'Salas/{sala}.json')
-    n_sala = Salas(sala,prof,prof2)
-    inserirSala(n_sala)
+    #teste com o flashcard caso a sala já exista
+    if bd.search(Q.sala != sala):
+        n_sala = Salas(sala, prof, prof2)
+        inserirSala(n_sala)
+        TinyDB(f'Salas/{sala}.json')
+    else:
+        flash('Essa sala já existe!')
+
+
+
     return redirect("/admin")
 
 '''@app.route('/admin/<string:sala>')
@@ -195,33 +203,80 @@ def avaliacao():
     ob2 = json.loads(result2)
     turmasp2 = []
     turmasm2 = []
+    alunos_m2 = []
+    alunos_p2 = []
+    ob3 =  json.dumps(mostrarTodos_times())
+    ob3 = json.loads(ob3)
+    ob4 = json.dumps(mostrarTodosAlunos())
+    ob4 = json.loads(ob4)
     json_obj = json.loads(ob)
+    times_p2 = []
+    times_m2 = []
+    alunos_turma2 =[]
+
     if session['prof'] == "PROFESSOR":
         usuario = session['usuario_logado']
         print(usuario)
-        for pos in range(len(ob2)):
-            print(ob2[pos]['p2'])
-            if ob2[pos]['p2'] == usuario: #se o nome do p2 que eu estou iterando dentro de OB2 (lista de salas) for igual ao do usuário logado
-                turmasp2.append(ob2[pos]['sala'])
-            pos += 1
-        for pos2 in range(len(ob2)):
-            print(ob2[pos2]['m2'])
-            if ob2[pos2]['m2'] == usuario:
-                print(ob2[pos2]['sala'])
-                turmasm2.append(ob2[pos2]['sala'])
-                print(turmasm2)
-            pos2 += 1
-
-
+        #area q testa pro P2
+        if session['prof'] == "PROFESSOR":
+            usuario = session['usuario_logado']
+            print(usuario)
+            for pos in range(len(ob2)):
+                print(ob2[pos]['p2'])
+                if ob2[pos][
+                    'p2'] == usuario:  # se o nome do p2 que eu estou iterando dentro de OB2 (lista de salas) for igual ao do usuário logado
+                    turmasp2.append(ob2[pos]['sala'])
+                pos += 1
+            for p in range(len(ob3)):
+                 if ob3[p]['turma'] in turmasp2:
+                    times_p2.append(ob3[p]['nome_time'])
+                 p += 1
+            for x in range(len(ob4)):
+                     if ob4[x]['time'] in times_p2:
+                         if ob4[x]['funcao'] == 'PRODUCT OWNER (P.O)':
+                            alunos_m2.append(ob4[x]['usuario'])
+                     x += 1
+            for pos2 in range(len(ob2)):
+                print(ob2[pos2]['m2'])
+                if ob2[pos2]['m2'] == usuario:
+                    print(ob2[pos2]['sala'])
+                    turmasm2.append(ob2[pos2]['sala'])
+                    print(turmasm2)
+                pos2 += 1
+            for p in range(len(ob3)):
+                    if ob3[p]['turma'] in turmasm2:
+                        times_m2.append(ob3[p]['nome_time'])
+                    p+=1
+            for x in range(len(ob4)):
+                    print(ob4[x]['time'])
+                    if ob4[x]['time'] in times_m2:
+                        if ob4[x]['funcao'] == 'SCRUM MASTER':
+                            alunos_m2.append(ob4[x]['usuario'])
+                    x += 1
         turmas = []
+        alunos_turma = []
         turmas.append(turmasp2)
         turmas.append(turmasm2)
+        for i in range(len(ob4)):
+            if ob4[i]['sala'] in turmasp2:
+                alunos_turma.append(ob4[i]['nome'])
+            i+=1
+        print(alunos_turma)
+        for i in range(len(ob4)):
+            if ob4[i]['sala'] in turmasm2:
+                alunos_turma2.append(ob4[i]['nome'])
+            i+=1
+        print(alunos_turma2)
         print(turmas)
 
-        #proxima sprint ou sla nessa ainda, pfv alguem faz o layout dessa pagina pra mostrar pro professor
-        #as turmas q ele ministra aula e oq ele ministra (qual o papel dele)
-        return  f'salas do titular:\n turmas que você é P2: \n{turmasp2}\n turmas que você é M2:\n {turmasm2}'
-    return render_template("avaliacao.html", result = result, perguntas = perguntas)
+
+        # proxima sprint ou sla nessa ainda, pfv alguem faz o layout dessa pagina pra mostrar pro professor
+        # as turmas q ele ministra aula e oq ele ministra (qual o papel dele),
+        # teste com array puro:
+        #return f'salas do titular:\n turmas que você é P2: \n{turmasp2}\n turmas que você é M2:\n {turmasm2}, times da turma p2: {times_p2}, times da turma m2: {times_m2}, alunos: {alunos_p2},{alunos_m2}'
+        return render_template('tela_professor_turmas.html', turmas=turmas,alunos_turma = alunos_turma)
+    return render_template("avaliacao.html", result=result, perguntas=perguntas)
+
 
 #Notas Alunos
 
@@ -345,14 +400,20 @@ def cadastroalunos():
 def cadastrar_alunos():
     myid = uuid.uuid1()
     id = str(myid)
+    obj = json.dumps(mostrarTodos_times())
+    obj = json.loads(obj)
     cargo_aluno = request.form["cargo_aluno"]
     nome_aluno = request.form["nome_aluno"]
     usuario_aluno = request.form["usuario_aluno"]
     senha_aluno = request.form["senha_aluno"]
     funcao_aluno = request.form["funcao_aluno"]
     time_aluno = request.form["time_aluno"]
-    aluno = Alunos(id, cargo_aluno, nome_aluno, usuario_aluno, senha_aluno, funcao_aluno, time_aluno)
-    inserirAlunos(aluno)
+    for x in range(len(obj)):
+        if obj[x]['nome_time'] == time_aluno:
+            sala_aluno = obj[x]['turma']
+            aluno = Alunos(id, cargo_aluno, nome_aluno, usuario_aluno, senha_aluno, funcao_aluno, time_aluno,sala_aluno)
+            inserirAlunos(aluno)
+
     return redirect("/admin/cadastro/alunos")
 
 #Atualizar dados alunos

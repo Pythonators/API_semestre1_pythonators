@@ -11,7 +11,8 @@ def inserirAlunos(model: Alunos):
     "usuario":model.usuario,
     "senha":model.senha,
     "funcao":model.funcao,
-    "time":model.time})
+    "time":model.time,
+    "sala": model.sala})
 def mostrarTodosAlunos():
     todos = bdAlunos.all()
     return todos

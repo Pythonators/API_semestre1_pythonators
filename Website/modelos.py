@@ -24,7 +24,7 @@ class Times:
         self.turma=turma
         self.nome_time=nome_time
 class Alunos:
-    def __init__(self, id, cargo, nome, usuario, senha, funcao, time) -> None:
+    def __init__(self, id, cargo, nome, usuario, senha, funcao, time,sala) -> None:
         self.id=id
         self.cargo=cargo
         self.nome=nome
@@ -32,3 +32,4 @@ class Alunos:
         self.senha=senha
         self.funcao=funcao
         self.time=time
+        self.sala=sala
