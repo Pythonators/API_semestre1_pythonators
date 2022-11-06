@@ -6,8 +6,6 @@
 |  02  | Eu como líder técnico quero poder avaliar meu aluno líder técnico para manter um bom rendimento de atividades. | Haverá uma tela de avaliação ao ScrumMaster. | 
 |  03  | Eu como administrador quero atribuir um perfil especifico a cada usuario cadastrado para que eu possa utilizar esse dado sistemicamente após sua autenticação. | Haverá um sistema de profiles. |
 
-<h4> Objetivo da sprint </h4> 
-Entregar um sistema de conversão dos dados, um sistema de revisão de avaliações e um dashboard compreensível ao aluno.
 
 <br/>
 
