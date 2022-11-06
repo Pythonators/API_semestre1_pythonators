@@ -12,5 +12,5 @@
 
 <p>
   <h3> Diagrama do banco de dados <h3/>
-  <img src="https://github.com/isadorarocsilva/photospythonators/blob/main/diagramabd.jpg?raw=true" width="900" title="Diagrama do Banco de Dados">
+  <img src="https://github.com/isadorarocsilva/photospythonators/blob/main/diagramabd.jpg?raw=true" width="800">
 </p>
