@@ -10,3 +10,11 @@
 
 <h4> Objetivo da sprint </h4> 
 Entregar um sistema de conversão dos dados, um sistema de revisão de avaliações e um dashboard compreensível ao aluno.
+
+<br/>
+
+
+<p>
+  <h3> Diagrama do banco de dados <h3/>
+  <img src="https://github.com/isadorarocsilva/photospythonators/blob/main/diagramabd.jpg?raw=true" width="500" title="Diagrama do Banco de Dados">
+</p>
