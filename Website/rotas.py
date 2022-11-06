@@ -24,11 +24,14 @@ p2 = Pergunta('2 - O avaliado fez entregas de acordo com as propostas da sprint'
 p3 = Pergunta('3 - O avaliado teve um bom desempenho no trabalho em equipe', '3')
 p4 = Pergunta('4 - O avaliado demonstrou habilidades e/ou desejo em se desenvolver nas tecnologias usadas no projeto',
               '4')
+p5 = Pergunta('5 - O avaliado teve uma comunicação clara com o grupo quanto às suas dificuldades e evoluções no decorrer das sprints',
+              '5')
 perguntas = []
 perguntas.append(p1)
 perguntas.append(p2)
 perguntas.append(p3)
 perguntas.append(p4)
+perguntas.append(p5)
 
 #Login e autenticação
 

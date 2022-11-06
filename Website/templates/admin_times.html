@@ -8,19 +8,19 @@
         <hr>
         <form style="width: 20rem;" action="cadastrartimes" method="POST">
           <div class="form-floating mb-3">
-          </div>
+      </div>
         <div class="form-floating mb-3">
-              <select class="form-select" name="turma" type="text" aria-label="TURMA" id="turma">
+              <select class="form-select" name="turma" type="text" aria-label="TURMA"  style="background-color:#ADACB5;"  id="turma">
                   {% for s in turmas%}
                 <option selected>{{s.sala}}</option>
                   {%endfor%}
               </select>
         </div>
         <div class="form-floating mb-3">
-          <input type="text" class="form-control"  id="nome_time" name="nome_time" nome_completo="floatingInput" placeholder="NOME DO TIME"required>
+          <input type="text" class="form-control"  id="nome_time" name="nome_time" style="background-color:#ADACB5; " nome_completo="floatingInput" placeholder="NOME DO TIME"required>
             <label for="floatingInput">NOME DO TIME</label>
         </div>
-          <br>
+      <div>
           <button type="submit" name="Enviar" class="btn btn-primary">Cadastrar</button>
         </div></form>
       </div>

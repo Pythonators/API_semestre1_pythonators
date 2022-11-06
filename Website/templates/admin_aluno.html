@@ -10,36 +10,38 @@
         <div class="form-floating mb-3">
         </div>
       <div class="form-floating mb-3">
-            <select class="form-select" name="cargo_aluno" type="text" aria-label="CARGO" id="cargo_aluno"required>
+            <select class="form-select" name="cargo_aluno" type="text" aria-label="CARGO" style="background-color:#ADACB5;" id="cargo_aluno"required >
               <option selected>ALUNO</option>
             </select>
       </div>
       <div class="form-floating mb-3">
-        <input type="text" class="form-control"  id="nome_aluno" name="nome_aluno" nome_completo="floatingInput" placeholder="NOME COMPLETO"required>
+        <input type="text" class="form-control"  id="nome_aluno" name="nome_aluno" nome_completo="floatingInput" style="background-color:#ADACB5;" placeholder="NOME COMPLETO"required>
           <label for="floatingInput">NOME COMPLETO</label>
       </div>
       <div class="form-floating mb-3">
-        <input type="text" class="form-control" name="usuario_aluno" usuario="floatingInput" placeholder="cargo" id="usuario_aluno"required>
+        <input type="text" class="form-control" name="usuario_aluno" usuario="floatingInput" placeholder="cargo" style="background-color:#ADACB5;" id="usuario_aluno"required>
           <label for="floatingInput">USUÁRIO</label>
       </div>
       <div class="form-floating mb-3">
-        <input type="text" class="form-control" id="senha_aluno" name="senha_aluno" senha="floatingInput" placeholder="SENHA"required>
+        <input type="text" class="form-control" id="senha_aluno" name="senha_aluno" senha="floatingInput" style="background-color:#ADACB5;" placeholder="SENHA"required>
           <label for="floatingInput">SENHA</label>
       </div>
       <div class="form-floating mb-3">
-        <select class="form-select" name="funcao_aluno" type="text" aria-label="CARGO" id="funcao_aluno">
+        <select class="form-select" name="funcao_aluno" type="text" aria-label="CARGO" style="background-color:#ADACB5;" id="funcao_aluno">
         <option selected>FUNÇÃO</option>
          <option value="DEV">DEV</option>
-         <option value="PRODUCT OWNER (P.O)">PRODUCT OWNER (P.O)</option>
+         <option value="PRODUCT OWNER (P.O)" >PRODUCT OWNER (P.O)</option>
          <option value="SCRUM MASTER">SCRUM MASTER</option>
         </select>
-        <select class="form-select" name="time_aluno" type="text" aria-label="time_aluno" id="time_aluno">
+      </div>
+      <div class="form-floating mb-3">
+        <select class="form-select" name="time_aluno" type="text" aria-label="time_aluno" style="background-color:#ADACB5;" id="time_aluno">
                   {% for s in result2%}
-                <option selected>{{s.nome_time}}</option>
+          <option selected>{{s.nome_time}}</option>
                   {%endfor%}
-              </select>
-
-        <br>
+        </select>
+        </div>      
+       <div>
         <button type="submit" name="Enviar" class="btn btn-primary">Cadastrar</button>
       </div></form>
     </div>

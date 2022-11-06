@@ -14,6 +14,10 @@
 
 
   </head>
+<!--Background-->
+<style>
+  body{background-color: #D8D5DB;}
+</style>
 
   <body>
 <!--  começo do flashcard-->
@@ -30,8 +34,9 @@
 <!--fim flashcard, FAVOR, PERSONALIZAR! Fonte: https://flask.palletsprojects.com/en/1.1.x/patterns/flashing/-->
       <nav class="navbar " id="barraSuperior">
           <div class="container-fluid" id="barraSuperior">
-            <span class="intername" >ADMINISTRADOR</span>
-        
+            <span class="intername" >Administrador</span>
+           
+
             <button class="navbar-toggler" type="button" data-bs-toggle="modal" data-bs-target="#exampleModal" id="OBotao">
               <span class="navbar-toggler-icon"></span>
             </button>
@@ -48,12 +53,12 @@
               <div class="modal-body">
         
                 <ul class="list-group list-group-flush">
-                  <li class="list-group-item"><a href="/admin">HOME</a></li>
-                  <li class="list-group-item"><a href="/admin">Cadastrar Salas</a></li>
-                  <li class="list-group-item"><a href="/admin/cadastro/times"> Cadastrar Times</a></li>
-                  <li class="list-group-item"><a href="/admin/cadastro/professores">Cadastrar Professores</a></li>
-                  <li class="list-group-item"><a href="/admin/cadastro/alunos">Cadastrar Alunos</a></li>
-                  <li class="list-group-item" ><a style="color:red" href="/logout">SAIR</a></li>
+                  <li class="list-group-item"><a style="text-decoration:none; color:#2D3142" href="/admin">HOME</a></li>                  
+                  <li class="list-group-item"><a style="text-decoration:none; color:#2D3142" href="/admin">Cadastrar Salas</a></li>
+                  <li class="list-group-item"><a style="text-decoration:none; color:#2D3142" href="/admin/cadastro/times"> Cadastrar Times</a></li>
+                  <li class="list-group-item"><a style="text-decoration:none; color:#2D3142" href="/admin/cadastro/professores">Cadastrar Professores</a></li>
+                  <li class="list-group-item"><a style="text-decoration:none; color:#2D3142" href="/admin/cadastro/alunos">Cadastrar Alunos</a></li>
+                  <li class="list-group-item" ><a style="text-decoration:none; color:red" href="/logout">SAIR</a></li>
                 </ul>
         
               </div>
