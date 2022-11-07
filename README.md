@@ -1,4 +1,10 @@
+<br id="topo">
 
+<h1 align="center"> A Organização Pythonators Apresenta : Projeto Integrador FATEC 2022.2</h1>
+
+<p align="center" width="100%">
+    <img width="33%" src="https://user-images.githubusercontent.com/107864553/188957731-78be2649-74db-4989-b918-4c3cd575d96d.jpg"> 
+</p>
 
 <h3 align="center">
 Este é um projeto apresentado pelos alunos do 1º Semestre do Curso do Banco de Dados da Fatec de São José dos Campos. O objetivo deste projeto é criar uma aplicação de uma avaliação 360° entre os membros da equipe scrum, usando como modelo a Escala Likert.
@@ -102,4 +108,3 @@ https://user-images.githubusercontent.com/77700346/200200143-5497d160-1d08-4b60-
  
 → [Voltar ao topo](#topo)
 </div>
-
