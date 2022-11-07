@@ -1,59 +1,46 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter&display=swap');
-
-body {
+*
+{
   margin: 0;
-  background: #D8D5DB;
-  font-family: 'Inter', sans-serif;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+  /* Google Fonts: https://fonts.google.com/?selection.family=Poppins*/
   list-style: none;
 }
 
-a {
-  text-decoration: none;
+a { text-decoration: none; }
+
+header
+{
+  background-color: #2D3142; padding: 15px; box-shadow: 2px 2px 1px black;
 }
 
-header {
-  width: 100%;
-  height: 64px;
-  justify-content: flex-start;
-  background-color: #2D3142;
-  border-radius: 0px 0px 24px 24px;
-  flex-direction: row;
-  padding: 0px;
-  margin: 0px;
-}
-
-
-header .labelMenu {
-  justify-content: center;
+header .labelMenu
+{
   color: #FFF;
   transition: all 0.2s;
-  height: 64px;
-  align-items: center;
-  margin-left: 32px;
-  margin-top: 20px;
+  width: 40px;
+  height: 40px;
+  display: inline;
+  text-align: fixed;
+  line-height: 40px;
+  border-radius: 100px;
+  padding: 10px;
 
-}
-
-/* CENTRALIZAR TITULO */
-
-h1 {
-  text-align: center;
-  margin-top: 16px;
 }
 
 /* NAVGATION: */
 
-#collapse-menu {
-  padding: 0px;
-  display: inline;
-  position: flex;
+#collapse-menu{
+    padding: 0px ;
+    display: inline;
+    position: flex;
 }
 
-.menu {
+.menu
+{
   position: fixed;
-  top: 0;
-  left: -205px;
-  bottom: 0;
+  top: 0; left: -205px; bottom: 0;
   width: 200px;
   height: 100vh;
   background-color: #595E75;
@@ -62,30 +49,22 @@ h1 {
   z-index: 50;
 }
 
-#salas {
-  align-items: fixed;
-  display: none;
-}
+    #salas{ align-items: fixed;  display: none; }
+    #salas.mostra{ display: block;}
+    #adicionar{
+        text-align: center;
+        position: flex;
+        width: 200px;
+        height: 40px;
+        left: 0px;
+        top: 328px;
 
-#salas.mostra {
-  display: block;
-}
+        background: yellow;
+        box-shadow: 2px 0px 4px rgba(0, 0, 0, 0.25);
+        border-radius: 0px 0px 20px 20px;;}
 
-#adicionar {
-  text-align: center;
-  position: flex;
-  width: 200px;
-  height: 40px;
-  left: 0px;
-  top: 328px;
-
-  background: yellow;
-  box-shadow: 2px 0px 4px rgba(0, 0, 0, 0.25);
-  border-radius: 0px 0px 20px 20px;
-  ;
-}
-
-.menu h1 {
+    .menu h1
+{
   background-color: #313a45;
   text-align: center;
   color: #DDD;
@@ -93,39 +72,57 @@ h1 {
 }
 
 .menu ul a {
-  display: flex;
-  padding: 10px;
-  color: #444;
-  transition: all 0.2s;
+    display: flex;
+    padding: 10px;
+    color: #444;
+    transition: all 0.2s;
 }
 
-.menu a:hover {
-  background-color: #DDD;
-}
+.menu a:hover { background-color: #DDD; }
 
 
-.opacMenu {
+.opacMenu
+{
   position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100vh;
+  top: 0; left: 0;
+  width: 100%; height: 100vh;
   background-color: rgba(0, 0, 0, 0.5);
   display: none;
   z-index: 40;
 }
 
-
-p {
-  text-align: center;
-  padding: 40px;
-  color: #DDD;
-  font-size: 50px;
-  text-shadow: 1px 1px 1px #222;
+p
+{
+  text-align: center; padding: 40px; color: #DDD; font-size: 50px; text-shadow: 1px 1px 1px #222;
 }
 
-p span {
-  color: #ff3366;
+p span { color: #ff3366; }
+
+.modal {
+  width: 300px;
+}
+.modal-content {
+  width: 300px;
+}
+.list-group-item:hover {
+  background-color: rgba(59, 57, 57, 0.164) !important;
 }
 
-/* MURILO */
+#barraSuperior{
+  background-color: #2D3142;
+  padding: 8px;
+  }
+#OBotao{
+  background-color: whitesmoke;
+  position: absolute;
+}
+.intername{
+  padding-left: 80%;
+  color: whitesmoke;
+}
+
+#menuInter{
+  color: white;
+  background-color: #2D3142;
+
+}

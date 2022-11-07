@@ -9,6 +9,9 @@ details {
     position: relative;
     top: 80px;
   }
+  h3{
+  color: black;
+  }
   
   summary {
     padding: 1rem;

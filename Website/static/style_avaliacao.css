@@ -195,3 +195,32 @@ button:hover {
   border: none;
   cursor: pointer;
 }
+
+.modal {
+  width: 300px;
+}
+.modal-content {
+  width: 300px;
+}
+.list-group-item:hover {
+  background-color: rgba(59, 57, 57, 0.164) !important;
+}
+
+#barraSuperior{
+  background-color: #2D3142;
+  padding: 8px;
+  }
+#OBotao{
+  background-color: whitesmoke;
+  position: absolute;
+}
+.intername{
+  padding-left: 80%;
+  color: whitesmoke;
+}
+
+#menuInter{
+  color: white;
+  background-color: #2D3142;
+
+}

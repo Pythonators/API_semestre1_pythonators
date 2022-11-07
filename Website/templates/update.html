@@ -14,17 +14,13 @@
     <form action="{{pessoa[0]['id']}}" method="POST">
         <div class="mb-3">
           <label for="id" class="form-label">Id</label>
-          <input type="text" class="form-control" id="id" 
+          <input type="text" class="form-control" id="id"
+
           name = "id"
           value='{{pessoa[0]["id"]}}'
           readonly>
           </div>
-        <div class="mb-3">
-          <label for="cargo" class="form-label">Cargo</label>
-          <input type="text" class="form-control" id="cargo" 
-          name=cargo
-          value='{{pessoa[0]["cargo"]}}'>
-        </div>
+        
         <div class="mb-3">
             <label for="nome" class="form-label">Nome</label>
             <input type="text" class="form-control" id="nome" 
@@ -40,16 +36,7 @@
             <input type="text" class="form-control" id="senha" 
             name="senha" value='{{pessoa[0]["senha"]}}'>
           </div>
-          <div class="mb-3">
-            <label for="funcao" class="form-label">Função</label>
-            <input type="text" class="form-control" id="funcao" 
-            name="funcao" value='{{pessoa[0]["funcao"]}}'>
-          </div>
-          <div class="mb-3">
-            <label for="time" class="form-label">Time</label>
-            <input type="text" class="form-control" id="time" 
-            name="time" value='{{pessoa[0]["time"]}}'>
-          </div>
+          
         <button type="submit" class="btn btn-primary"><i class="bi bi-arrow-clockwise"> </i>Atualizar</button>
       </form>
       </div>

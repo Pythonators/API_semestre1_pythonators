@@ -10,10 +10,12 @@
 
 </head>
 <body>
+
 <!-- BARRA SUPERIOR-->
     <div class="barrasuperior">
         <div class="nomeadm">
-            <h3>PROGRAMADOR</h3></div>
+            <h3>{{session['usuario_logado']}}</h3></div>
+
     </div>
     <h1>REALIZAR AVALIAÇÕES</h1>
 <!--    <input  type=text name="aaa" value="Funciona por favor">Funciona por favor</input>-->
@@ -31,17 +33,19 @@
                         <form action="/aluno/notas" method="POST">
                         <ul>
 <!--                        <li >Extramamente -->
-                            <input type="radio" value="Extremamente" name="{{itens.nome}}{{pergunt.name}}">Extremamente</input>
-<!--                            </li>-->
-<!--                        <li >Muito -->
-                            <input type="radio" value= 'Muito' name="{{itens.nome}}{{pergunt.name}}">Muito</input>
-<!--                        </li>-->
-<!--                        <li >Pouco -->
-                            <input type="radio" value='Pouco' name="{{itens.nome}}{{pergunt.name}}">Pouco</input>
-<!--                            </li>-->
-<!--                        <li >Nada -->
-                            <input type="radio" value='Nada' name="{{itens.nome}}{{pergunt.name}}">Nada</input>
-<!--                            </li>-->
+                                <input type="radio" value="Extremamente" name="{{itens.nome}}{{pergunt.name}}"required>Extremamente</input>
+    <!--                            </li>-->
+    <!--                        <li >Muito -->
+                                <input type="radio" value= 'Muito' name="{{itens.nome}}{{pergunt.name}}"required>Muito</input>
+    <!--                        </li>-->
+    <!--                        <li >médio -->
+                                <input type="radio" value='médio' name="{{itens.nome}}{{pergunt.name}}"required> médio</input>
+    <!--                            </li>-->
+    <!--                        <li >pouco -->
+                                <input type="radio" value='pouco' name="{{itens.nome}}{{pergunt.name}}"required>pouco</input>
+    <!--                            </li> nada-->
+                                <input type="radio" value='Nada' name="{{itens.nome}}{{pergunt.name}}"required>Nada</input>
+    <!--                            </li>-->
                         </ul>
 
 </ul>
