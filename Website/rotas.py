@@ -106,12 +106,12 @@ def addSalas():
     prof = request.form['p2']
     prof2 = request.form['m2']
     #teste com o flashcard caso a sala já exista
-    if bd.search(Q.sala != sala):
+    '''if bd.search(Q.sala != sala):
         n_sala = Salas(sala, prof, prof2)
         inserirSala(n_sala)
         TinyDB(f'Salas/{sala}.json')
     else:
-        flash('Essa sala já existe!')
+        flash('Essa sala já existe!')'''
 
 
 
@@ -256,7 +256,7 @@ def avaliacao():
         print(alunos_turma2)
         print(alunos_turma)
 
-        return render_template('tela_professor_turmas.html', alunos_turma=alunos_turma,alunos_turma2=alunos_turma2)
+        return render_template('tela_professor_turmas.html', alunos_turma=alunos_turma,alunos_turma2=alunos_turma2, result=result, perguntas=perguntas)
     return render_template("avaliacao.html", result=result, perguntas=perguntas)
 
 #Notas Alunos
