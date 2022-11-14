@@ -1,0 +1,114 @@
+body {margin: 0;}
+
+@import url('https://fonts.googleapis.com/css2?family=Inter&display=swap');
+
+.fotologo > img {
+    width: 300px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-bottom: 32px;
+}
+
+.main-login{
+    width: 100vw;
+    height: 100vh;
+    background: #D8D5DB;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.card-login {
+    margin: 0;
+    width: 512px;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.campousuario {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    margin-bottom: 8px;    
+}
+
+.campousuario > input {
+    border: 10px;
+    width: 480px;
+    height: 64px;
+    background: #ADACB5;
+    border-radius: 16px;
+    outline: none;
+    padding-left: 16px;
+    padding-right: 16px;
+
+    font-family: 'Inter', sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 24px;    
+}
+
+.camposenha {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    margin-bottom: 8px;    
+}
+
+.camposenha > input {
+    border: 10px;
+    width: 480px;
+    height: 64px;
+    background: #ADACB5;
+    border-radius: 16px;
+    outline: none;
+    padding-left: 16px;
+    padding-right: 16px;
+
+    font-family: 'Inter', sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 24px;    
+}
+
+.instrucoes > h6 {
+    font-family: 'Inter', sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 19px;
+    text-align: center;
+    color: #2D3142;
+    padding-bottom: 8px;
+    margin: 8px;
+}
+
+.loginbutton {
+    width: 100%;
+    height: 64px;
+    outline: none;
+    text-decoration: none;
+    border-radius: 16px;
+    background: #2D3142;
+    color: #FFFFFF;
+    font-family: 'Inter', sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 24px;
+    text-align: center;
+}
+
+.loginbutton:hover {
+    background: #6f7aa7;
+    color: #FFFFFF;
+    outline: none;
+    border: none;
+    cursor: pointer;
+}

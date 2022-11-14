@@ -1,0 +1,39 @@
+{
+    "_default": {
+        "1": {
+            "sala": "4\u00ba ADS 2022",
+            "p2": "cauana",
+            "m2": "cauana"
+        },
+        "2": {
+            "sala": "5\u00ba DSE 2022",
+            "p2": "nasa",
+            "m2": "nasa"
+        },
+        "3": {
+            "sala": "2\u00ba PEA 2022",
+            "p2": "SagaGemeos",
+            "m2": "SagaGemeos"
+        },
+        "4": {
+            "sala": "3\u00ba MANUTEN\u00c7\u00c3O 2022",
+            "p2": "SagaGemeos",
+            "m2": "SagaGemeos"
+        },
+        "5": {
+            "sala": "4\u00ba BD 2022",
+            "p2": "ronalds",
+            "m2": "ronalds"
+        },
+        "6": {
+            "sala": "6\u00aa DSE 2022",
+            "p2": "rodigs",
+            "m2": "ronalds"
+        },
+        "7": {
+            "sala": "1\u00ba BD 2022",
+            "p2": "nadalete",
+            "m2": "sabha"
+        }
+    }
+}

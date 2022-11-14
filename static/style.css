@@ -1,0 +1,51 @@
+h1 {
+color: #000000;
+font-family: sans-serif, Arial
+font-size: 40px;
+position: absolute;
+width: 495px;
+height: 00px;
+left: 400px;
+top: 00px;}
+
+div1 {box-sizing: border-box;
+
+position: absolute;
+width: 251px;
+height: 251px;
+left: 40px;
+top: 150px;
+
+}
+
+div2{box-sizing: border-box;
+
+position: absolute;
+width: 251px;
+height: 251px;
+left: 350px;
+top: 150px;
+
+}
+
+div3 {
+box-sizing: border-box;
+
+position: absolute;
+width: 251px;
+height: 251px;
+left: 681px;
+top: 150px;
+
+}
+
+
+div4{
+position: absolute;
+width: 251px;
+height: 251px;
+left: 1012px;
+top: 150px;
+
+
+}
