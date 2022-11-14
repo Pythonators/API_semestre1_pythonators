@@ -1,0 +1,45 @@
+{% extends 'admin.html' %}
+
+{% block conteudo %}
+  <body>
+    <div class="card-body">
+      <h1 id="cabecalho">Cadastro de Salas</h1>
+      <div>
+        <ul>            
+      <form  action="addSalas" method="POST">
+      <input type="text" class="form-control" name="sala" id="floatingInput" style="background-color:#ADACB5; width: 20rem;" placeholder="Sala" id="sala">
+      Professor P2:
+        <select class="form-select" name="p2" type="text" aria-label="P2" style="background-color:#ADACB5; width: 20rem;" id="p2">
+              {% for s in result%}
+            <option selected>{{s.usuario}}</option>
+              {%endfor%}
+          </select>
+        Professor M2:<select class="form-select" name="m2" type="text" aria-label="M2" style="background-color:#ADACB5; width: 20rem;" id="m2">
+              {% for s in result%}
+            <option selected>{{s.usuario}}</option>
+              {%endfor%}
+          </select>
+        </ul>
+        </div>
+      </div>
+        <ul> <button type="submit" name="23" class="btn btn-primary">Cadastrar</button></ul>
+      </form>
+    </details>
+  </nav>
+    </div>
+    <h1 id="cabecalho">Salas cadastradas</h1>
+ 
+          {% for s in salas %}
+          <ul id="listaSalas" style="width: 50rem;">
+            <li>
+              <a href='/admin/{{s["sala"]}}' class="btn btn-secondary">
+                <i class="bi bi-arrow-clockwise" id="sala" nome="sala"> </i>{{s.sala}}</a></td>   
+              </li>
+          </ul>
+          {% endfor %}
+         
+    </div>
+  </body>
+  {% endblock %}  
+  </body>
+</html>
