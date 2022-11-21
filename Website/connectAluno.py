@@ -29,3 +29,5 @@ def deletarAlunos(id: int):
         bdAlunos.remove(aluno.id==str(id))
     else:
         print("Usuário não encontrado")
+        
+        'ok'
