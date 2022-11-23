@@ -97,25 +97,13 @@ def pagina_admin():
     
 @app.route('/addSalas', methods=["POST","GET"])
 def addSalas():
-    Q = Query()
-    if 'usuario_logado' in session:
-        redirect("/")
-    if 'adminlogado' not in session or session['adminlogado'] == None:
-        return redirect('/')
-    sala = request.form["sala"]
-    prof = request.form['p2']
-    prof2 = request.form['m2']
-    #teste com o flashcard caso a sala já exista
-    if bd.search(Q.sala != sala):
-        n_sala = Salas(sala, prof, prof2)
-        inserirSala(n_sala)
-        TinyDB(f'Salas/{sala}.json')
-    else:
-        flash('Essa sala já existe!')
-
-
-
-    return redirect("/admin")
+        sala = request.form["sala"]
+        prof = request.form['p2']
+        prof2 = request.form['m2']
+        sala = Salas(sala,prof,prof2)
+        inserirSala(sala)
+        return redirect ("/admin")    
+   
 
 '''@app.route('/admin/<string:sala>')
 def index(sala):
