@@ -28,15 +28,19 @@
   </nav>
     </div>
     <h1 id="cabecalho">Salas cadastradas</h1>
- 
-          {% for s in salas %}
-          <ul id="listaSalas" style="width: 50rem;">
-            <li>
-              <a href='/admin/{{s["sala"]}}' class="btn btn-secondary">
-                <i class="bi bi-arrow-clockwise" id="sala" nome="sala"> </i>{{s.sala}}</a></td>   
-              </li>
-          </ul>
-          {% endfor %}
+    <table class="table">
+      <tr>
+        <th>Turmas</th>
+       </tr>
+      {% for s in sala %}
+      <tr>
+        <td>{{s.sala}}</td>
+        <td><a class="btn btn-danger" href='/deletar/sala/{{s["id"]}}'>
+          <i class="bi bi-trash"> </i>Deletar</a>
+          <a href='/admin/{{s["sala"]}}' class="btn btn-secondary">
+            <i class="bi bi-arrow-clockwise"> </i>Atualizar</a></td>  
+      </tr>
+      {% endfor %}
          
     </div>
   </body>
