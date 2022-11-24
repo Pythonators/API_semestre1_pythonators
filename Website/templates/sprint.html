@@ -29,7 +29,7 @@
 <!–botão 1 e texto embaixo–>
         <div1 class="box1">
             <a href="/sprint">
-                <button class="btn-pri">SPRINT {{sprints[0]['sprint']}}
+                <button class="btn-pri" name="1" onclick="alert('BLOQUEADA')">SPRINT {{sprints[0]['sprint']}}
 
                 </button>
             </a>
@@ -42,7 +42,7 @@
         <!–botão 2 e texto embaixo–>
         <div2 class="box2">
             <a href="/sprint">
-                <button class="btn-seg">SPRINT {{sprints[1]['sprint']}}
+                <button class="btn-seg" name="2" onclick="alert('BLOQUEADA')">SPRINT {{sprints[1]['sprint']}}
 
                 </button>
             </a>
@@ -54,8 +54,9 @@
 
         <!–botão 3 e texto embaixo–>
         <div3 class="box3">
+        
         <a href="/aluno/avaliacao">
-            <button class="btn-ter">SPRINT {{sprints[2]['sprint']}}</button>
+            <button class="btn-ter" name="3">SPRINT {{sprints[2]['sprint']}}</button>
         </a>
         <div class="texto">
                 <br>
@@ -65,8 +66,8 @@
 
         <!–botão 4 e texto embaixo–>
         <div4 class="box4">
-        <a href="/sprint">
-            <button class="btn-qua">SPRINT {{sprints[3]['sprint']}}</button>
+        <a href={{liberado}}>
+            <button class="btn-qua" name="4" onclick="alert('BLOQUEADA')">SPRINT {{sprints[3]['sprint']}}</button>
         </a>
         <div class="texto">
         <br>

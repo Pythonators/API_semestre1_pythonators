@@ -122,10 +122,10 @@ div4{
 
 /* botão sprint 3 */
 .btn-ter{
-    background-color: #790000;
+    background-color: #3A4886;
     color: #ecf0f1;
     padding: 25px 38px;
-    border: 1px solid #790000;
+    border: 1px solid #3A4886;
     border-radius: 30px;
     cursor: pointer;
     font-family: 'Inter', sans-serif;
@@ -133,8 +133,8 @@ div4{
 }
 .btn-ter:hover{
     background-color:#ecf0f1;
-    color:#790000;
-    color:#790000;}
+    color:#3A4886;
+    color:#3A4886;}
 
 /* Botão sprint 4 */
 .btn-qua{

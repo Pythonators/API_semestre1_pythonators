@@ -3,6 +3,7 @@ from connect import mostrarTodos, inserir, atualizarProfessor, buscarPorId, dele
 from connectAluno import mostrarTodosAlunos, bdAlunos
 from connectAvaliacao import mostrarTodos2, inserir2
 from connectSala import mostrarSalas, inserirSala
+from datetime import datetime
 from connectSprint import *
 from connectTime import *
 from connectAluno import *
@@ -33,6 +34,7 @@ perguntas.append(p3)
 perguntas.append(p4)
 perguntas.append(p5)
 
+
 #Login e autenticação
 
 @app.route('/', methods = ['GET','POST'])
@@ -60,6 +62,7 @@ def autenticar():
         return redirect('/sprint')
     else:
         return redirect("/")
+        
     
 #Logout
 
@@ -75,6 +78,10 @@ def pagina_sprint():
     if 'usuario_logado' not in session or session['usuario_logado'] == None:
         return redirect('/')
     sprints = mostrarSprint()
+    
+    selecionado = sprints[2]['sprint']#controle intracódigo para qual sprint está aberta, ela vai direto para o banco de avaliações.
+    session['sprint_atual'] = selecionado#session pra usar no banco de avaliações
+
     print(sprints)
     return render_template("sprint.html",sprints=sprints)
 
@@ -92,24 +99,33 @@ def pagina_admin():
     result=result,sala=mostrar_salas)
 
 
+
     
 #Adicionar Salas, requisição e inserção para o banco
     
 @app.route('/addSalas', methods=["POST","GET"])
 def addSalas():
-        sala = request.form["sala"]
-        prof = request.form['p2']
-        prof2 = request.form['m2']
-        sala = Salas(sala,prof,prof2)
-        inserirSala(sala)
-        return redirect ("/admin")
+    # Q = Query()
+    # if 'usuario_logado' in session:
+    #     redirect("/")
+    # if 'adminlogado' not in session or session['adminlogado'] == None:
+    #     return redirect('/')
+
+    sala = request.form["sala"]
+    prof = request.form['p2']
+    prof2 = request.form['m2']
+    sala = Salas(sala,prof,prof2)
+    inserirSala(sala)
+    return redirect ("/admin")
     #teste com o flashcard caso a sala já exista
-'''if bd.search(Q.sala != sala):
+    '''if bd.search(Q.sala != sala):
         n_sala = Salas(sala, prof, prof2)
         inserirSala(n_sala)
         TinyDB(f'Salas/{sala}.json')
     else:
         flash('Essa sala já existe!')'''
+
+
 
 '''@app.route('/admin/<string:sala>')
 def index(sala):
@@ -231,6 +247,7 @@ def avaliacao():
                     alunos.append(ob4[x]['nome'])
 
             x += 1
+        session['meu_time'] = alunos
         print(alunos)
 
         return render_template("avaliacao.html", result3=result3, alunos=alunos, time=time, perguntas=perguntas)
@@ -271,9 +288,12 @@ def avaliacao():
                     alunos_turma2.append(ob4[x]['nome'])
 
             x += 1
-
-        print(alunos_turma2)
-        print(alunos_turma)
+        todos = alunos_turma2+alunos_turma
+        session['minha_classe'] = todos
+        
+        # print(alunos_turma2)
+        # print(alunos_turma)
+        print('todos da classe',todos,session['minha_classe'])
 
         return render_template('tela_professor_turmas.html', alunos_turma=alunos_turma,alunos_turma2=alunos_turma2, result=result, perguntas=perguntas)
     return render_template("avaliacao.html", result=result, perguntas=perguntas)
@@ -282,35 +302,46 @@ def avaliacao():
 
 @app.route("/aluno/notas",methods=['POST'])
 def aluno_notas():
-        x = 0
-        y = 0
-        lista = [1,2,3,4]
+        lista = [1,2,3,4,5] #lista so pra percorrer a quantidade de perguntas q tem
         option = []
-        result = json.dumps(mostrarTodos())
-        uniao = []
-        ob = json.loads(result)
-        # json_obj = json.loads(ob)
-        nomesAlunos = []
-        sub = []
-        perguntas = []
-        result2 = len(perguntas)
-        for x in range(len(ob)):
-            option.append([ob[x]['nome']])
+        option2 = []
+        resposta2 = []
+        resposta = []
+        if session['tipo'] == 'ALUNO':
+            for i in session['meu_time']:
+                option.append(i)
+                resposta.clear()
+                for x in lista:
+                    
+                    resposta.append(request.form[i+str(x)])
+                    print(request.form[i+str(x)])
+                avaliado = Avaliacao(i,resposta,session['usuario_logado'],session['sprint_atual'],'XX/XX/XX','XX/XX/XX')
+                inserir2(avaliado)
+                
+            
 
-            for y in range(len(lista)):
-               option[x].append(request.form[ob[x]['nome']+str(lista[y])])
-               if request.form[ob[x]['nome']+str(lista[y])] == '':
-                   return 'PREENCHA TODOSS!!'
-               y += 1
-            x+=1
-        for z in range(len(option)):
-            avaliado = Avaliacao(option[z][0], option[z])
-            inserir2(avaliado)
-            z += 1
-        result = mostrarTodos2()
-        print(result)
+            
+            result = mostrarTodos2()
+            print(resposta)
+            
 
-        return result
+            return render_template("avaliacao.html")
+        if session['tipo'] == 'PROFESSOR':
+            for i in session['minha_classe']:
+                option2.append(i)
+                resposta2.clear()
+                for x in lista:
+                    resposta2.append(request.form[i+str(x)])
+                    print(request.form[i+str(x)])
+                avaliado = Avaliacao(i,resposta2,session['usuario_logado'],session['sprint_atual'],'XX/XX/XX','XX/XX/XX')
+                inserir2(avaliado)
+                
+            
+
+            
+            result = mostrarTodos2()
+            print(resposta)
+            return render_template("avaliacao.html")
 
 
 # Tela de professores

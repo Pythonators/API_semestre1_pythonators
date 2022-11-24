@@ -20,6 +20,31 @@
         {% for itens2 in alunos_turma%}
             <details>
                  <summary>PO: {{itens2}}</summary>
+                 {% for pergunt in perguntas %}
+                    <ul>
+                        <il>{{pergunt.pergunta_}}</il>
+                        <form action="/aluno/notas" method="POST">
+                        <ul>
+<!--                        <li >Extramamente -->
+                                <input type="radio" value="5" name="{{itens2}}{{pergunt.name}}"required>Extremamente</input>
+    <!--                            </li>-->
+    <!--                        <li >Muito -->
+                                <input type="radio" value= '4' name="{{itens2}}{{pergunt.name}}"required>Muito</input>
+    <!--                        </li>-->
+    <!--                        <li >médio -->
+                                <input type="radio" value='3' name="{{itens2}}{{pergunt.name}}"required> Médio</input>
+    <!--                            </li>-->
+    <!--                        <li >pouco -->
+                                <input type="radio" value='2' name="{{itens2}}{{pergunt.name}}"required>Pouco</input>
+    <!--                            </li> nada-->
+                                <input type="radio" value='1' name="{{itens2}}{{pergunt.name}}"required>Nada</input>
+    <!--                            </li>-->
+                        </ul>
+
+</ul>
+                {% endfor %}
+                
+
             </details>
         {%endfor%}
 
@@ -32,23 +57,25 @@
                         <form action="/aluno/notas" method="POST">
                         <ul>
 <!--                        <li >Extramamente -->
-                                <input type="radio" value="5" name="{{itens.nome}}{{pergunt.name}}"required>Extremamente</input>
+                                <input type="radio" value="5" name="{{itens}}{{pergunt.name}}"required>Extremamente</input>
     <!--                            </li>-->
     <!--                        <li >Muito -->
-                                <input type="radio" value= '4' name="{{itens.nome}}{{pergunt.name}}"required>Muito</input>
+                                <input type="radio" value= '4' name="{{itens}}{{pergunt.name}}"required>Muito</input>
     <!--                        </li>-->
     <!--                        <li >médio -->
-                                <input type="radio" value='3' name="{{itens.nome}}{{pergunt.name}}"required> Médio</input>
+                                <input type="radio" value='3' name="{{itens}}{{pergunt.name}}"required> Médio</input>
     <!--                            </li>-->
     <!--                        <li >pouco -->
-                                <input type="radio" value='2' name="{{itens.nome}}{{pergunt.name}}"required>Pouco</input>
+                                <input type="radio" value='2' name="{{itens}}{{pergunt.name}}"required>Pouco</input>
     <!--                            </li> nada-->
-                                <input type="radio" value='1' name="{{itens.nome}}{{pergunt.name}}"required>Nada</input>
+                                <input type="radio" value='1' name="{{itens}}{{pergunt.name}}"required>Nada</input>
     <!--                            </li>-->
                         </ul>
 
 </ul>
                 {% endfor %}
+                <textarea rows="8" cols="50" name="justificativa" id="coment" maxlength="3000"></textarea>
+
             </details>
         {%endfor%}
                 <br>
