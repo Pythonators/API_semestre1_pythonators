@@ -346,16 +346,9 @@ def aluno_notas():
 
 # Tela de professores
 
-@app.route('/professor')
-def professorm2():
-    return render_template("tela_do_professor.html")
-
-#Dashboard Professores
-
-@app.route("/professor/dashboard")
-def professor_dash():
-    return "<h1>página dashboard</h1>"
-
+@app.route('/dashboard')
+def dash():
+    return render_template("dashboard.html")
 
 #Admin cadastro times
     
