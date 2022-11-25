@@ -65,9 +65,11 @@ details {
   
   details[open]
   {
-      height: 550px;
+      height: auto;
 
   }
+
+
 
 
   summary {
@@ -114,14 +116,15 @@ details {
   details > ul {
     padding-bottom: 1rem;
     margin-bottom: 0;
+    padding-top: 10px;
+    padding-right: 10px;
+
   }
 
-textarea{
-  resize: none;
-  width: 88%;
-  position: relative;
-  left: 45px;
+il {
+  padding: 10px;
 }
+
 button{
   margin-top: 100px;
   margin-bottom: 48px;
@@ -160,14 +163,44 @@ button:hover {
   padding: 0px;
   margin: 0px;
 }
+
 #OBotao{
-left: 15px;
-background-color: whitesmoke;
+justify-content: flex-start;
+padding: 0px;
+margin: 0px;
+left: 5px;
+background: #595E75;
 position: absolute;
 width: 80px;
 height: 50px;
-border-radius: 10px;
+border-radius: 29px;
+outline: none;
+border-color: transparent;
 }
+
+.span.navbar-toggler-icon {
+  color-scheme: white;
+}
+
+#OBotao:hover {
+  color: #FFFFFF;
+  outline: none;
+  border: none;
+  cursor: pointer;
+  outline: none;
+  border-color: transparent; 
+}
+
+#OBotao:focus:hover {
+  color: #FFFFFF;
+  outline: none;
+  border: none;
+  cursor: pointer;
+  outline: none;
+  border-color: transparent; 
+}
+
+
 .intername{
 color: #FFFFFF;
   font-family: 'Inter', sans-serif;
@@ -196,4 +229,11 @@ justify-content: center;
 color: white;
 background-color: #2D3142;
 justify-content: center;
+width: 100%;
+position: relative;
+margin: none;
+}
+
+div.modal-content {
+  width: 498px;
 }
