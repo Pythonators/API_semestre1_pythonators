@@ -9,6 +9,7 @@ from connectAluno import *
 from modelos import Alunos, Professor, Avaliacao, Salas, Times
 from tinydb import TinyDB, Query
 import uuid
+import json
 
 app = Flask(__name__)
 app.config['SECRET_KEY'] = 'A1B2C3'
@@ -230,6 +231,24 @@ def deletar(id):
 def avaliacao():
     if 'usuario_logado' not in session or session['usuario_logado'] == None:
         return redirect('/')
+    
+    bd_avaliacao = TinyDB("Avaliacao.json")
+    Q = Query()
+
+    todos_avaliacao = bd_avaliacao.all()
+    ob_avaliacao = json.dumps(todos_avaliacao)
+    json_avaliacao = json.loads(ob_avaliacao)
+    x = json_avaliacao
+
+    nomes_avaliacao = []
+
+    for i in range(len(x)):
+        nomes_avaliacao.append(x[i]["avaliador"])
+    print(nomes_avaliacao)
+    
+    for n in range(len(nomes_avaliacao)):
+        if nomes_avaliacao[n] == session['usuario_logado']:
+            return render_template('finalizaçao.html')
 
     result = mostrarTodos()
     # b = cargoUsuario
@@ -347,8 +366,8 @@ def aluno_notas():
             result = mostrarTodos2()
             print(resposta)
             
-
-            return render_template("avaliacao.html")
+            return redirect("/aluno/avaliacao")
+        
         if session['tipo'] == 'PROFESSOR':
             for i in session['minha_classe']:
                 option2.append(i)
@@ -364,7 +383,7 @@ def aluno_notas():
             
             result = mostrarTodos2()
             print(resposta)
-            return render_template("avaliacao.html")
+            return redirect("/aluno/avaliacao")
 
 
 # Tela de professores
