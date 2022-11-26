@@ -2,8 +2,7 @@ from flask import Flask, flash, render_template, request, redirect, json, sessio
 from connect import mostrarTodos, inserir, atualizarProfessor, buscarPorId, deletarProfessor, bdProfessor
 from connectAluno import mostrarTodosAlunos, bdAlunos
 from connectAvaliacao import mostrarTodos2, inserir2
-from connectSala import mostrarSalas, inserirSala
-from datetime import datetime
+from connectSala import mostrarSalas, inserirSala, deletarSala, atualizarSala, buscarPorNomeSala
 from connectSprint import *
 from connectTime import *
 from connectAluno import *
@@ -99,6 +98,30 @@ def pagina_admin():
     result=result,sala=mostrar_salas)
 
 
+@app.route('/deletar/sala/<string:sala>', methods = ['GET','POST'])
+def deletarSalas(sala):
+    try:
+        deletarSala(sala)
+        return redirect("/admin")
+    except:
+        return "Algo de errado aconteceu"
+    
+@app.route('/admin/<string:sala>', methods = ['GET','POST'])
+def attSala(sala):
+    if request.method =='POST':
+        sala = request.form["sala"]
+        p2 = request.form["p2"]
+        m2 = request.form["m2"]
+        turma = Salas(sala,p2,m2)
+        try:
+            atualizarSala(sala,turma)
+            return redirect('/admin')
+        except:
+            return 'algo deu errado'
+    else:
+        result = mostrarTodos()
+        turma = buscarPorNomeSala(sala)
+        return render_template('update_sala.html',turma = turma, result = result)
 
     
 #Adicionar Salas, requisição e inserção para o banco
