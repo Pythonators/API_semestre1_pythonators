@@ -13,5 +13,17 @@ def mostrarSalas():
     todos = bd.all()
     return todos
 
-def buscarPorNome(sala_atual):
-    return bd.search(n_sala.sala_atual==str(sala_atual))
+def buscarPorNomeSala(sala):
+    return bd.search(n_sala.sala==str(sala))
+
+def atualizarSala(sala: int, model:Salas):
+    if bd.search(n_sala.sala==str(sala)):
+        bd.remove(n_sala.sala==str(sala))
+        inserirSala(model)
+    else:
+        print("Esse usuário não existe")
+def deletarSala(sala: int):
+    if bd.search(n_sala.sala==str(sala)):
+        bd.remove(n_sala.sala==str(sala))
+    else:
+        print("Usuário não encontrado")
