@@ -1,199 +1,193 @@
-body {margin: 0;}
+body {
+  margin: 0;
+  padding: 0;
+  background: #D8D5DB;
+  font-family: sans-serif;
+  color: white;
+  line-height: 1.5;
+  letter-spacing: 1px;
+  margin-top: 0;
+  align-items: center;
+  flex-direction: column;
+}
+
 @import url('https://fonts.googleapis.com/css2?family=Inter&display=swap');
 
 
 /* Posição dos botões */
-div1 {box-sizing: border-box;
-    position: absolute;
-    width: 300px;
-    height: 450px;
-    left: 460px;
-    top: 250px;
+.box1 {
+  width: 100%;
+  height: 600px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
+
+
 /* Decoração dos botões */
 /* Botão sprint 1 */
-.btn-pri{
-    background-color: #3A4886;
-    color: #ecf0f1;
-    padding: 25px 38px;
-    border: 1px solid #3A4886;
-    border-radius: 30px;
-    cursor: pointer;
-    font-family: 'Inter', sans-serif;
-    font-size: 20px;
+.btn-pri {
+  align-items: center;
+  background-color: #3A4886;
+  color: #ecf0f1;
+  border: 1px solid #3A4886;
+  border-radius: 30px;
+  font-family: 'Inter', sans-serif;
+  font-size: 20px;
+  width: 600px;
+  height: 128px;
+  margin-left: auto;
+  margin-right: auto;
 }
-.btn-pri:hover{
-    background-color:#ecf0f1;
-    color:#3A4886;
-    color:#3A4886;}
 
-body {
-    margin: 0;
-    padding: 0;
-    background: #D8D5DB;
-    font-family: sans-serif;
-    color: white;
-    line-height: 1.5;
-    letter-spacing: 1px;
-    margin-top: 0;
-    justify-content:center;
-  }
-  
-  /* TENTATIVA DE ARRUMAR O SCROLLBAR */
-  body::-webkit-scrollbar {
-    width: 0px;
-  }
-  
-  @import url('https://fonts.googleapis.com/css2?family=Inter&display=swap');
-  
-  
-  .centralizar {
-    margin: 0;
-    height: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-  }
-  
-  h1 {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-family: 'Inter', sans-serif;
-    font-style: normal;
-    font-weight: 400;
-    font-size: 48px;
-    line-height: 58px;
-    margin: 0px;
-    padding-top: 32px;
-    color: #333333;
-  }
-  
-  
-  details {
-      width: 50%;
-      margin: 0 auto ;
-      background: #595E75;
-      margin-bottom: .5rem;
-      box-shadow: 0 .1rem 1rem -.5rem rgba(0,0,0,.4);
-      border-radius: 5px;
-      overflow: hidden;
-      position: relative;
-      top: 80px;
-      box-shadow: 5px 10px 20px rgba(0, 0, 0, 0.25);
-      transition: height 1s ease;
-      overflow: hidden;
-  
-    }
-    
-    details:not([open])
-    {
-        height: 56px;
-    }
-    
-    details[open]
-    {
-        height: auto;
-  
-    }
-  
-  
-  
-  
-    summary {
-      width: 100%;
-      padding: 1rem;
-      display: block;
-      background: #595E75;
-      padding-left: 2.2rem;
-      position: relative;
-      cursor: pointer;
-      font-family: 'Inter', sans-serif;
-      box-shadow: 5px 10px 20px rgba(0, 0, 0, 0.25), -5px -10px 20px rgba(255, 255, 255, 0.25);
-  
-    }
-    
-    summary:before {
-      content: '';
-      border-width: .4rem;
-      border-style: solid;
-      border-color: transparent transparent transparent #fff;
-      position: absolute;
-      top: 1.3rem;
-      left: 1rem;
-      transform: rotate(0);
-      transform-origin: .2rem 50%;
-      transition: .5s transform ease;
-      
-    }
-  
-    textarea {
-      margin-bottom: 16px;
-    }
-    
-    /* THE MAGIC 🧙‍♀️ */
-    details[open] > summary:before {
-      transform: rotate(90deg);
-    }
-    
-    
-    details summary::-webkit-details-marker {
-      display:none;
-    }
-    
-    details > ul {
-      padding-bottom: 1rem;
-      margin-bottom: 0;
-      padding-top: 10px;
-      padding-right: 10px;
-  
-    }
-  
-  il {
-    padding: 10px;
-  }
-  
-  button{
-    margin-top: 100px;
-    margin-bottom: 48px;
-    justify-content: center;
-    width: 512px;
-    height: 64px;
-    border-radius: 16px;
-    background: #00793F;
-    color: #FFFFFF;
-    font-family: 'Inter', sans-serif;
-    outline: none;
-    font-style: normal;
-    font-weight: 400;
-    font-size: 24px;
-    border-color: transparent; 
-  }
-  
-  button:hover {
-    background: #00984f;
-    color: #FFFFFF;
-    outline: none;
-    border: none;
-    cursor: pointer;
-  }
-  
-  /*Controle da barra superior*/
-  
-  #barraSuperior{
-    width: 100%;
-    height: 64px;
-    justify-content: flex-start;
-    background: #2D3142;
-    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-    border-radius: 0px 0px 24px 24px;
-    flex-direction: row;
-    padding: 0px;
-    margin: 0px;
-  }
-  
-  #OBotao{
+.btn-pri:hover {
+  background-color: #ecf0f1;
+  color: #3A4886;
+  color: #3A4886;
+}
+
+
+/* TENTATIVA DE ARRUMAR O SCROLLBAR */
+body::-webkit-scrollbar {
+  width: 0px;
+}
+
+
+
+
+h1 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: 'Inter', sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 48px;
+  line-height: 58px;
+  margin: 0px;
+  padding-top: 32px;
+  color: #333333;
+}
+
+
+details {
+  width: 50%;
+  margin: 0 auto;
+  background: #595E75;
+  margin-bottom: .5rem;
+  box-shadow: 0 .1rem 1rem -.5rem rgba(0, 0, 0, .4);
+  border-radius: 5px;
+  overflow: hidden;
+  position: relative;
+  top: 80px;
+  box-shadow: 5px 10px 20px rgba(0, 0, 0, 0.25);
+  transition: height 1s ease;
+  overflow: hidden;
+
+}
+
+details:not([open]) {
+  height: 56px;
+}
+
+details[open] {
+  height: auto;
+
+}
+
+
+
+
+summary {
+  width: 100%;
+  padding: 1rem;
+  display: block;
+  background: #595E75;
+  padding-left: 2.2rem;
+  position: relative;
+  cursor: pointer;
+  font-family: 'Inter', sans-serif;
+  box-shadow: 5px 10px 20px rgba(0, 0, 0, 0.25), -5px -10px 20px rgba(255, 255, 255, 0.25);
+
+}
+
+summary:before {
+  content: '';
+  border-width: .4rem;
+  border-style: solid;
+  border-color: transparent transparent transparent #fff;
+  position: absolute;
+  top: 1.3rem;
+  left: 1rem;
+  transform: rotate(0);
+  transform-origin: .2rem 50%;
+  transition: .5s transform ease;
+
+}
+
+textarea {
+  margin-bottom: 16px;
+}
+
+/* THE MAGIC 🧙‍♀️ */
+details[open]>summary:before {
+  transform: rotate(90deg);
+}
+
+
+details summary::-webkit-details-marker {
+  display: none;
+}
+
+details>ul {
+  padding-bottom: 1rem;
+  margin-bottom: 0;
+  padding-top: 10px;
+  padding-right: 10px;
+
+}
+
+
+button {
+  margin-top: 100px;
+  margin-bottom: 48px;
+  justify-content: center;
+  width: 512px;
+  height: 64px;
+  border-radius: 16px;
+  background: #00793F;
+  color: #FFFFFF;
+  font-family: 'Inter', sans-serif;
+  outline: none;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 24px;
+  border-color: transparent;
+}
+
+button:hover {
+  background: #00984f;
+  color: #FFFFFF;
+  outline: none;
+  border: none;
+  cursor: pointer;
+}
+
+/*Controle da barra superior*/
+
+#barraSuperior {
+  width: 100%;
+  height: 64px;
+  justify-content: flex-start;
+  background: #2D3142;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 0px 0px 24px 24px;
+  flex-direction: row;
+  padding: 0px;
+  margin: 0px;
+}
+
+#OBotao {
   justify-content: flex-start;
   padding: 0px;
   margin: 0px;
@@ -205,43 +199,43 @@ body {
   border-radius: 29px;
   outline: none;
   border-color: transparent;
-  }
-  
-  .span.navbar-toggler-icon {
-    color-scheme: white;
-  }
-  
-  #OBotao:hover {
-    color: #FFFFFF;
-    outline: none;
-    border: none;
-    cursor: pointer;
-    outline: none;
-    border-color: transparent; 
-  }
-  
-  #OBotao:focus:hover {
-    color: #FFFFFF;
-    outline: none;
-    border: none;
-    cursor: pointer;
-    outline: none;
-    border-color: transparent; 
-  }
-  
-  
-  .intername{
+}
+
+.span.navbar-toggler-icon {
+  color-scheme: white;
+}
+
+#OBotao:hover {
   color: #FFFFFF;
-    font-family: 'Inter', sans-serif;
-    font-style: normal;
-    font-weight: 400;
-    font-size: 24px;
-    padding-left: 80%;
-    margin: 0px;
-    line-height: 64px;
-  }
-  
-  .intername {
+  outline: none;
+  border: none;
+  cursor: pointer;
+  outline: none;
+  border-color: transparent;
+}
+
+#OBotao:focus:hover {
+  color: #FFFFFF;
+  outline: none;
+  border: none;
+  cursor: pointer;
+  outline: none;
+  border-color: transparent;
+}
+
+
+.intername {
+  color: #FFFFFF;
+  font-family: 'Inter', sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 24px;
+  padding-left: 80%;
+  margin: 0px;
+  line-height: 64px;
+}
+
+.intername {
   width: 288px;
   height: 64px;
   position: absolute;
@@ -252,19 +246,17 @@ body {
   display: flex;
   text-align: center;
   justify-content: center;
-  }
-  
-  #menuInter{
+}
+
+#menuInter {
   color: white;
   background-color: #2D3142;
   justify-content: center;
   width: 100%;
   position: relative;
   margin: none;
-  }
-  
-  div.modal-content {
-    width: 498px;
-  }
-  
+}
 
+div.modal-content {
+  width: 498px;
+}
