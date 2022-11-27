@@ -61,7 +61,6 @@ Este é um projeto apresentado pelos alunos do 1º Semestre do Curso do Banco de
 |   03   | Haverá uma tela de avaliação ao PO | Eu como fake client quero avaliar meu aluno PO para manter bom rendimento e alterar pontos fracos | Imprescindível |
 |   03  | Haverá um sistema de profiles | Eu como administrador quero atribuir um perfil específico a cada usuário cadastrado para que eu possa utilizar esse dado sistemicamente após sua autenticação | Imprescindível |
 |   04   | Haverão telas de demonstração de pontuação | Eu como usuário quero que os dados sejam demonstrados de forma direta e prática para facilitação de entendimento |  Importante |
-|   04   | Haverá uma página exclusiva a revisão | Eu como aluno quero poder acessar minhas avaliações para revisão | Imprescindível |
 |   04  | Haverá uma visualização de avaliação geral | Eu como instrutor quero ter acesso a avaliação de meus alunos para saber qual seu rendimento na visão do time| Imprescindível |
 |   04  | Haverá um dashboard ligado as informações de time, de sprint e de avaliações de usuário | Eu como aluno quero ter um dashboard para melhor facilidade de acompanhamento | Imprescindível |
 <br/>
