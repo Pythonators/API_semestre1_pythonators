@@ -138,10 +138,10 @@ div4{
 
 /* Botão sprint 4 */
 .btn-qua{
-    background-color: #790000;
+    background-color: #3A4886;
     color: #ecf0f1;
     padding: 25px 38px;
-    border: 1px solid #790000;
+    border: 1px solid #3A4886;
     border-radius: 30px;
     cursor: pointer;
     font-family: 'Inter', sans-serif;
@@ -155,7 +155,7 @@ div4{
 /* texto abaixo dos botões */
 .texto{
     font-family: 'Inter', sans-serif;
-    font-size:15px; line-height; 1em;
+    font-size:15px;
     display:block;
     position:relative;
     width:65%;
@@ -167,4 +167,3 @@ div4{
     position:absolute;
     bottom:0;
     width:100%;}
-}
