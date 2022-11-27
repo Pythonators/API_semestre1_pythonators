@@ -10,6 +10,8 @@ from modelos import Alunos, Professor, Avaliacao, Salas, Times
 from tinydb import TinyDB, Query
 import uuid
 import json
+import numpy as np
+
 
 app = Flask(__name__)
 app.config['SECRET_KEY'] = 'A1B2C3'
@@ -300,7 +302,7 @@ def avaliacao():
         # area q testa pro P2
 
         for pos in range(len(ob2)):
-            if ob2[pos]['p2'] in session['usuario_logado']:  # se o nome do p2 que eu estou iterando dentro de OB2 (lista de salas) for igual ao do usuário logado
+            if ob2[pos]['p2'] in session['usuario_logado']:  # se o nome do p2 que Feu estou iterando dentro de OB2 (lista de salas) for igual ao do usuário logado
                 turmasp2.append(ob2[pos]['sala'])
 
             pos += 1
@@ -388,9 +390,10 @@ def aluno_notas():
 
 # Tela de professores
 
-@app.route('/dashboard')
+@app.route('/dashboard', methods=["POST","GET"])
 def dash():
-    return render_template("dashboard.html")
+    nota = mostrarTodos2()
+    return render_template("dashboard.html",nota=nota)
 
 #Admin cadastro times
     
