@@ -1,0 +1,104 @@
+{
+    "_default": {
+        "1": {
+            "id": "3196b9a2-5df7-11ed-8a18-988389d88988",
+            "cargo": "ALUNO",
+            "nome": "Caio",
+            "usuario": "Caio",
+            "senha": "123",
+            "funcao": "PRODUCT OWNER (P.O)",
+            "time": "pythonators",
+            "sala": "1\u00ba BD 2022"
+        },
+        "2": {
+            "id": "5642550a-5df7-11ed-8d52-988389d88988",
+            "cargo": "ALUNO",
+            "nome": "Isadora",
+            "usuario": "Isadora",
+            "senha": "123",
+            "funcao": "SCRUM MASTER",
+            "time": "pythonators",
+            "sala": "1\u00ba BD 2022"
+        },
+        "20": {
+            "id": "4ecaba22-6e3c-11ed-be2e-3085a9f6118a",
+            "cargo": "ALUNO",
+            "nome": "Felipe",
+            "usuario": "Felipe",
+            "senha": "123",
+            "funcao": "DEV",
+            "time": "pythonators",
+            "sala": "1\u00ba BD 2022"
+        },
+        "22": {
+            "id": "558970bf-5df8-11ed-b067-988389d88988",
+            "cargo": "ALUNO",
+            "nome": "Cauana",
+            "usuario": "cauanadias",
+            "senha": "123",
+            "funcao": "DEV",
+            "time": "pythonators",
+            "sala": "1\u00ba BD 2022"
+        },
+        "23": {
+            "id": "7050c0a2-6e3c-11ed-bcb8-3085a9f6118a",
+            "cargo": "ALUNO",
+            "nome": "Ryan",
+            "usuario": "ryan",
+            "senha": "123",
+            "funcao": "DEV",
+            "time": "pythonators",
+            "sala": "1\u00ba BD 2022"
+        },
+        "24": {
+            "id": "aaaf2319-6e3c-11ed-b656-3085a9f6118a",
+            "cargo": "ALUNO",
+            "nome": "Mikaela",
+            "usuario": "Mikaela",
+            "senha": "123",
+            "funcao": "DEV",
+            "time": "pythonators",
+            "sala": "1\u00ba BD 2022"
+        },
+        "25": {
+            "id": "bad1e347-6e3c-11ed-a4e8-3085a9f6118a",
+            "cargo": "ALUNO",
+            "nome": "Marcelo",
+            "usuario": "Marcelo",
+            "senha": "123",
+            "funcao": "DEV",
+            "time": "pythonators",
+            "sala": "1\u00ba BD 2022"
+        },
+        "26": {
+            "id": "c4ded36d-6e3c-11ed-a0b1-3085a9f6118a",
+            "cargo": "ALUNO",
+            "nome": "Murilo",
+            "usuario": "Murilo",
+            "senha": "123",
+            "funcao": "DEV",
+            "time": "pythonators",
+            "sala": "1\u00ba BD 2022"
+        },
+        "27": {
+            "id": "d42f14f3-6e3c-11ed-a5db-3085a9f6118a",
+            "cargo": "ALUNO",
+            "nome": "Gabriel",
+            "usuario": "Gabriel",
+            "senha": "123",
+            "funcao": "DEV",
+            "time": "pythonators",
+            "sala": "1\u00ba BD 2022"
+        },
+        "28": {
+            "id": "eb4ccc65-6e3c-11ed-9649-3085a9f6118a",
+            "cargo": "ALUNO",
+            "nome": "Ana Flavia",
+            "usuario": "Ana",
+            "senha": "123",
+            "funcao": "DEV",
+            "time": "pythonators",
+            "sala": "1\u00ba BD 2022"
+        }
+    }
+}
