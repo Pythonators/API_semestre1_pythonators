@@ -41,41 +41,6 @@ h1 {
   color: #333333;
 }
 
-.barrasuperior {
-  width: 100%;
-  height: 64px;
-  justify-content: flex-start;
-  background: #2D3142;
-  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-  border-radius: 0px 0px 24px 24px;
-  flex-direction: row;
-  padding: 0px;
-  margin: 0px;
-}
-
-.nomeadm {
-  width: 288px;
-  height: 64px;
-  position: absolute;
-  right: 0px;
-  padding: 0px;
-  margin: 0px;
-  border-left: 0.5px solid #ffffffae;
-  display: flex;
-  text-align: center;
-  justify-content: center;
-}
-
-.nomeadm > h3 {
-  color: #FFFFFF;
-  font-family: 'Inter', sans-serif;
-  font-style: normal;
-  font-weight: 400;
-  font-size: 24px;
-  padding: 0px;
-  margin: 0px;
-  line-height: 64px;
-}
 
 details {
     width: 50%;
@@ -100,9 +65,11 @@ details {
   
   details[open]
   {
-      height: 550px;
+      height: auto;
 
   }
+
+
 
 
   summary {
@@ -149,28 +116,15 @@ details {
   details > ul {
     padding-bottom: 1rem;
     margin-bottom: 0;
-  }
-  
-  
-  header {
-    border-bottom: 1px solid #ccc;
-    display: flex;
-    justify-content: space-between;
-    background-color:#2D3142;
-    background-size:100%;
-    position: absolute;
-    width:100%;
-    height: 64px;
-    left: 0px;
-    top: 0px;
+    padding-top: 10px;
+    padding-right: 10px;
+
   }
 
-textarea{
-  resize: none;
-  width: 88%;
-  position: relative;
-  left: 45px;
+il {
+  padding: 10px;
 }
+
 button{
   margin-top: 100px;
   margin-bottom: 48px;
@@ -196,31 +150,90 @@ button:hover {
   cursor: pointer;
 }
 
-.modal {
-  width: 300px;
-}
-.modal-content {
-  width: 300px;
-}
-.list-group-item:hover {
-  background-color: rgba(59, 57, 57, 0.164) !important;
-}
+/*Controle da barra superior*/
 
 #barraSuperior{
-  background-color: #2D3142;
-  padding: 8px;
-  }
-#OBotao{
-  background-color: whitesmoke;
-  position: absolute;
+  width: 100%;
+  height: 64px;
+  justify-content: flex-start;
+  background: #2D3142;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 0px 0px 24px 24px;
+  flex-direction: row;
+  padding: 0px;
+  margin: 0px;
 }
+
+#OBotao{
+justify-content: flex-start;
+padding: 0px;
+margin: 0px;
+left: 5px;
+background: #595E75;
+position: absolute;
+width: 80px;
+height: 50px;
+border-radius: 29px;
+outline: none;
+border-color: transparent;
+}
+
+.span.navbar-toggler-icon {
+  color-scheme: white;
+}
+
+#OBotao:hover {
+  color: #FFFFFF;
+  outline: none;
+  border: none;
+  cursor: pointer;
+  outline: none;
+  border-color: transparent; 
+}
+
+#OBotao:focus:hover {
+  color: #FFFFFF;
+  outline: none;
+  border: none;
+  cursor: pointer;
+  outline: none;
+  border-color: transparent; 
+}
+
+
 .intername{
+color: #FFFFFF;
+  font-family: 'Inter', sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 24px;
   padding-left: 80%;
-  color: whitesmoke;
+  margin: 0px;
+  line-height: 64px;
+}
+
+.intername {
+width: 288px;
+height: 64px;
+position: absolute;
+right: 0px;
+padding: 0px;
+margin: 0px;
+border-left: 0.5px solid #ffffffae;
+display: flex;
+text-align: center;
+justify-content: center;
 }
 
 #menuInter{
-  color: white;
-  background-color: #2D3142;
+color: white;
+background-color: #2D3142;
+justify-content: center;
+width: 100%;
+position: relative;
+margin: none;
+}
 
+div.modal-content {
+  width: 498px;
 }
