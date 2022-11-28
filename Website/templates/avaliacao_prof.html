@@ -69,42 +69,17 @@
       {% block conteudo %}
       {% endblock %}  
     <h1>REALIZAR AVALIAÇÕES</h1>
-    <div class = "centralizar">
-        {% for itens2 in alunos_turma%}
-            <details>
-                 <summary>PO: {{itens2}}</summary>
-                 {% for pergunt in perguntas %}
-                    <ul>
-                        <il>{{pergunt.pergunta_}}</il>
-                        <form action="/aluno/notas" method="POST">
-                        <ul>
-<!--                        <li >Extramamente -->
-                                <input type="radio" value="5" name="{{itens2}}{{pergunt.name}}"required>Extremamente</input>
-    <!--                            </li>-->
-    <!--                        <li >Muito -->
-                                <input type="radio" value= '4' name="{{itens2}}{{pergunt.name}}"required>Muito</input>
-    <!--                        </li>-->
-    <!--                        <li >médio -->
-                                <input type="radio" value='3' name="{{itens2}}{{pergunt.name}}"required> Médio</input>
-    <!--                            </li>-->
-    <!--                        <li >pouco -->
-                                <input type="radio" value='2' name="{{itens2}}{{pergunt.name}}"required>Pouco</input>
-    <!--                            </li> nada-->
-                                <input type="radio" value='1' name="{{itens2}}{{pergunt.name}}"required>Nada</input>
-    <!--                            </li>-->
-                        </ul>
-
-</ul>
-                {% endfor %}
-                
-
-            </details>
-        {%endfor%}
-
-        {% for itens in alunos_turma2%}
-            <details>
-                 <summary>SCRUM MASTER: {{itens}}</summary>
-                 {% for pergunt in perguntas %}
+<!--    <input  type=text name="aaa" value="Funciona por favor">Funciona por favor</input>-->
+<!--    <button type="submit">ENVIAR</button>-->
+    <div class = "centralizar">       
+        {% for itens in alunos%}
+        
+            <details>           
+                <div class="scrollbar" id="style-4">
+                    <div class="force-overflow"></div>                  
+                </div>
+                     <summary>{{itens}}</summary>       
+                {% for pergunt in perguntas %}
                     <ul>
                         <il>{{pergunt.pergunta_}}</il>
                         <form action="/aluno/notas" method="POST">
@@ -129,11 +104,43 @@
                 {% endfor %}
                 <textarea rows="8" cols="50" name="justificativa" id="coment" maxlength="3000"></textarea>
 
-            </details>
-        {%endfor%}
                 <br>
+            </details>
+        {% endfor %}
         <button type="submit">ENVIAR AVALIAÇÕES</button>
 </form>
     </div>
 </body>
+<!--<script>-->
+<!--    var buttonSub = document.querySelector('button')-->
+<!--    buttonSub.addEventListener('click',enviar)-->
+<!--    var y = document.querySelectorAll('input')-->
+<!--    var z  = document.querySelectorAll('summary')-->
+<!--    b = []-->
+
+<!--    function enviar(){-->
+
+<!--        for(d=0; d < z.length;d++){-->
+<!--            //console.log(z[d].getAttribute('id'))-->
+<!--            b.push(z[d].getAttribute('id')) //array de nomes-->
+<!--            console.log(b[d])-->
+<!--             }-->
+<!--        for(a=0; a < y.length;a++){-->
+
+<!--                if(y[a].checked){-->
+<!--                //-->
+<!--                for(h=0; h < b.length;h++){-->
+<!--                if(b[h] == y[a].getAttribute('id')){-->
+<!--                console.log(b[h]+y[a].value)-->
+<!--                }-->
+<!--        }-->
+<!--        }-->
+
+<!--        }-->
+
+
+
+<!--    }-->
+<!--</script>-->
+
 </html>

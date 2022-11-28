@@ -2,13 +2,16 @@ from flask import Flask, flash, render_template, request, redirect, json, sessio
 from connect import mostrarTodos, inserir, atualizarProfessor, buscarPorId, deletarProfessor, bdProfessor
 from connectAluno import mostrarTodosAlunos, bdAlunos
 from connectAvaliacao import mostrarTodos2, inserir2
-from connectSala import mostrarSalas, inserirSala
+from connectSala import mostrarSalas, inserirSala, deletarSala, atualizarSala, buscarPorNomeSala
 from connectSprint import *
 from connectTime import *
 from connectAluno import *
 from modelos import Alunos, Professor, Avaliacao, Salas, Times
 from tinydb import TinyDB, Query
 import uuid
+import json
+import numpy as np
+
 
 app = Flask(__name__)
 app.config['SECRET_KEY'] = 'A1B2C3'
@@ -33,6 +36,7 @@ perguntas.append(p3)
 perguntas.append(p4)
 perguntas.append(p5)
 
+
 #Login e autenticação
 
 @app.route('/', methods = ['GET','POST'])
@@ -51,15 +55,16 @@ def autenticar():
         return redirect("/admin")
     if bdProfessor.search(Q.usuario == usuario) and bdProfessor.search(Q.senha == senha):
         session["usuario_logado"] = request.form['nome']
-        session['prof'] = "PROFESSOR"
+        session['tipo'] = "PROFESSOR"
 
         return redirect('/sprint')
     if bdAlunos.search(Q.usuario == usuario) and bdAlunos.search(Q.senha == senha):
         session["usuario_logado"] = request.form['nome']
-        session['prof'] = "ALUNO"
+        session['tipo'] = "ALUNO"
         return redirect('/sprint')
     else:
         return redirect("/")
+        
     
 #Logout
 
@@ -75,6 +80,10 @@ def pagina_sprint():
     if 'usuario_logado' not in session or session['usuario_logado'] == None:
         return redirect('/')
     sprints = mostrarSprint()
+    
+    selecionado = sprints[2]['sprint']#controle intracódigo para qual sprint está aberta, ela vai direto para o banco de avaliações.
+    session['sprint_atual'] = selecionado#session pra usar no banco de avaliações
+
     print(sprints)
     return render_template("sprint.html",sprints=sprints)
 
@@ -87,24 +96,53 @@ def pagina_admin():
     if 'adminlogado' not in session or session['adminlogado'] == None:
         return redirect('/')
     result = mostrarTodos()
-    salas = mostrarSalas()
+    mostrar_salas = mostrarSalas()
     return render_template("admin_turmas.html",
-    result=result,salas=salas)
+    result=result,sala=mostrar_salas)
 
+
+@app.route('/deletar/sala/<string:sala>', methods = ['GET','POST'])
+def deletarSalas(sala):
+    try:
+        deletarSala(sala)
+        return redirect("/admin")
+    except:
+        return "Algo de errado aconteceu"
+    
+@app.route('/admin/<string:sala>', methods = ['GET','POST'])
+def attSala(sala):
+    if request.method =='POST':
+        sala = request.form["sala"]
+        p2 = request.form["p2"]
+        m2 = request.form["m2"]
+        turma = Salas(sala,p2,m2)
+        try:
+            atualizarSala(sala,turma)
+            return redirect('/admin')
+        except:
+            return 'algo deu errado'
+    else:
+        result = mostrarTodos()
+        turma = buscarPorNomeSala(sala)
+        return render_template('update_sala.html',turma = turma, result = result)
 
     
 #Adicionar Salas, requisição e inserção para o banco
     
 @app.route('/addSalas', methods=["POST","GET"])
 def addSalas():
-    Q = Query()
-    if 'usuario_logado' in session:
-        redirect("/")
-    if 'adminlogado' not in session or session['adminlogado'] == None:
-        return redirect('/')
+    # Q = Query()
+    # if 'usuario_logado' in session:
+    #     redirect("/")
+    # if 'adminlogado' not in session or session['adminlogado'] == None:
+    #     return redirect('/')
+
     sala = request.form["sala"]
     prof = request.form['p2']
     prof2 = request.form['m2']
+    sala = Salas(sala,prof,prof2)
+    inserirSala(sala)
+    return redirect ("/admin")
     #teste com o flashcard caso a sala já exista
     '''if bd.search(Q.sala != sala):
         n_sala = Salas(sala, prof, prof2)
@@ -114,8 +152,6 @@ def addSalas():
         flash('Essa sala já existe!')'''
 
 
-
-    return redirect("/admin")
 
 '''@app.route('/admin/<string:sala>')
 def index(sala):
@@ -197,17 +233,37 @@ def deletar(id):
 def avaliacao():
     if 'usuario_logado' not in session or session['usuario_logado'] == None:
         return redirect('/')
+    
+    bd_avaliacao = TinyDB("Avaliacao.json")
+    Q = Query()
+
+    todos_avaliacao = bd_avaliacao.all()
+    ob_avaliacao = json.dumps(todos_avaliacao)
+    json_avaliacao = json.loads(ob_avaliacao)
+    x = json_avaliacao
+
+    nomes_avaliacao = []
+
+    for i in range(len(x)):
+        nomes_avaliacao.append(x[i]["avaliador"])
+    print(nomes_avaliacao)
+    
+    for n in range(len(nomes_avaliacao)):
+        if nomes_avaliacao[n] == session['usuario_logado']:
+            return render_template('finalizaçao.html')
 
     result = mostrarTodos()
     # b = cargoUsuario
     # json_obj = json.loads(result)
     ob = json.dumps(result)
+    result3 = json.dumps(mostrarTodosAlunos())
     result2 = json.dumps(mostrarSalas())
     ob2 = json.loads(result2)
     turmasp2 = []
     turmasm2 = []
     alunos_m2 = []
     alunos_p2 = []
+    time = []
     ob3 = json.dumps(mostrarTodos_times())
     ob3 = json.loads(ob3)
     ob4 = json.dumps(mostrarTodosAlunos())
@@ -215,14 +271,38 @@ def avaliacao():
 
     alunos_turma = []
     alunos_turma2 = []
+    alunos = []
 
+    if session['tipo'] == "ALUNO":
 
-    if session['prof'] == "PROFESSOR":
+        # area q testa pro aluno
+        for pos in range(len(ob4)):
+            if ob4[pos]['nome'] in session['usuario_logado']:  # se o nome do p2 que eu estou iterando dentro de OB2 (lista de salas) for igual ao do usuário logado
+                time.append(ob4[pos]['time'])
+
+            pos += 1
+        for x in range(len(ob4)):
+            if ob4[x]['time'] in time:
+               check = 'ALUNO'
+            # for i in range(len(ob4)):
+               if check in ob4[x]['cargo']:
+                    print('há')
+                    print('é o ',ob4[x]['usuario'])
+                    alunos.append(ob4[x]['nome'])
+
+            x += 1
+        session['meu_time'] = alunos
+        print(alunos)
+
+        return render_template("avaliacao.html", result3=result3, alunos=alunos, time=time, perguntas=perguntas)
+ 
+
+    if session['tipo'] == "PROFESSOR":
 
         # area q testa pro P2
 
         for pos in range(len(ob2)):
-            if ob2[pos]['p2'] in session['usuario_logado']:  # se o nome do p2 que eu estou iterando dentro de OB2 (lista de salas) for igual ao do usuário logado
+            if ob2[pos]['p2'] in session['usuario_logado']:  # se o nome do p2 que Feu estou iterando dentro de OB2 (lista de salas) for igual ao do usuário logado
                 turmasp2.append(ob2[pos]['sala'])
 
             pos += 1
@@ -252,9 +332,12 @@ def avaliacao():
                     alunos_turma2.append(ob4[x]['nome'])
 
             x += 1
-
-        print(alunos_turma2)
-        print(alunos_turma)
+        todos = alunos_turma2+alunos_turma
+        session['minha_classe'] = todos
+        
+        # print(alunos_turma2)
+        # print(alunos_turma)
+        print('todos da classe',todos,session['minha_classe'])
 
         return render_template('tela_professor_turmas.html', alunos_turma=alunos_turma,alunos_turma2=alunos_turma2, result=result, perguntas=perguntas)
     return render_template("avaliacao.html", result=result, perguntas=perguntas)
@@ -263,49 +346,54 @@ def avaliacao():
 
 @app.route("/aluno/notas",methods=['POST'])
 def aluno_notas():
-        x = 0
-        y = 0
-        lista = [1,2,3,4]
+        lista = [1,2,3,4,5] #lista so pra percorrer a quantidade de perguntas q tem
         option = []
-        result = json.dumps(mostrarTodos())
-        uniao = []
-        ob = json.loads(result)
-        # json_obj = json.loads(ob)
-        nomesAlunos = []
-        sub = []
-        perguntas = []
-        result2 = len(perguntas)
-        for x in range(len(ob)):
-            option.append([ob[x]['nome']])
+        option2 = []
+        resposta2 = []
+        resposta = []
+        if session['tipo'] == 'ALUNO':
+            for i in session['meu_time']:
+                option.append(i)
+                resposta.clear()
+                for x in lista:
+                    
+                    resposta.append(request.form[i+str(x)])
+                    print(request.form[i+str(x)])
+                avaliado = Avaliacao(i,resposta,session['usuario_logado'],session['sprint_atual'],'XX/XX/XX','XX/XX/XX')
+                inserir2(avaliado)
+                
+            
 
-            for y in range(len(lista)):
-               option[x].append(request.form[ob[x]['nome']+str(lista[y])])
-               if request.form[ob[x]['nome']+str(lista[y])] == '':
-                   return 'PREENCHA TODOSS!!'
-               y += 1
-            x+=1
-        for z in range(len(option)):
-            avaliado = Avaliacao(option[z][0], option[z])
-            inserir2(avaliado)
-            z += 1
-        result = mostrarTodos2()
-        print(result)
+            
+            result = mostrarTodos2()
+            print(resposta)
+            
+            return redirect("/aluno/avaliacao")
+        
+        if session['tipo'] == 'PROFESSOR':
+            for i in session['minha_classe']:
+                option2.append(i)
+                resposta2.clear()
+                for x in lista:
+                    resposta2.append(request.form[i+str(x)])
+                    print(request.form[i+str(x)])
+                avaliado = Avaliacao(i,resposta2,session['usuario_logado'],session['sprint_atual'],'XX/XX/XX','XX/XX/XX')
+                inserir2(avaliado)
+                
+            
 
-        return result
+            
+            result = mostrarTodos2()
+            print(resposta)
+            return redirect("/aluno/avaliacao")
 
 
 # Tela de professores
 
-@app.route('/professor')
-def professorm2():
-    return render_template("tela_do_professor.html")
-
-#Dashboard Professores
-
-@app.route("/professor/dashboard")
-def professor_dash():
-    return "<h1>página dashboard</h1>"
-
+@app.route('/dashboard', methods=["POST","GET"])
+def dash():
+    nota = mostrarTodos2()
+    return render_template("dashboard.html",nota=nota)
 
 #Admin cadastro times
     
@@ -370,10 +458,10 @@ def cadastroalunos():
         redirect("/")
     if 'adminlogado' not in session or session['adminlogado'] == None:
         return redirect('/')
-    result = mostrarTodosAlunos()
+    result3 = mostrarTodosAlunos()
     result2 = mostrarTodos_times()
     return render_template("admin_aluno.html",
-    result=result, result2=result2)
+    result3=result3, result2=result2)
 
 #Inserção alunos no Banco de dados
 

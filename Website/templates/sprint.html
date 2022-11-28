@@ -26,55 +26,56 @@
     
     <h1> OLÁ, AVALIADOR SEJA BEM VINDO! SELECIONE A SPRINT DISPONÍVEL  </h1>
 
-<!–botão 1 e texto embaixo–>
-        <div1 class="box1">
-            <a href="/sprint">
-                <button class="btn-pri">SPRINT {{sprints[0]['sprint']}}
-
-                </button>
-            </a>
-            <div class="texto">
-                <br>
-                    <span>Avaliação disponível de <br> 29/08/2022 à 18/09/2022</span>
-                </div>
-            </div></div1>
-
-        <!–botão 2 e texto embaixo–>
-        <div2 class="box2">
-            <a href="/sprint">
-                <button class="btn-seg">SPRINT {{sprints[1]['sprint']}}
-
-                </button>
-            </a>
-            <div class="texto">
-                <br>
-                    <span> Avaliação disponível de <br>19/09/2022 à 09/10/2022 </span>
-                </div>
-        </div2>
-
-        <!–botão 3 e texto embaixo–>
-        <div3 class="box3">
-        <a href="/aluno/avaliacao">
-            <button class="btn-ter">SPRINT {{sprints[2]['sprint']}}</button>
-        </a>
-        <div class="texto">
-                <br>
-            <span> Avaliação disponível de <br> 17/10/2022 à 06/11/2022 </span>
-        </div>
-        </div3>
-
-        <!–botão 4 e texto embaixo–>
-        <div4 class="box4">
+    <!–botão 1 e texto embaixo–>
+    <div1 class="box1">
         <a href="/sprint">
-            <button class="btn-qua">SPRINT {{sprints[3]['sprint']}}</button>
+            <button class="btn-pri" name="1" onclick="alert('SPRINT FINALIZADA')">SPRINT {{sprints[0]['sprint']}}
+
+            </button>
         </a>
         <div class="texto">
-        <br>
-            <span> Avaliação disponível de <br>07/11/2022 à 27/11/2022</span>
-        </div>
-        </div4>
+            <br>
+                <span>Avaliação disponível de <br> 29/08/2022 à 18/09/2022</span>
+            </div>
+        </div></div1>
 
-        <!–rodape–>
+    <!–botão 2 e texto embaixo–>
+    <div2 class="box2">
+        <a href="/sprint">
+            <button class="btn-seg" name="2" onclick="alert('SPRINT FINALIZADA')">SPRINT {{sprints[1]['sprint']}}
+
+            </button>
+        </a>
+        <div class="texto">
+            <br>
+                <span> Avaliação disponível de <br>19/09/2022 à 09/10/2022 </span>
+            </div>
+    </div2>
+
+    <!–botão 3 e texto embaixo–>
+    <div3 class="box3">
+    
+    <a href="{{liberado}}">
+        <button class="btn-ter" name="3" onclick="alert('SPRINT FINALIZADA')" >SPRINT {{sprints[2]['sprint']}}</button>
+    </a>
+    <div class="texto">
+            <br>
+        <span> Avaliação disponível de <br> 17/10/2022 à 06/11/2022 </span>
+    </div>
+    </div3>
+
+    <!–botão 4 e texto embaixo–>
+    <div4 class="box4">
+    <a href=/aluno/avaliacao>
+        <button class="btn-qua" name="4">SPRINT {{sprints[3]['sprint']}}</button>
+    </a>
+    <div class="texto">
+    <br>
+        <span> Avaliação disponível de <br>07/11/2022 à 27/11/2022</span>
+    </div>
+    </div4>
+
+    <!–rodape–>
         <div class="main">
                 <div id="footer">
 

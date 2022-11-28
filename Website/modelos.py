@@ -6,9 +6,13 @@ class Professor:
         self.senha=senha
         #self.funcao=funcao
 class Avaliacao:
-    def __init__(self, avaliado, perguntas) -> None:
+    def __init__(self, avaliado, perguntas,avaliador,sprint,data_inicio,data_fim) -> None:
         self.avaliado=avaliado
         self.perguntas = perguntas
+        self.avaliador = avaliador
+        self.sprint = sprint
+        self.data_inicio = data_inicio
+        self.data_fim = data_fim
 class Salas:
     def __init__(self, sala,prof,prof2):
         self.sala = sala

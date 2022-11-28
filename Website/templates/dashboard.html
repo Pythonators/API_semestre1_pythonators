@@ -64,76 +64,13 @@
                 </div>
               </div>
             </div>
-            <div class="container text-center"></div>
       </body>
       {% block conteudo %}
       {% endblock %}  
-    <h1>REALIZAR AVALIAÇÕES</h1>
-    <div class = "centralizar">
-        {% for itens2 in alunos_turma%}
-            <details>
-                 <summary>PO: {{itens2}}</summary>
-                 {% for pergunt in perguntas %}
-                    <ul>
-                        <il>{{pergunt.pergunta_}}</il>
-                        <form action="/aluno/notas" method="POST">
-                        <ul>
-<!--                        <li >Extramamente -->
-                                <input type="radio" value="5" name="{{itens2}}{{pergunt.name}}"required>Extremamente</input>
-    <!--                            </li>-->
-    <!--                        <li >Muito -->
-                                <input type="radio" value= '4' name="{{itens2}}{{pergunt.name}}"required>Muito</input>
-    <!--                        </li>-->
-    <!--                        <li >médio -->
-                                <input type="radio" value='3' name="{{itens2}}{{pergunt.name}}"required> Médio</input>
-    <!--                            </li>-->
-    <!--                        <li >pouco -->
-                                <input type="radio" value='2' name="{{itens2}}{{pergunt.name}}"required>Pouco</input>
-    <!--                            </li> nada-->
-                                <input type="radio" value='1' name="{{itens2}}{{pergunt.name}}"required>Nada</input>
-    <!--                            </li>-->
-                        </ul>
-
-</ul>
-                {% endfor %}
-                
-
-            </details>
-        {%endfor%}
-
-        {% for itens in alunos_turma2%}
-            <details>
-                 <summary>SCRUM MASTER: {{itens}}</summary>
-                 {% for pergunt in perguntas %}
-                    <ul>
-                        <il>{{pergunt.pergunta_}}</il>
-                        <form action="/aluno/notas" method="POST">
-                        <ul>
-<!--                        <li >Extramamente -->
-                                <input type="radio" value="5" name="{{itens}}{{pergunt.name}}"required>Extremamente</input>
-    <!--                            </li>-->
-    <!--                        <li >Muito -->
-                                <input type="radio" value= '4' name="{{itens}}{{pergunt.name}}"required>Muito</input>
-    <!--                        </li>-->
-    <!--                        <li >médio -->
-                                <input type="radio" value='3' name="{{itens}}{{pergunt.name}}"required> Médio</input>
-    <!--                            </li>-->
-    <!--                        <li >pouco -->
-                                <input type="radio" value='2' name="{{itens}}{{pergunt.name}}"required>Pouco</input>
-    <!--                            </li> nada-->
-                                <input type="radio" value='1' name="{{itens}}{{pergunt.name}}"required>Nada</input>
-    <!--                            </li>-->
-                        </ul>
-
-</ul>
-                {% endfor %}
-                <textarea rows="8" cols="50" name="justificativa" id="coment" maxlength="3000"></textarea>
-
-            </details>
-        {%endfor%}
-                <br>
-        <button type="submit">ENVIAR AVALIAÇÕES</button>
-</form>
+    <h1>Visualizar notas</h1>
+    {% for s in nota%}
+    <h1>{{s.avaliado}}: {{s.perguntas}}</h1>
+      {%endfor%}
     </div>
 </body>
 </html>
